@@ -8,6 +8,15 @@ import { useEffect, useState } from 'react';
 import MainLayout from '@/layouts/MainLayout';
 import ProductItem from '@/components/ProductItem';
 
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { updateProducts } from '@/store';
+
+// Swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
+
 import styles from './index.module.css';
 
 export async function getServerSideProps() {
@@ -21,29 +30,47 @@ export async function getServerSideProps() {
 }
 
 const MainPage = ({ data }) => {
-	const [products, setProducts] = useState([]);
+	const dispatch = useDispatch();
+	const dispatchList = useSelector(state => state.products.products);
+
+	const dispatchProduct = () => {
+		const productList = Object.entries(data);
+		dispatch(updateProducts(productList));
+	};
 
 	useEffect(() => {
-		const productList = Object.entries(data);
-		setProducts(productList);
+		dispatchProduct();
 	}, [data]);
+
+	// Swiper
+	// SwiperCore.use([Navigation, Scrollbar, Autoplay]);
 
 	return (
 		<>
 			<MainLayout>
 				<main>
 					<ul>
-						{products.map(([genre, songs], index) => (
+						{dispatchList.map(([genre, songs], index) => (
 							<li key={index} className={styles.genreList}>
 								<h3 className={styles.title}>{genre.toUpperCase()}</h3>
 
-								<ul className={styles.productList}>
-									{songs.map((item, index) => (
-										<li key={index}>
-											<ProductItem product={item} />
-										</li>
-									))}
-								</ul>
+								<Swiper
+									modules={[Navigation, Pagination]}
+									spaceBetween={0}
+									slidesPerView={6}
+									navigation
+									pagination={{ clickable: true }}
+								>
+									<div className={styles.productList}>
+										{songs.map((item, index) => (
+											<SwiperSlide key={index}>
+												<div>
+													<ProductItem product={item} />
+												</div>
+											</SwiperSlide>
+										))}
+									</div>
+								</Swiper>
 							</li>
 						))}
 					</ul>

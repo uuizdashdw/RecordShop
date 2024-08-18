@@ -8,5 +8,21 @@
 }
 
 main {
-    padding: 24px;
+    padding: 50px;
+}
+
+.swiper {
+    padding-bottom: 60px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: black !important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: ghostwhite !important;
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 36px !important;
 }
