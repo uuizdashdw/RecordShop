@@ -1,0 +1,46 @@
+.header {
+    width: 1800px;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.gnb {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.auth {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media screen and (max-width: 1440px){
+    .header {
+        width: 100%;
+        padding: 12px 24px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 70px;
+        background-color: black;
+    }
+}
