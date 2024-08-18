@@ -6,3 +6,7 @@
     box-sizing: border-box;
     color: black;
 }
+
+main {
+    padding: 24px;
+}

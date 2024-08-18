@@ -1,0 +1,30 @@
+.img {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.price {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 1440px) {
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .title {
+        font-size: 12px;
+    }
+    
+    .price {
+        font-size: 12px;
+    }
+}
