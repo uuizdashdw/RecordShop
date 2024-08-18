@@ -1,14 +1,18 @@
-import { testHandler } from "./api/hello"
+import MainLayout from '@/layouts/MainLayout';
 
-export default function Home() {
+const MainPage = () => {
+	return (
+		<div>
+			<MainLayout>
+				<h1>Main Page</h1>
+				<p>main page text</p>
+			</MainLayout>
+		</div>
+	);
+};
 
-  
+MainPage.getLayout = function getLayout(page) {
+	return <MainLayout>{page}</MainLayout>;
+};
 
-  return (
-    <div>
-      
-        Home
-      
-    </div>
-  )
-}
+export default MainPage;
