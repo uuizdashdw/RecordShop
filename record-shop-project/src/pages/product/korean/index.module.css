@@ -1,0 +1,16 @@
+.title {
+    margin-bottom: 40px;
+}
+
+.koreanMusicList {
+    display: grid;
+    gap: 120px;
+    grid-template-columns: repeat(6, minmax(0px, 1fr));
+    width: 100%;
+}
+
+@media screen and (max-width: 1440px) {
+    .koreanMusicList {
+        gap: 32px;
+    }
+}

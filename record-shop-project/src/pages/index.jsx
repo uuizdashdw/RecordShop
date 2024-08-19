@@ -34,6 +34,7 @@ const MainPage = ({ data }) => {
 	const dispatchList = useSelector(state => state.products.products);
 
 	const dispatchProduct = () => {
+		console.log(data);
 		const productList = Object.entries(data);
 		dispatch(updateProducts(productList));
 	};
@@ -41,9 +42,6 @@ const MainPage = ({ data }) => {
 	useEffect(() => {
 		dispatchProduct();
 	}, [data]);
-
-	// Swiper
-	// SwiperCore.use([Navigation, Scrollbar, Autoplay]);
 
 	return (
 		<>

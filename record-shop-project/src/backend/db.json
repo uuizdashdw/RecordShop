@@ -1,6 +1,6 @@
 {
   "products": {
-    "korean": [
+    "koreanMusic": [
       {
         "id": 0,
         "name": "빈지노(Beenzino) - NOWITZKI",
@@ -423,7 +423,7 @@
       }
     ],
 
-    "hip hop, rnb": [
+    "hiphopRnb": [
       {
         "id": 0,
         "name": "Little Simz - No Thank You",
@@ -846,7 +846,7 @@
       }
     ],
 
-    "beats, instrumental": [
+    "beatsInstrumental": [
       {
         "id": 0,
         "name": "Knxwlegde - Anthology",
@@ -1185,7 +1185,7 @@
       }
     ],
 
-    "soul, funk, disco": [
+    "soulFunkDisco": [
       {
         "id": 0,
         "name": "El Michels Affair & Black Thought - Glorious Game",
@@ -1608,7 +1608,7 @@
       }
     ],
     
-    "nu disco, modern funk": [
+    "nuDiscoModernFunk": [
       {
         "id": 0,
         "name": "B. Bravo - Vizionz",
@@ -2076,7 +2076,7 @@
       }
     ],
 
-    "rock, pop": [
+    "rockPop": [
       {
         "id": 0,
         "name": "Touched - Purple",

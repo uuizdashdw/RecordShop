@@ -1,5 +1,5 @@
 .header {
-    width: 1800px;
+    width: 100%;
     padding: 24px 50px;
     border-bottom: 1px solid #eee;
 }
@@ -32,6 +32,12 @@
     gap: 15px;
 }
 
+.logo {
+    width: 200px;
+    height: 90px;
+    background-color: black;
+}
+
 @media screen and (max-width: 1440px){
     .header {
         width: 100%;
@@ -41,6 +47,5 @@
     .logo {
         width: 150px;
         height: 70px;
-        background-color: black;
     }
 }
