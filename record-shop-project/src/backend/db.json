@@ -4,6 +4,7 @@
       {
         "id": 0,
         "name": "빈지노(Beenzino) - NOWITZKI",
+        "category": "Korean",
         "price": "60,000",
         "priceOff": true,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1720413043049_1000.png",
@@ -46,6 +47,7 @@
       {
         "id": 1,
         "name": "김현철 - 그대 안의 블루",
+        "category": "Korean",
         "price": "45,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1709195688354_1000.jpg",
@@ -88,6 +90,7 @@
       {
         "id": 2,
         "name": "문지영 - 연애작전",
+        "category": "Korean",
         "price": "44,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1687418637482_1000.jpg",
@@ -130,6 +133,7 @@
       {
         "id": 3,
         "name": "지누션 - The Real",
+        "category": "Korean",
         "price": "46,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1698808212167_1000.png",
@@ -172,6 +176,7 @@
       {
         "id": 4,
         "name": "기리보이 - avante [싸인반]",
+        "category": "Korean",
         "price": "60,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1649665492371_1000.jpeg",
@@ -214,6 +219,7 @@
       {
         "id": 5,
         "name": "He6 - 아름다운 인형",
+        "category": "Korean",
         "price": "40,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1645255139447_1000.png",
@@ -256,6 +262,7 @@
       {
         "id": 6,
         "name": "윤시내 - 1집",
+        "category": "Korean",
         "price": "42,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1645255401838_1000.jpg",
@@ -298,6 +305,7 @@
       {
         "id": 7,
         "name": "이현도 - D.O Funk",
+        "category": "Korean",
         "price": "58,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1668838232074_1000.png",
@@ -340,6 +348,7 @@
       {
         "id": 8,
         "name": "김흥국 - 레게의 神 : Last Reggae",
+        "category": "Korean",
         "price": "28,500",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1576650530212_1000.png",
@@ -382,6 +391,7 @@
       {
         "id": 9,
         "name": "Duex - 여름 안에서",
+        "category": "Korean",
         "price": "29,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1627588654982_1000.jpg",
@@ -427,6 +437,7 @@
       {
         "id": 0,
         "name": "Little Simz - No Thank You",
+        "category": "Hiphop/R&B",
         "price": "55,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1703410125062_1000.png",
@@ -469,6 +480,7 @@
       {
         "id": 1,
         "name": "J Dilla - The Shining",
+        "category": "Hiphop/R&B",
         "price": "55,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1703659704417_1000.jpeg",
@@ -511,6 +523,7 @@
       {
         "id": 2,
         "name": "Mac Miller - Blue Slide Park",
+        "category": "Hiphop/R&B",
         "price": "40,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1703406174163_1000.jpeg",
@@ -553,6 +566,7 @@
       {
         "id": 3,
         "name": "마미손 - 나의 슬픔",
+        "category": "Hiphop/R&B",
         "price": "46,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1702444496898_1000.jpg",
@@ -595,6 +609,7 @@
       {
         "id": 4,
         "name": "Crown J - Asia King",
+        "category": "Hiphop/R&B",
         "price": "44,500",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1702444169543_1000.jpg",
@@ -637,6 +652,7 @@
       {
         "id": 5,
         "name": "The Roots - Things Fall Apart",
+        "category": "Hiphop/R&B",
         "price": "60,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1677147229276_1000.jpeg",
@@ -679,6 +695,7 @@
       {
         "id": 6,
         "name": "Wiz Khalifa - Multiverse",
+        "category": "Hiphop/R&B",
         "price": "52,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1677215147938_1000.jpeg",
@@ -721,6 +738,7 @@
       {
         "id": 7,
         "name": "Wild Style",
+        "category": "Hiphop/R&B",
         "price": "35,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1674813386395_1000.jpeg",
@@ -763,6 +781,7 @@
       {
         "id": 8,
         "name": "RZA - Bobby Digital And The Pit Of Snakes",
+        "category": "Hiphop/R&B",
         "price": "48,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1677213750360_1000.jpeg",
@@ -805,6 +824,7 @@
       {
         "id": 9,
         "name": "Aitch - Close To Home",
+        "category": "Hiphop/R&B",
         "price": "30,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1671621627688_1000.jpeg",
@@ -850,6 +870,7 @@
       {
         "id": 0,
         "name": "Knxwlegde - Anthology",
+        "category": "Beats/Instrumental",
         "price": "44,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1591457070516_1000.jpg",
@@ -892,6 +913,7 @@
       {
         "id": 1,
         "name": "Pete Rock - 80 Blocks Instrumental",
+        "category": "Beats/Instrumental",
         "price": "37,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1649585590689_1000.jpeg",
@@ -934,6 +956,7 @@
       {
         "id": 2,
         "name": "J Dilla - Donuts",
+        "category": "Beats/Instrumental",
         "price": "52,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1667022179113_1000.jpeg",
@@ -976,6 +999,7 @@
       {
         "id": 3,
         "name": "Madvillain - Madvillainy Instrumentals",
+        "category": "Beats/Instrumental",
         "price": "30,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1653647178657_1000.jpeg",
@@ -1018,6 +1042,7 @@
       {
         "id": 4,
         "name": "RJD2 - Deadringer",
+        "category": "Beats/Instrumental",
         "price": "30,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1644741514670_1000.jpeg",
@@ -1060,6 +1085,7 @@
       {
         "id": 5,
         "name": "Avantgarde Vak - Funky Rhyme Maker / GoldenBwoy",
+        "category": "Beats/Instrumental",
         "price": "23,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1679816751342_1000.jpeg",
@@ -1102,6 +1128,7 @@
       {
         "id": 6,
         "name": "Madlib - Shades of Blue",
+        "category": "Beats/Instrumental",
         "price": "60,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1703659246081_1000.jpg",
@@ -1144,6 +1171,7 @@
       {
         "id": 7,
         "name": "S. Fidelity - Fidelity Radio Club",
+        "category": "Beats/Instrumental",
         "price": "33,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1663486715676_1000.jpeg",
@@ -1189,6 +1217,7 @@
       {
         "id": 0,
         "name": "El Michels Affair & Black Thought - Glorious Game",
+        "category": "Soul/Funk/Disco",
         "price": "42,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1704274317815_1000.jpeg",
@@ -1231,6 +1260,7 @@
       {
         "id": 1,
         "name": "Incredible Bongo Band - Bongo Rock",
+        "category": "Soul/Funk/Disco",
         "price": "30,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1644136122732_1000.jpeg",
@@ -1273,6 +1303,7 @@
       {
         "id": 2,
         "name": "김상희 - Love Story",
+        "category": "Soul/Funk/Disco",
         "price": "49,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1709195409802_1000.jpg",
@@ -1315,6 +1346,7 @@
       {
         "id": 3,
         "name": "Foster Sylvers - Foster Sylvers",
+        "category": "Soul/Funk/Disco",
         "price": "35,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1701944201911_1000.jpeg",
@@ -1357,6 +1389,7 @@
       {
         "id": 4,
         "name": "The Mighty Mocambos - Scénarios",
+        "category": "Soul/Funk/Disco",
         "price": "32,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1700361235383_1000.jpg",
@@ -1399,6 +1432,7 @@
       {
         "id": 5,
         "name": "Johny Pate - Shaft In Africa (45s Collection)",
+        "category": "Soul/Funk/Disco",
         "price": "29,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1592194116464_1000.jpg",
@@ -1441,6 +1475,7 @@
       {
         "id": 6,
         "name": "For The Love Of You",
+        "category": "Soul/Funk/Disco",
         "price": "42,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1700159079657_1000.jpg",
@@ -1483,6 +1518,7 @@
       {
         "id": 7,
         "name": "Bobby Boyd - Bobby Boyd",
+        "category": "Soul/Funk/Disco",
         "price": "40,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1700359802170_1000.jpeg",
@@ -1525,6 +1561,7 @@
       {
         "id": 8,
         "name": "Just A Touch",
+        "category": "Soul/Funk/Disco",
         "price": "48,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1700359461802_1000.jpg",
@@ -1567,6 +1604,7 @@
       {
         "id": 9,
         "name": "Eleven76 - Synchronization",
+        "category": "Soul/Funk/Disco",
         "price": "32,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1700360893791_1000.jpg",
@@ -1612,6 +1650,7 @@
       {
         "id": 0,
         "name": "B. Bravo - Vizionz",
+        "category": "Nu Disco/Modern Funk",
         "price": "34,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1684573984640_1000.jpg",
@@ -1654,6 +1693,7 @@
       {
         "id": 1,
         "name": "Daft Punk - Get Lucky / Harder, Better, Faster, Stronger",
+        "category": "Nu Disco/Modern Funk",
         "price": "20,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1667037524365_1000.jpeg",
@@ -1696,6 +1736,7 @@
       {
         "id": 2,
         "name": "Snoop Dogg & Dam-Funk - 7 Days of Funk",
+        "category": "Nu Disco/Modern Funk",
         "price": "42,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1667022539471_1000.jpeg",
@@ -1738,6 +1779,7 @@
       {
         "id": 3,
         "name": "S-Tone Inc. - Body & Soul (The Disco Experience)",
+        "category": "Nu Disco/Modern Funk",
         "price": "40,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1659007145103_1000.jpeg",
@@ -1780,6 +1822,7 @@
       {
         "id": 4,
         "name": "Steamy Windows & Woolfy - One of Those Nights",
+        "category": "Nu Disco/Modern Funk",
         "price": "20,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1650022900343_1000.jpeg",
@@ -1822,6 +1865,7 @@
       {
         "id": 5,
         "name": "Pictured Resort - Vibe Your Room",
+        "category": "Nu Disco/Modern Funk",
         "price": "41,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1646458175310_1000.jpeg",
@@ -1867,6 +1911,7 @@
       {
         "id": 0,
         "name": "Donald Byrd - Slow Drag",
+        "category": "Jazz",
         "price": "60,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1704273159966_1000.jpeg",
@@ -1909,6 +1954,7 @@
       {
         "id": 1,
         "name": "McCoy Tyner - Time For Tyner",
+        "category": "Jazz",
         "price": "65,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1704272756397_1000.jpeg",
@@ -1951,6 +1997,7 @@
       {
         "id": 2,
         "name": "Daniel Salinas - Atlantis",
+        "category": "Jazz",
         "price": "35,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1702031699620_1000.jpeg",
@@ -1993,6 +2040,7 @@
       {
         "id": 3,
         "name": "Azymuth - Águia Não Come Mosca",
+        "category": "Jazz",
         "price": "35,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1702031858160_1000.jpeg",
@@ -2035,6 +2083,7 @@
       {
         "id": 4,
         "name": "Tadao Sawai - Jazz Rock",
+        "category": "Jazz",
         "price": "35,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1702108533488_1000.jpeg",
@@ -2080,6 +2129,7 @@
       {
         "id": 0,
         "name": "Touched - Purple",
+        "category": "Rock/Pop",
         "price": "48,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1713689587594_1000.jpeg",
@@ -2122,6 +2172,7 @@
       {
         "id": 1,
         "name": "확인 - 칸",
+        "category": "Rock/Pop",
         "price": "48,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1713689128847_1000.jpeg",
@@ -2164,6 +2215,7 @@
       {
         "id": 2,
         "name": "소란 - Polar",
+        "category": "Rock/Pop",
         "price": "44,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1713688788369_1000.jpeg",
@@ -2206,6 +2258,7 @@
       {
         "id": 3,
         "name": "이준형 - UTOPIA",
+        "category": "Rock/Pop",
         "price": "54,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1713688403366_1000.jpeg",
@@ -2248,6 +2301,7 @@
       {
         "id": 4,
         "name": "Matty - Déjàvu",
+        "category": "Rock/Pop",
         "price": "30,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1702105706909_1000.jpeg",
@@ -2293,6 +2347,7 @@
       {
         "id": 0,
         "name": "Guardians Of The Galaxy Vol.3",
+        "category": "Soundtrack",
         "price": "59,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1685018191416_1000.jpeg",
@@ -2335,6 +2390,7 @@
       {
         "id": 1,
         "name": "Joseph Koo / Wang Fu Ling - The Big Boss",
+        "category": "Soundtrack",
         "price": "35,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1576575724851_1000.jpg",
@@ -2377,6 +2433,7 @@
       {
         "id": 2,
         "name": "Jacky Chan - The Miracle Fist",
+        "category": "Soundtrack",
         "price": "20,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1576576564897_1000.jpg",
@@ -2419,6 +2476,7 @@
       {
         "id": 3,
         "name": "Lalo Schifrin - Enter The Dragon",
+        "category": "Soundtrack",
         "price": "30,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1576574983483_1000.jpg",
@@ -2461,6 +2519,7 @@
       {
         "id": 4,
         "name": "Vince Guaraldi Trio - A Boy Named Charlie Brown",
+        "category": "Soundtrack",
         "price": "35,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1640420395183_1000.jpeg",

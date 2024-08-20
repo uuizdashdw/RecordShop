@@ -1,8 +1,12 @@
 import Image from 'next/image';
 
 import styles from './css/productItem.module.css';
+// import { useEffect } from 'react';
 
 const ProductItem = ({ product }) => {
+	// useEffect(() => {
+	// 	console.log('product ###', product);
+	// }, []);
 	return (
 		<>
 			<Image

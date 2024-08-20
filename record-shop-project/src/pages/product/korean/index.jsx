@@ -26,6 +26,7 @@ const KoreanPage = data => {
 
 	useEffect(() => {
 		const korean = data.children.props.data;
+		console.log('### product LIST', korean);
 		setMusic(korean);
 	}, [data]);
 
