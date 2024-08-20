@@ -1,9 +1,47 @@
+// CSS
+import styles from './index.module.css';
+
+// Layout
 import ProductLayout from '@/layouts/ProductLayout';
 
-const BeatsAndInstrumentalPage = () => {
+// Components
+import ProductItem from '@/components/ProductItem';
+
+// API
+import { fetchBeatsAndInstrumentalProdcuts } from '@/api';
+
+// Hooks
+import { useEffect, useState } from 'react';
+
+export async function getServerSideProps() {
+	const data = await fetchBeatsAndInstrumentalProdcuts();
+
+	return {
+		props: {
+			data,
+		},
+	};
+}
+
+const BeatsAndInstrumentalPage = data => {
+	const [music, setMusic] = useState([]);
+
+	useEffect(() => {
+		const beatsInstrumental = data.children.props.data;
+		setMusic(beatsInstrumental);
+	}, []);
+
 	return (
 		<ProductLayout>
-			<h1>Beats, Instrumental !!</h1>
+			<h3 className={styles.title}>Beats / Instrumental</h3>
+
+			<ul className={styles.musicList}>
+				{music.map((item, index) => (
+					<li key={index}>
+						<ProductItem product={item} />
+					</li>
+				))}
+			</ul>
 		</ProductLayout>
 	);
 };

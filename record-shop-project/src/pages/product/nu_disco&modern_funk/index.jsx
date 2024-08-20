@@ -1,9 +1,47 @@
+// CSS
+import styles from './index.module.css';
+
+// Layout
 import ProductLayout from '@/layouts/ProductLayout';
 
-const NuDiscoAndModernFunkPage = () => {
+// Componenets
+import ProductItem from '@/components/ProductItem';
+
+// Hooks
+import { useEffect, useState } from 'react';
+
+// API
+import { fetchNuDiscoModernFunkProducts } from '@/api';
+
+export async function getServerSideProps() {
+	const data = await fetchNuDiscoModernFunkProducts();
+
+	return {
+		props: {
+			data,
+		},
+	};
+}
+
+const NuDiscoAndModernFunkPage = data => {
+	const [music, setMusic] = useState([]);
+
+	useEffect(() => {
+		const nuDiscoAndModernFunk = data.children.props.data;
+		setMusic(nuDiscoAndModernFunk);
+	}, []);
+
 	return (
 		<ProductLayout>
-			<h1>NU Disco And Modern Funk !!</h1>
+			<h3 className={styles.title}>NU Disco / Modern Funk</h3>
+
+			<ul className={styles.musicList}>
+				{music.map((item, index) => (
+					<li key={index}>
+						<ProductItem product={item} />
+					</li>
+				))}
+			</ul>
 		</ProductLayout>
 	);
 };

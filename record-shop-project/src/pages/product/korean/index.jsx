@@ -22,19 +22,19 @@ export async function getServerSideProps() {
 }
 
 const KoreanPage = data => {
-	const [koreanMusic, setKoreanMusic] = useState([]);
+	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
 		const korean = data.children.props.data;
-		setKoreanMusic(korean);
+		setMusic(korean);
 	}, [data]);
 
 	return (
 		<ProductLayout>
 			<h3 className={styles.title}>Korean</h3>
 
-			<ul className={styles.koreanMusicList}>
-				{koreanMusic.map((item, index) => (
+			<ul className={styles.musicList}>
+				{music.map((item, index) => (
 					<li key={index}>
 						<ProductItem product={item} />
 					</li>

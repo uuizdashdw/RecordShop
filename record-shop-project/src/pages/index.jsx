@@ -43,6 +43,25 @@ const MainPage = ({ data }) => {
 		dispatchProduct();
 	}, [data]);
 
+	const getGenreTitle = genre => {
+		switch (genre) {
+			case 'koreanMusic':
+				return 'Korean';
+			case 'hiphopRnb':
+				return 'Hiphop / R&B';
+			case 'beatsInstrumental':
+				return 'Beats / Instrumental';
+			case 'soulFunkDisco':
+				return 'Soul / Funk / Disco';
+			case 'nuDiscoModernFunk':
+				return 'Nu Disco / Modern Funk';
+			case 'rockPop':
+				return 'Rock / Pop';
+			default:
+				return genre.charAt(0).toUpperCase() + genre.slice(1);
+		}
+	};
+
 	return (
 		<>
 			<MainLayout>
@@ -50,7 +69,7 @@ const MainPage = ({ data }) => {
 					<ul>
 						{dispatchList.map(([genre, songs], index) => (
 							<li key={index} className={styles.genreList}>
-								<h3 className={styles.title}>{genre.toUpperCase()}</h3>
+								<h3 className={styles.title}>{getGenreTitle(genre)}</h3>
 
 								<Swiper
 									modules={[Navigation, Pagination]}

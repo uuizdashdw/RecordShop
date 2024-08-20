@@ -1,9 +1,47 @@
+// CSS
+import styles from './index.module.css';
+
+// Layout
 import ProductLayout from '@/layouts/ProductLayout';
 
-const JazzPage = () => {
+// Componenets
+import ProductItem from '@/components/ProductItem';
+
+// API
+import { fetchJazzProducts } from '@/api';
+
+// Hooks
+import { useEffect, useState } from 'react';
+
+export async function getServerSideProps() {
+	const data = await fetchJazzProducts();
+
+	return {
+		props: {
+			data,
+		},
+	};
+}
+
+const JazzPage = data => {
+	const [music, setMusic] = useState([]);
+
+	useEffect(() => {
+		const jazz = data.children.props.data;
+		setMusic(jazz);
+	}, []);
+
 	return (
 		<ProductLayout>
-			<h1>Jazz Page!!</h1>
+			<h3 className={styles.title}>Jazz Page</h3>
+
+			<ul className={styles.musicList}>
+				{music.map((item, index) => (
+					<li key={index}>
+						<ProductItem product={item} />
+					</li>
+				))}
+			</ul>
 		</ProductLayout>
 	);
 };
