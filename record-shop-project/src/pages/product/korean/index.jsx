@@ -1,6 +1,6 @@
 // Components
-import ProductItem from '@/components/ProductItem';
 import ProductLayout from '@/layouts/ProductLayout';
+import ProductItem from '@/components/product/ProductItem';
 
 // Hooks
 import { useEffect, useState } from 'react';

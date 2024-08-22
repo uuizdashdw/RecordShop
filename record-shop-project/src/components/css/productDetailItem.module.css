@@ -1,0 +1,10 @@
+.product_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+
+.info_wrapper {
+    width: 100%;
+}

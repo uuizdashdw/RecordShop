@@ -1,6 +1,6 @@
 {
   "products": {
-    "koreanMusic": [
+    "korean": [
       {
         "id": 0,
         "name": "빈지노(Beenzino) - NOWITZKI",
@@ -15,7 +15,7 @@
         "savings": "3%",
         "deliveryFee": "3,000원",
         "quantityTerms": true,
-        "inventory": 10,
+        "inventory": 0,
         "aboutItem": {
           "title": "Beenzino - NOWITZKI",
           "subTitle": "제 21회 한국대중음악상 '올해의 음반' 수상에 빛나는 '빈지노'의 정규 음반 [NOWITZKI] 발매 1주년 기념 바이닐(LP) 사전예약",
@@ -29,16 +29,31 @@
             "color": "각각 투명한 녹색/ 투명한 흰색 바이닐",
             "trackList": {
               "Disc 1 Side A": [
-                "Stinky Kiss(intro)", "Monet", "침대에서/막걸리", "여행 Again (Feat. Cautious Clay)"
+                "Stinky Kiss(intro)",
+                "Monet",
+                "침대에서/막걸리",
+                "여행 Again (Feat. Cautious Clay)"
               ],
               "Disc 1 Side B": [
-                "Dope As (Interlude)", "Coca Cola Red(Feat. Oygli)", "990 (Feat.Kim Ximya)", "Lemon", "바보같이 (Feat.Y2K92)"
+                "Dope As (Interlude)",
+                "Coca Cola Red(Feat. Oygli)",
+                "990 (Feat.Kim Ximya)",
+                "Lemon",
+                "바보같이 (Feat.Y2K92)"
               ],
               "Disc 2 Side A": [
-                "Trippy (Feat. Lance Skiiiwalker", "Crime (Feat.Bek Hyunjin, 250)", "Camp", "Sanso (Interlude)", "Change"
+                "Trippy (Feat. Lance Skiiiwalker",
+                "Crime (Feat.Bek Hyunjin, 250)",
+                "Camp",
+                "Sanso (Interlude)",
+                "Change"
               ],
               "Disc 2 Side B": [
-                "단 하루", "Sandman", "Radio", "Gym", "Bonus Track"
+                "단 하루",
+                "Sandman",
+                "Radio",
+                "Gym",
+                "Bonus Track"
               ]
             }
           }
@@ -68,21 +83,26 @@
             "arrivalDate": "",
             "maximumPurchaseQuantity": "",
             "price": "",
-            "spec": "",
-            "color": "",
+            "spec": "LP",
+            "color": "Blue Vinyl",
             "trackList": {
               "Disc 1 Side A": [
-                "그대 안의 블루", "헤어짐", "연습실에서", "Afternoon", "Night"
+                "그대 안의 블루",
+                "헤어짐",
+                "연습실에서",
+                "Afternoon",
+                "Night"
               ],
               "Disc 1 Side B": [
-                "새로운 시작 (Song)", "만남 Blue Purple", "만남 Sky Blue (piano)", "만남 Marine Blue (synth)", "만남 Prussian Blue (guitar)", "새로운 시작 (guitar version)"
+                "새로운 시작 (Song)",
+                "만남 Blue Purple",
+                "만남 Sky Blue (piano)",
+                "만남 Marine Blue (synth)",
+                "만남 Prussian Blue (guitar)",
+                "새로운 시작 (guitar version)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -115,17 +135,22 @@
             "color": "Black Vinyl 180g",
             "trackList": {
               "Disc 1 Side A": [
-                "연애작전", "겨울나무", "낙엽", "사랑이 오고 갈 때 (연주곡)", "그리운 시절 (까치소리)"
+                "연애작전",
+                "겨울나무",
+                "낙엽",
+                "사랑이 오고 갈 때 (연주곡)",
+                "그리운 시절 (까치소리)"
               ],
               "Disc 1 Side B": [
-                "종착역", "기원", "안녕 (연주곡)", "사랑 (연석원)", "내일을 꿈꾸며 (까치소리)", "변함없는 마음 (까치소리, 연주곡)"
+                "종착역",
+                "기원",
+                "안녕 (연주곡)",
+                "사랑 (연석원)",
+                "내일을 꿈꾸며 (까치소리)",
+                "변함없는 마음 (까치소리, 연주곡)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -158,17 +183,21 @@
             "color": "Transparent Red (투명 레드 바이닐)",
             "trackList": {
               "Disc 1 Side A": [
-                "Jinusean Bomb [Remix]","이제 더이상 [MF Family Version]", "Gasoline [English Version]", "Celebrate [Remix Version]", "Throw Them Hands Up"
+                "Jinusean Bomb [Remix]",
+                "이제 더이상 [MF Family Version]",
+                "Gasoline [English Version]",
+                "Celebrate [Remix Version]",
+                "Throw Them Hands Up"
               ],
               "Disc 1 Side B": [
-                "Gasoline [Remix Version]", "Like This, Like That", "What U Wanna Do [English Version]", "Jinusean Bomb [Original Version]", "Celebrate [Original Version]"
+                "Gasoline [Remix Version]",
+                "Like This, Like That",
+                "What U Wanna Do [English Version]",
+                "Jinusean Bomb [Original Version]",
+                "Celebrate [Original Version]"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -201,17 +230,21 @@
             "color": "Black Vinyl",
             "trackList": {
               "Disc 1 Side A": [
-                "사자", "내일은 없다 (Feat. lilBOI, nafla", "그리고 돌아섰다", "추락", "우린 결국 그렇게"
+                "사자",
+                "내일은 없다 (Feat. lilBOI, nafla)",
+                "그리고 돌아섰다",
+                "추락",
+                "우린 결국 그렇게"
               ],
               "Disc 1 Side B": [
-                "그럴 수도 아닐 수도 (Feat. JINBO)", "엉망진창", "그땐 어렸으니까", "시공간", "어쩌라고"
+                "그럴 수도 아닐 수도 (Feat. JINBO)",
+                "엉망진창",
+                "그땐 어렸으니까",
+                "시공간",
+                "어쩌라고"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -244,17 +277,18 @@
             "color": "Black Vinyl",
             "trackList": {
               "Disc 1 Side A": [
-                "사랑의 상처", "태양이 질 때 (A Whiter Shades of Pale)", "모르겠오이다", "당신은 몰라", "초원의 빛"
+                "사랑의 상처",
+                "태양이 질 때 (A Whiter Shades of Pale)",
+                "모르겠오이다",
+                "당신은 몰라",
+                "초원의 빛"
               ],
               "Disc 1 Side B": [
-                "아름다운 인형 (Get Ready)", "사랑의 약속 (Colour My Wolrd)"
+                "아름다운 인형 (Get Ready)",
+                "사랑의 약속 (Colour My Wolrd)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -287,17 +321,23 @@
             "color": "Black Vinyl",
             "trackList": {
               "Disc 1 Side A": [
-                "내 마음 너무도 몰라 (Don't Know a Thing)", "난 모르겠네 (Can't Understand)", "시간의 됐네 (It's Time)", "사랑의 기도 (Prayer of Love)", "짝 (Partner)", "내 마음 너무도 몰라 (경음악) (Do't Know a Thing - instrumental)"
+                "내 마음 너무도 몰라 (Don't Know a Thing)",
+                "난 모르겠네 (Can't Understand)",
+                "시간의 됐네 (It's Time)",
+                "사랑의 기도 (Prayer of Love)",
+                "짝 (Partner)",
+                "내 마음 너무도 몰라 (경음악) (Do't Know a Thing - instrumental)"
               ],
               "Disc 1 Side B": [
-                "거울 (Mirror)", "공연히 (Uselessly)", "임에게 (To You)", "아낙네 (Young Lass)", "사랑의 기도 (경음악) (Prayer of Love - instrumental)", "해군가 (건전 가요) (ROK Navy Anthem)"
+                "거울 (Mirror)",
+                "공연히 (Uselessly)",
+                "임에게 (To You)",
+                "아낙네 (Young Lass)",
+                "사랑의 기도 (경음악) (Prayer of Love - instrumental)",
+                "해군가 (건전 가요) (ROK Navy Anthem)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -330,17 +370,23 @@
             "color": "Blue Vinyl",
             "trackList": {
               "Disc 1 Side A": [
-                "D.O Funk (Intro) (Instrumental)", "폭풍 / You Got The Funk", "Boogie Night", "소년(少年)", "영원히...", "Shock!", "후배에게 이야기"
+                "D.O Funk (Intro) (Instrumental)",
+                "폭풍 / You Got The Funk",
+                "Boogie Night",
+                "소년(少年)",
+                "영원히...",
+                "Shock!",
+                "후배에게 이야기"
               ],
               "Disc 1 Side B": [
-                "제 3의 눈 (Feat. 박찬호61)", "New World", "왜?", "잃어버린 영웅", "Sunshine (Feat. 김종진 of 봄여름가을겨울)"
+                "제 3의 눈 (Feat. 박찬호61)",
+                "New World",
+                "왜?",
+                "잃어버린 영웅",
+                "Sunshine (Feat. 김종진 of 봄여름가을겨울)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -373,17 +419,19 @@
             "color": "Christmas Tricolor",
             "trackList": {
               "Disc 1 Side A": [
-                "레게파티 (feat. 이상민)", "내 마음을 꽉 꼬집어 준 그대", "야릇한 기분", "자정이 훨씬 넘었네"
+                "레게파티 (feat. 이상민)",
+                "내 마음을 꽉 꼬집어 준 그대",
+                "야릇한 기분",
+                "자정이 훨씬 넘었네"
               ],
               "Disc 1 Side B": [
-                "오늘은 좋은 날", "호랑나비", "지지않는 추억", "레게파티 (한 번 더)"
+                "오늘은 좋은 날",
+                "호랑나비",
+                "지지않는 추억",
+                "레게파티 (한 번 더)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -415,29 +463,20 @@
             "spec": "1LP",
             "color": "Black or Blue",
             "trackList": {
-              "Disc 1 Side A": [
-                
-              ],
-              "Disc 1 Side B": [
-                
-              ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 1 Side A": [],
+              "Disc 1 Side B": [],
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
       }
     ],
-
-    "hiphopRnb": [
+    "hiphop&rnb": [
       {
         "id": 0,
         "name": "Little Simz - No Thank You",
-        "category": "hiphop/r&b",
+        "category": "hiphop&rnb",
         "price": "55,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1703410125062_1000.png",
@@ -462,16 +501,22 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Angel (4:31)", "Gorilla (5:26)", "Silhouette (6:37)"
+                "Angel (4:31)",
+                "Gorilla (5:26)",
+                "Silhouette (6:37)"
               ],
               "Disc 1 Side B": [
-                "No Merci (5:17)", "X (5:49)"
+                "No Merci (5:17)",
+                "X (5:49)"
               ],
               "Disc 2 Side A": [
-                "Heart On Fire (4:03)", "Broken (7:32)"
+                "Heart On Fire (4:03)",
+                "Broken (7:32)"
               ],
               "Disc 2 Side B": [
-                "Sideways (2:10)", "Who Even Cares (4:37)", "Control (3:46)"
+                "Sideways (2:10)",
+                "Who Even Cares (4:37)",
+                "Control (3:46)"
               ]
             }
           }
@@ -480,7 +525,7 @@
       {
         "id": 1,
         "name": "J Dilla - The Shining",
-        "category": "hiphop/r&b",
+        "category": "hiphop&rnb",
         "price": "55,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1703659704417_1000.jpeg",
@@ -505,16 +550,24 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Geek Down (feat. Busta Rhymes)", "E=MC2 (feat. Common)", "Love Jones"
+                "Geek Down (feat. Busta Rhymes)",
+                "E=MC2 (feat. Common)",
+                "Love Jones"
               ],
               "Disc 1 Side B": [
-                "Love (feat. Pharoahe Monch", "Baby (feat. Madilb & Guilty Simpson)", "So Far To Go (feat. Common & D 'Angelo)"
+                "Love (feat. Pharoahe Monch",
+                "Baby (feat. Madilb & Guilty Simpson)",
+                "So Far To Go (feat. Common & D 'Angelo)"
               ],
               "Disc 2 Side A": [
-                "Jungle Love (feat. Med & Guilty Simpson)", "Over The Breaks", "Body Movin' (feat. J Rocc & Karriem Riggins)"
+                "Jungle Love (feat. Med & Guilty Simpson)",
+                "Over The Breaks",
+                "Body Movin' (feat. J Rocc & Karriem Riggins)"
               ],
               "Disc 2 Side B": [
-                "Dime Piece (feat. Dwele - remix)", "Love Movin' (feat. Black Thought)", "Won't Do"
+                "Dime Piece (feat. Dwele - remix)",
+                "Love Movin' (feat. Black Thought)",
+                "Won't Do"
               ]
             }
           }
@@ -523,7 +576,7 @@
       {
         "id": 2,
         "name": "Mac Miller - Blue Slide Park",
-        "category": "hiphop/r&b",
+        "category": "hiphop&rnb",
         "price": "40,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1703406174163_1000.jpeg",
@@ -548,16 +601,28 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "English Lane", "Blue Slide Park", "Party On Fifth Ave", "PA Nights"
+                "English Lane",
+                "Blue Slide Park",
+                "Party On Fifth Ave",
+                "PA Nights"
               ],
               "Disc 1 Side B": [
-                "Frick Park Market", "Smile Back", "Under The Weather", "Of The Soul"
+                "Frick Park Market",
+                "Smile Back",
+                "Under The Weather",
+                "Of The Soul"
               ],
               "Disc 2 Side A": [
-                "My Team", "Up All Night", "Loitering", "Hole In My Pocket"
+                "My Team",
+                "Up All Night",
+                "Loitering",
+                "Hole In My Pocket"
               ],
               "Disc 2 Side B": [
-                "Diamonds & Gold", "Missed Calls", "Man In The Hat", "One Last Thing"
+                "Diamonds & Gold",
+                "Missed Calls",
+                "Man In The Hat",
+                "One Last Thing"
               ]
             }
           }
@@ -566,7 +631,7 @@
       {
         "id": 3,
         "name": "마미손 - 나의 슬픔",
-        "category": "hiphop/r&b",
+        "category": "hiphop&rnb",
         "price": "46,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1702444496898_1000.jpg",
@@ -591,17 +656,20 @@
             "color": "Pink",
             "trackList": {
               "Disc 1 Side A": [
-                "별의 노래 (Feat. 유진박)", "사랑은 (Feat. 원슈타인)", "Dancing in San Francisco (Feat. Chanjuicy)", "나 너 좋아해 (Feat. 원슈타인)", "땡큐땡큐 (Feat. 장기하 & YDG & 머쉬베놈)"
+                "별의 노래 (Feat. 유진박)",
+                "사랑은 (Feat. 원슈타인)",
+                "Dancing in San Francisco (Feat. Chanjuicy)",
+                "나 너 좋아해 (Feat. 원슈타인)",
+                "땡큐땡큐 (Feat. 장기하 & YDG & 머쉬베놈)"
               ],
               "Disc 1 Side B": [
-                "쓰레기 (Feat. 스컬)", "공양발원문", "탭댄스", "소년점프 (Feat. 배기성)"
+                "쓰레기 (Feat. 스컬)",
+                "공양발원문",
+                "탭댄스",
+                "소년점프 (Feat. 배기성)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -609,7 +677,7 @@
       {
         "id": 4,
         "name": "Crown J - Asia King",
-        "category": "hiphop/r&b",
+        "category": "hiphop&rnb",
         "price": "44,500",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1702444169543_1000.jpg",
@@ -634,17 +702,20 @@
             "color": "Solid Gold",
             "trackList": {
               "Disc 1 Side A": [
-                "Fly Boy", "Baby You (Feat. D.Brown & 인회)", "Too Much (Bed Time Remix 4 Ladies) (With 서인영)", "I'm Good (Feat. Young Dro) (English Ver.)", "I'm Good (Clean Ver.)"
+                "Fly Boy",
+                "Baby You (Feat. D.Brown & 인회)",
+                "Too Much (Bed Time Remix 4 Ladies) (With 서인영)",
+                "I'm Good (Feat. Young Dro) (English Ver.)",
+                "I'm Good (Clean Ver.)"
               ],
               "Disc 1 Side B": [
-                "SYMPHONY NO. 11 ANDANTE & LOLO ACAPELLA (Feat. TAJ EN'PHINITI)", "L.O.L.O (Life of Luxury Only) (Dirty Ver.)" ,"B.R.B (Feat. C-Luv (A.K.A Taewan))", "Pull Up (Dirty Ver.)"
+                "SYMPHONY NO. 11 ANDANTE & LOLO ACAPELLA (Feat. TAJ EN'PHINITI)",
+                "L.O.L.O (Life of Luxury Only) (Dirty Ver.)",
+                "B.R.B (Feat. C-Luv (A.K.A Taewan))",
+                "Pull Up (Dirty Ver.)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -652,7 +723,7 @@
       {
         "id": 5,
         "name": "The Roots - Things Fall Apart",
-        "category": "hiphop/r&b",
+        "category": "hiphop&rnb",
         "price": "60,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1677147229276_1000.jpeg",
@@ -677,16 +748,29 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Act Won (Things Fall Apart) (0:53)", "Table Of Content (part 1 & 2) (3:37)", "The Next Movement (4:10)", "Step Into The Relm (2:51)", "The Spark (3:53)"
+                "Act Won (Things Fall Apart) (0:53)",
+                "Table Of Content (part 1 & 2) (3:37)",
+                "The Next Movement (4:10)",
+                "Step Into The Relm (2:51)",
+                "The Spark (3:53)"
               ],
               "Disc 1 Side B": [
-                "Dynamite! (4:50)", "Without A Doubt (4:15)", "Ain't Saying Nothin' New (4:37)", "Double Trouble (5:49)"
+                "Dynamite! (4:50)",
+                "Without A Doubt (4:15)",
+                "Ain't Saying Nothin' New (4:37)",
+                "Double Trouble (5:49)"
               ],
               "Disc 2 Side A": [
-                "Act Too (The Love Of My Life) (4:56)", "100% Dundee (3:57)", "Diedre vs Dice (0:47)", "Adrenailne! (4:29)", "3rd Acts:? vs Scratch 2 Electric Boogaloo (0:53)"
+                "Act Too (The Love Of My Life) (4:56)",
+                "100% Dundee (3:57)",
+                "Diedre vs Dice (0:47)",
+                "Adrenailne! (4:29)",
+                "3rd Acts:? vs Scratch 2 Electric Boogaloo (0:53)"
               ],
               "Disc 2 Side B": [
-                "You Got Me (feat. Erykah Badu)", "Don't See Us (4:36)", "The Return To Innocence Lost (5:29)"
+                "You Got Me (feat. Erykah Badu)",
+                "Don't See Us (4:36)",
+                "The Return To Innocence Lost (5:29)"
               ]
             }
           }
@@ -695,7 +779,7 @@
       {
         "id": 6,
         "name": "Wiz Khalifa - Multiverse",
-        "category": "hiphop/r&b",
+        "category": "hiphop&rnb",
         "price": "52,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1677215147938_1000.jpeg",
@@ -720,16 +804,29 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Big Daddy Wiz (feat Girl Talk) (2:07)", "MVP (2:40)", "Memory Lane (2:43)", "1000 Women (feat. THEY) (3:44)", "Like You (Groove 3) (1:59)"
+                "Big Daddy Wiz (feat Girl Talk) (2:07)",
+                "MVP (2:40)",
+                "Memory Lane (2:43)",
+                "1000 Women (feat. THEY) (3:44)",
+                "Like You (Groove 3) (1:59)"
               ],
               "Disc 1 Side B": [
-                "Something Real (3:52)", "High Maintenance (3:22)", "Bad Ass Bitches (4:34)", "Iced Out Necklace (3:58)"
+                "Something Real (3:52)",
+                "High Maintenance (3:22)",
+                "Bad Ass Bitches (4:34)",
+                "Iced Out Necklace (3:58)"
               ],
               "Disc 2 Side A": [
-                "Keys (2:33)", "We Don't Go Out To Nightclubs Anymore/Candlelight Girl (5:00)", " We're Not Even (4:15)"
+                "Keys (2:33)",
+                "We Don't Go Out To Nightclubs Anymore/Candlelight Girl (5:00)",
+                " We're Not Even (4:15)"
               ],
               "Disc 2 Side B": [
-                "Homies (6:29)", "Mirror Love (Groove 2) (3:51)", "Goyard Bags (feat. THEY)", "Nobody Knows (3:26)", "Thank Him (2:58)"
+                "Homies (6:29)",
+                "Mirror Love (Groove 2) (3:51)",
+                "Goyard Bags (feat. THEY)",
+                "Nobody Knows (3:26)",
+                "Thank Him (2:58)"
               ]
             }
           }
@@ -738,7 +835,7 @@
       {
         "id": 7,
         "name": "Wild Style",
-        "category": "hiphop/r&b",
+        "category": "hiphop&rnb",
         "price": "35,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1674813386395_1000.jpeg",
@@ -763,17 +860,23 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Grand Master Caz & Chris Stein - Wild Style Theme (6:50)", "The Chief Rocker Busy Bee vs Lil Rodney Cee & DJ Grand Wizard Theodore - MC Battle (3:12)", "The Cold Crush Bros vs The Fantastic Freaks - Basketball Throwdown (1:17)", "Kevie Kev, Master Rob, Prince Whipper Whip, MC, Rubie Dee, Dota Rock & DJ Grand Wizard Theodore - Fantastic Freaks At The Dixie (6:25)", "Grand Wizard Theodore & DJ Kevie Kev Rockwell - Military Cut (Scratch mix) (2:12)", "Grand Master Caz, JDL, Easy Ad, Kg, DJ Charlie Chase & DJ Toney Tone - Cold Crush Bros At The Dixie (6:05)"
+                "Grand Master Caz & Chris Stein - Wild Style Theme (6:50)",
+                "The Chief Rocker Busy Bee vs Lil Rodney Cee & DJ Grand Wizard Theodore - MC Battle (3:12)",
+                "The Cold Crush Bros vs The Fantastic Freaks - Basketball Throwdown (1:17)",
+                "Kevie Kev, Master Rob, Prince Whipper Whip, MC, Rubie Dee, Dota Rock & DJ Grand Wizard Theodore - Fantastic Freaks At The Dixie (6:25)",
+                "Grand Wizard Theodore & DJ Kevie Kev Rockwell - Military Cut (Scratch mix) (2:12)",
+                "Grand Master Caz, JDL, Easy Ad, Kg, DJ Charlie Chase & DJ Toney Tone - Cold Crush Bros At The Dixie (6:05)"
               ],
               "Disc 1 Side B": [
-                "Double Trouble, Rodney Cee & K K Rockwell - Stoop Rap (1:18)", "Rodney Cee, K K Rockwell & DJ Stevie Steve - Double Trouble At The Amphitheatre (7:57)", "Grand Master Caz & Chris Stein - Wild Style Subway Rap (3:37)", "The Chief Rocker Busy Bee & Dj Aj - The Chief Rocker Busy Bee, DJ AJ At The Amphitheatre (2:16)", "DJ Grand Wizard Theodore & Kevie Kev Rockwell - Gangbusters (Scratch mix) (1:19)", "Rammellzee & Shock Dell & The Grand Mixer Dst - Rammellzee & Shock Dell At The Amphitheatre (3:42)"
+                "Double Trouble, Rodney Cee & K K Rockwell - Stoop Rap (1:18)",
+                "Rodney Cee, K K Rockwell & DJ Stevie Steve - Double Trouble At The Amphitheatre (7:57)",
+                "Grand Master Caz & Chris Stein - Wild Style Subway Rap (3:37)",
+                "The Chief Rocker Busy Bee & Dj Aj - The Chief Rocker Busy Bee, DJ AJ At The Amphitheatre (2:16)",
+                "DJ Grand Wizard Theodore & Kevie Kev Rockwell - Gangbusters (Scratch mix) (1:19)",
+                "Rammellzee & Shock Dell & The Grand Mixer Dst - Rammellzee & Shock Dell At The Amphitheatre (3:42)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -781,7 +884,7 @@
       {
         "id": 8,
         "name": "RZA - Bobby Digital And The Pit Of Snakes",
-        "category": "hiphop/r&b",
+        "category": "hiphop&rnb",
         "price": "48,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1677213750360_1000.jpeg",
@@ -806,17 +909,19 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Under The Sun (4:15)", "Trouble Shooting (3:01)", "Something Going On (4:30)", "We Push (4:01)"
+                "Under The Sun (4:15)",
+                "Trouble Shooting (3:01)",
+                "Something Going On (4:30)",
+                "We Push (4:01)"
               ],
               "Disc 1 Side B": [
-                "Cowards (4:05)", "Fight To Win (4:16)", "Celebrate Life (3:54)", "Live Your Own Rhythm (outro) (1:38)"
+                "Cowards (4:05)",
+                "Fight To Win (4:16)",
+                "Celebrate Life (3:54)",
+                "Live Your Own Rhythm (outro) (1:38)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -824,7 +929,7 @@
       {
         "id": 9,
         "name": "Aitch - Close To Home",
-        "category": "hiphop/r&b",
+        "category": "hiphop&rnb",
         "price": "30,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1671621627688_1000.jpeg",
@@ -849,24 +954,33 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Belgraveroad 1 (3:33)", "Louis Vuitton (3:00)", "1989 (2:19)", "Money Habits (feat. Mastermind) (2:37)", "Baby (feat. Ashanti) (3:01)", "Bring It Back (2:28)", "Sunshine (feat. New Machine) (3:00)", "Fuego (2:48)"
+                "Belgraveroad 1 (3:33)",
+                "Louis Vuitton (3:00)",
+                "1989 (2:19)",
+                "Money Habits (feat. Mastermind) (2:37)",
+                "Baby (feat. Ashanti) (3:01)",
+                "Bring It Back (2:28)",
+                "Sunshine (feat. New Machine) (3:00)",
+                "Fuego (2:48)"
               ],
               "Disc 1 Side B": [
-                "Cheque (2:30)", "In Disguise (feat. Baker) (2:36)", "The Palm (2:57)", "100x (2:57)", "R Kid (feat. Aj Tracey) (3:43)", "My G (feat. Ed Sheeran) (3:15)", "Close To Home (3:49)", "Hollinwood To Hollywood (3:23)"
+                "Cheque (2:30)",
+                "In Disguise (feat. Baker) (2:36)",
+                "The Palm (2:57)",
+                "100x (2:57)",
+                "R Kid (feat. Aj Tracey) (3:43)",
+                "My G (feat. Ed Sheeran) (3:15)",
+                "Close To Home (3:49)",
+                "Hollinwood To Hollywood (3:23)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
       }
     ],
-
-    "beatsInstrumental": [
+    "beats&instrumental": [
       {
         "id": 0,
         "name": "Knxwlegde - Anthology",
@@ -894,18 +1008,10 @@
             "spec": "",
             "color": "Black",
             "trackList": {
-              "Disc 1 Side A": [
-                
-              ],
-              "Disc 1 Side B": [
-                
-              ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 1 Side A": [],
+              "Disc 1 Side B": [],
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -938,17 +1044,23 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Intro (0:20)", "Ladies & Gentleman (0:34)", "Clean Getaway (19:14)", "No Uniform (0:15)", "Meagan Good (1:13)", "Don't You Just Love it (10:44)"
+                "Intro (0:20)",
+                "Ladies & Gentleman (0:34)",
+                "Clean Getaway (19:14)",
+                "No Uniform (0:15)",
+                "Meagan Good (1:13)",
+                "Don't You Just Love it (10:44)"
               ],
               "Disc 1 Side B": [
-                "You Never See A City Like (The Bronx) (1:55)", "Glitter & Gold (2:18)", "80 Blocks From Tiffany's (3:09)", "Block Party (3:02)", "Mafungo (3:04)", "Not Ready (2:30)"
+                "You Never See A City Like (The Bronx) (1:55)",
+                "Glitter & Gold (2:18)",
+                "80 Blocks From Tiffany's (3:09)",
+                "Block Party (3:02)",
+                "Mafungo (3:04)",
+                "Not Ready (2:30)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -981,16 +1093,43 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Donuts (outro)", "Workinonit", "Waves", "Light My Fire", "The New", "Stop!", "People", "The Diff`rence"
+                "Donuts (outro)",
+                "Workinonit",
+                "Waves",
+                "Light My Fire",
+                "The New",
+                "Stop!",
+                "People",
+                "The Diff`rence"
               ],
               "Disc 1 Side B": [
-                "Mash", "Time: The Donut Of The Heart", "Glazed", "Airworks", "Lightworks", "Stepson Of The Clapper", "The Twister (Huh What)"
+                "Mash",
+                "Time: The Donut Of The Heart",
+                "Glazed",
+                "Airworks",
+                "Lightworks",
+                "Stepson Of The Clapper",
+                "The Twister (Huh What)"
               ],
               "Disc 2 Side A": [
-                "One Eleven", "Two Can Win", "Don't Cry", "Anti-American Graffiti", "Geek Down", "Thunder", "Gobstopper"
+                "One Eleven",
+                "Two Can Win",
+                "Don't Cry",
+                "Anti-American Graffiti",
+                "Geek Down",
+                "Thunder",
+                "Gobstopper"
               ],
               "Disc 2 Side B": [
-                "One For Ghost", "Dilla Says Go", "Walkinonit", "The Factory", "U-Love", "Hi", "Bye", "Last Donut Of The Night", "Welcome Toe The Show"
+                "One For Ghost",
+                "Dilla Says Go",
+                "Walkinonit",
+                "The Factory",
+                "U-Love",
+                "Hi",
+                "Bye",
+                "Last Donut Of The Night",
+                "Welcome Toe The Show"
               ]
             }
           }
@@ -1024,16 +1163,29 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Accordion", "Meat Grinder", "Raid", "America's Most Blunted"
+                "Accordion",
+                "Meat Grinder",
+                "Raid",
+                "America's Most Blunted"
               ],
               "Disc 1 Side B": [
-                "Rainbows", "Curls", "Money Folder", "Shadows Of Tomorrow"
+                "Rainbows",
+                "Curls",
+                "Money Folder",
+                "Shadows Of Tomorrow"
               ],
               "Disc 2 Side A": [
-                "Operation Lifesaver aka Mint Test", "Figaro", "Hardcore Hustle", "Strange Ways", "Fancy Clown", "Eye"
+                "Operation Lifesaver aka Mint Test",
+                "Figaro",
+                "Hardcore Hustle",
+                "Strange Ways",
+                "Fancy Clown",
+                "Eye"
               ],
               "Disc 2 Side B": [
-                "All Caps", "Great Day", "Rhinestone Cowboy"
+                "All Caps",
+                "Great Day",
+                "Rhinestone Cowboy"
               ]
             }
           }
@@ -1067,16 +1219,28 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "The Horror", "Salud", "Smoke & Mirrors", "Good Times Roll (Part 2)"
+                "The Horror",
+                "Salud",
+                "Smoke & Mirrors",
+                "Good Times Roll (Part 2)"
               ],
               "Disc 1 Side B": [
-                "Final Frontier (feat. Blueprint)", "Ghostwirter", "Cut Out To Fl", "Shot In The Dark"
+                "Final Frontier (feat. Blueprint)",
+                "Ghostwirter",
+                "Cut Out To Fl",
+                "Shot In The Dark"
               ],
               "Disc 2 Side A": [
-                "FHH (feat. Jakki)", "Chicken Bone Circuit", "The Proxy", "2 More Dead"
+                "FHH (feat. Jakki)",
+                "Chicken Bone Circuit",
+                "The Proxy",
+                "2 More Dead"
               ],
               "Disc 2 Side B": [
-                "Take The Picture Off", "Silver Fox", "June (feat. Copywrite)", "Work"
+                "Take The Picture Off",
+                "Silver Fox",
+                "June (feat. Copywrite)",
+                "Work"
               ]
             }
           }
@@ -1109,18 +1273,10 @@
             "spec": "7 inch Limited Edition.",
             "color": "Black",
             "trackList": {
-              "Disc 1 Side A": [
-                
-              ],
-              "Disc 1 Side B": [
-                
-              ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 1 Side A": [],
+              "Disc 1 Side B": [],
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1153,16 +1309,28 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Introduction (0:36)", "Slim's Return (3:30)", "Distant Land (4:22)", "Mystic Bounce (4:03)"
+                "Introduction (0:36)",
+                "Slim's Return (3:30)",
+                "Distant Land (4:22)",
+                "Mystic Bounce (4:03)"
               ],
               "Disc 1 Side B": [
-                "Stormy (3:49)", "Blue Note (interlude) (0:48)", "Please Set Me At Ease (4:41)", "Funky Blue Note (3:21)", "Alfred Lion (interlude) (0:51)"
+                "Stormy (3:49)",
+                "Blue Note (interlude) (0:48)",
+                "Please Set Me At Ease (4:41)",
+                "Funky Blue Note (3:21)",
+                "Alfred Lion (interlude) (0:51)"
               ],
               "Disc 2 Side A": [
-                "Stepping Into Tomorrow (7:27)", "Andrew Hill Break (6:43)", "Montara (0:32)"
+                "Stepping Into Tomorrow (7:27)",
+                "Andrew Hill Break (6:43)",
+                "Montara (0:32)"
               ],
               "Disc 2 Side B": [
-                "Song For My Father (7:49)", "Footprints (3:19)", "Peace/Dolphin Dance (5:24)", "Outro (0:17)"
+                "Song For My Father (7:49)",
+                "Footprints (3:19)",
+                "Peace/Dolphin Dance (5:24)",
+                "Outro (0:17)"
               ]
             }
           }
@@ -1196,24 +1364,41 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "I (Intro) (0:08)", "Me At The Zoo (feat. Abase) (2:47)", "Mixed Signals (feat. NDO) (2:49)", "Love International Inc (feat. Bluestaeb & Melodiesinfonie) (3:55)", "Backseats Cheat (2:47)", "II - James' Joint (0:35)", "Something Good (2:52)", "III - Yagi Uda (1:03)"
+                "I (Intro) (0:08)",
+                "Me At The Zoo (feat. Abase) (2:47)",
+                "Mixed Signals (feat. NDO) (2:49)",
+                "Love International Inc (feat. Bluestaeb & Melodiesinfonie) (3:55)",
+                "Backseats Cheat (2:47)",
+                "II - James' Joint (0:35)",
+                "Something Good (2:52)",
+                "III - Yagi Uda (1:03)"
               ],
               "Disc 1 Side B": [
-                "Presumably Broccoli (feat. Suff Dadd) (2:16)", "Temptations (2:13)", "IV - Trippin' (feat. K & Le Maestro) (1:11)", "Higher (feat. Abase & Saint Ezekiel) (1:34)", "Members Only (2:34)", "V - Extra Dobro (feat. Noa Erni) (2:24)", "Tiara St (feat. Aspen, K, Le Maestro & Zae) (3:58)"
+                "Presumably Broccoli (feat. Suff Dadd) (2:16)",
+                "Temptations (2:13)",
+                "IV - Trippin' (feat. K & Le Maestro) (1:11)",
+                "Higher (feat. Abase & Saint Ezekiel) (1:34)",
+                "Members Only (2:34)",
+                "V - Extra Dobro (feat. Noa Erni) (2:24)",
+                "Tiara St (feat. Aspen, K, Le Maestro & Zae) (3:58)"
               ],
               "Disc 2 Side A": [
-                "Stepping Into Tomorrow (7:27)", "Andrew Hill Break (6:43)", "Montara (0:32)"
+                "Stepping Into Tomorrow (7:27)",
+                "Andrew Hill Break (6:43)",
+                "Montara (0:32)"
               ],
               "Disc 2 Side B": [
-                "Song For My Father (7:49)", "Footprints (3:19)", "Peace/Dolphin Dance (5:24)", "Outro (0:17)"
+                "Song For My Father (7:49)",
+                "Footprints (3:19)",
+                "Peace/Dolphin Dance (5:24)",
+                "Outro (0:17)"
               ]
             }
           }
         }
       }
     ],
-
-    "soulFunkDisco": [
+    "soul&funk&disco": [
       {
         "id": 0,
         "name": "El Michels Affair & Black Thought - Glorious Game",
@@ -1242,17 +1427,23 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Grateful (2:52)", "Glorious Game (feat. Kirby) (3:56)", "I'm Still Somehow (1:58)", "Hollow Way (2:25)", "Protocol (feat. Son Little) (2:54)", "The Weather (3:03)"
+                "Grateful (2:52)",
+                "Glorious Game (feat. Kirby) (3:56)",
+                "I'm Still Somehow (1:58)",
+                "Hollow Way (2:25)",
+                "Protocol (feat. Son Little) (2:54)",
+                "The Weather (3:03)"
               ],
               "Disc 1 Side B": [
-                "That Girl (2:15)", "I Would Never (2:41)", "Alone (2:05)", "Miracle (2:36)", "Glorious Game (reprise) (1:16)", "Alter Ego (feat. Brainstory) (3:11)"
+                "That Girl (2:15)",
+                "I Would Never (2:41)",
+                "Alone (2:05)",
+                "Miracle (2:36)",
+                "Glorious Game (reprise) (1:16)",
+                "Alter Ego (feat. Brainstory) (3:11)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1285,17 +1476,19 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Let There Be Drums", "Apache", "Bongolia", "Last Bongo In Belgium"
+                "Let There Be Drums",
+                "Apache",
+                "Bongolia",
+                "Last Bongo In Belgium"
               ],
               "Disc 1 Side B": [
-                "Dueling Bongos", "In-A-Gadda-Da-Vida", "Raucnchy '73", "Bongo Rock"
+                "Dueling Bongos",
+                "In-A-Gadda-Da-Vida",
+                "Raucnchy '73",
+                "Bongo Rock"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1328,17 +1521,23 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Love Story", "Let It Be", "Scarborough Fair", "Close To You", "You've Made Me So Verry Happy", "By The Time I Get To Phoenix"
+                "Love Story",
+                "Let It Be",
+                "Scarborough Fair",
+                "Close To You",
+                "You've Made Me So Verry Happy",
+                "By The Time I Get To Phoenix"
               ],
               "Disc 1 Side B": [
-                "Yesterday", "The Look Of Love", "We've Only Just Begun", "Bridge Over Troubled Water", "Something", "Spinning Wheel"
+                "Yesterday",
+                "The Look Of Love",
+                "We've Only Just Begun",
+                "Bridge Over Troubled Water",
+                "Something",
+                "Spinning Wheel"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1371,17 +1570,22 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Misdemeanor (2:32)", "Big Things Come In Small Packages (3:07)", "I'm Your Puppet (3:20)", "Mockingbird (3:33)", "I'll Get You In The End (3:23)"
+                "Misdemeanor (2:32)",
+                "Big Things Come In Small Packages (3:07)",
+                "I'm Your Puppet (3:20)",
+                "Mockingbird (3:33)",
+                "I'll Get You In The End (3:23)"
               ],
               "Disc 1 Side B": [
-                "Hey Liite Girl (2:53)", "Happy Face (2:46)", "Swooperman (2:37)", "More Love (3:41)", "Only My Love Is True (3:29)", "Lullabye/Uncle Albert (6:35)"
+                "Hey Liite Girl (2:53)",
+                "Happy Face (2:46)",
+                "Swooperman (2:37)",
+                "More Love (3:41)",
+                "Only My Love Is True (3:29)",
+                "Lullabye/Uncle Albert (6:35)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1414,17 +1618,22 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "St. Pauli Second Line", "Something's Missing", "Arabesque Breakin' Suite", "Theme From Beverly Hills Cop (Axel F)", "Four Two Three"
+                "St. Pauli Second Line",
+                "Something's Missing",
+                "Arabesque Breakin' Suite",
+                "Theme From Beverly Hills Cop (Axel F)",
+                "Four Two Three"
               ],
               "Disc 1 Side B": [
-                "Silent Heroes", "Carry On", "Munich Psycholympics", "Ghost Walk", "Let The Music Play", "Where Do We Go From Here"
+                "Silent Heroes",
+                "Carry On",
+                "Munich Psycholympics",
+                "Ghost Walk",
+                "Let The Music Play",
+                "Where Do We Go From Here"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1500,16 +1709,24 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Peter Hunningale - Rocking You Eternally (3:40)", "Christine Lewin - Juicy Fruit (3:56)", "Pure Silk - Don't Let Love Get You Down (4:24)"
+                "Peter Hunningale - Rocking You Eternally (3:40)",
+                "Christine Lewin - Juicy Fruit (3:56)",
+                "Pure Silk - Don't Let Love Get You Down (4:24)"
               ],
               "Disc 1 Side B": [
-                "Al Charles - Outstanding (5:51)", "Karen Dixon - I Want To Be Free (6:06)", "George Posse (Feat. Toyin Adekale) - Touch A Four Leaf Clover"
+                "Al Charles - Outstanding (5:51)",
+                "Karen Dixon - I Want To Be Free (6:06)",
+                "George Posse (Feat. Toyin Adekale) - Touch A Four Leaf Clover"
               ],
               "Disc 2 Side A": [
-                "Misses Misty - Mellow Mellow, Ride On (8:39)", "Trevor Hartley - The Look In Your Eyes (4:48)", "Family Love - Do Me Baby (5:20)"
+                "Misses Misty - Mellow Mellow, Ride On (8:39)",
+                "Trevor Hartley - The Look In Your Eyes (4:48)",
+                "Family Love - Do Me Baby (5:20)"
               ],
               "Disc 2 Side B": [
-                "Michael Prophet - Body Fusion (3:43)", "Michael Gordon - What You Won't Do For Love (4:52)", "Simplicity - For The Love Of You (5:35)"
+                "Michael Prophet - Body Fusion (3:43)",
+                "Michael Gordon - What You Won't Do For Love (4:52)",
+                "Simplicity - For The Love Of You (5:35)"
               ]
             }
           }
@@ -1543,17 +1760,21 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Why Are You Cryin' (4:09)", "Good Woman (5:04)", "Happy Hooker (5:55)", "Ain't What You Know (2:39)", "'Cause I Love You (3:39)"
+                "Why Are You Cryin' (4:09)",
+                "Good Woman (5:04)",
+                "Happy Hooker (5:55)",
+                "Ain't What You Know (2:39)",
+                "'Cause I Love You (3:39)"
               ],
               "Disc 1 Side B": [
-                "Girl, I Can Feel Ya (3:47)", "How Do You Hang On To A Dream (3:22)", "Let Bygones Be Bygones (5:08)", "To Be In Love With Yourself (3:58)", "On This Side Of Town (3:36)"
+                "Girl, I Can Feel Ya (3:47)",
+                "How Do You Hang On To A Dream (3:22)",
+                "Let Bygones Be Bygones (5:08)",
+                "To Be In Love With Yourself (3:58)",
+                "On This Side Of Town (3:36)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1586,16 +1807,23 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Bô'vel - Coming Back", "Sam - Life (Club Mix)", "Marcelle - Moncrieffe - Take Me There"
+                "Bô'vel - Coming Back",
+                "Sam - Life (Club Mix)",
+                "Marcelle - Moncrieffe - Take Me There"
               ],
               "Disc 1 Side B": [
-                "Kofi - Step By Step", "Pure Silk - What You Do For Me", "Jenny B - Sexy Eyes (Club Mix)"
+                "Kofi - Step By Step",
+                "Pure Silk - What You Do For Me",
+                "Jenny B - Sexy Eyes (Club Mix)"
               ],
               "Disc 2 Side A": [
-                "Sonja Ryshard - Step Back", "Cavalier - Don't Touch"
+                "Sonja Ryshard - Step Back",
+                "Cavalier - Don't Touch"
               ],
               "Disc 2 Side B": [
-                "Dennis Planter - I Still Dream Of You", "Taffy - Passion", "Weekend In Paris - Hold Your Head Up"
+                "Dennis Planter - I Still Dream Of You",
+                "Taffy - Passion",
+                "Weekend In Paris - Hold Your Head Up"
               ]
             }
           }
@@ -1629,24 +1857,27 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Annatar", "Canyon Chase", "Duosynchronic", "Knock Out", "Wolf At The Door"
+                "Annatar",
+                "Canyon Chase",
+                "Duosynchronic",
+                "Knock Out",
+                "Wolf At The Door"
               ],
               "Disc 1 Side B": [
-                "Josie Said", "Kreuzer Weight", "Step Off The Ledge", "Minster", "The Inverted Jehnny"
+                "Josie Said",
+                "Kreuzer Weight",
+                "Step Off The Ledge",
+                "Minster",
+                "The Inverted Jehnny"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
       }
     ],
-    
-    "nuDiscoModernFunk": [
+    "nu_disco&modern_funk": [
       {
         "id": 0,
         "name": "B. Bravo - Vizionz",
@@ -1675,17 +1906,23 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Da Essence (3:03)", "Lifted (What U Waiting 4) (3:42)", "Back Times Two (feat. Def Sound) (3:35)", "Fly Bye (feat. Reva DeVito) (3:45)", "10/10 (feat. Sally Green) (3:44)", "Ms Stardust (feat. Nico Fasho) (3:33)"
+                "Da Essence (3:03)",
+                "Lifted (What U Waiting 4) (3:42)",
+                "Back Times Two (feat. Def Sound) (3:35)",
+                "Fly Bye (feat. Reva DeVito) (3:45)",
+                "10/10 (feat. Sally Green) (3:44)",
+                "Ms Stardust (feat. Nico Fasho) (3:33)"
               ],
               "Disc 1 Side B": [
-                "No Regrets (feat. Rojai) (3:29)", "Moon Bounce (4:13)", "Midnight Rider (3:32)", "Penelope (3:48)", "Flip Out (1:49)", "Believe (feat. Chuck Inglish) (2:21)"
+                "No Regrets (feat. Rojai) (3:29)",
+                "Moon Bounce (4:13)",
+                "Midnight Rider (3:32)",
+                "Penelope (3:48)",
+                "Flip Out (1:49)",
+                "Believe (feat. Chuck Inglish) (2:21)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1723,12 +1960,8 @@
               "Disc 1 Side B": [
                 "Daft Punk - Harder, Better, Faster, Stronger"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1761,17 +1994,18 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Hit D Pavement", "Let It Go", "Faden Away", "1Question? (feat. Steve Arrington)"
+                "Hit D Pavement",
+                "Let It Go",
+                "Faden Away",
+                "1Question? (feat. Steve Arrington)"
               ],
               "Disc 1 Side B": [
-                "Ride (feat. Kurupt)", "Do My Thang", "I'll Be There 4 U"
+                "Ride (feat. Kurupt)",
+                "Do My Thang",
+                "I'll Be There 4 U"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1804,17 +2038,21 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Body & Soul (remix) (3:21)", "Pra Voce (feat. Toco - extended remix) (3:39)", "In The Name of Love (feat. Laura Fedele - extended remix) (3:53)", "Blow My Mind (feat. Afra Kane - remix) (3:23)", "Flying Away (feat. Afra Kane - remix) (3:48)"
+                "Body & Soul (remix) (3:21)",
+                "Pra Voce (feat. Toco - extended remix) (3:39)",
+                "In The Name of Love (feat. Laura Fedele - extended remix) (3:53)",
+                "Blow My Mind (feat. Afra Kane - remix) (3:23)",
+                "Flying Away (feat. Afra Kane - remix) (3:48)"
               ],
               "Disc 1 Side B": [
-                "Rosa Da Ribeira (feat. Toco - extended remix) (5:40)", "(Got To) Move On (feat. Afra Kane - remix) (3:31)", "No Meio Do Samba (feat. Toco - remix) (3:24)", "Odoya (feat. Toco - The Invisible Session remix) (4:46)", "Midnight Sun (remix) (3:16)"
+                "Rosa Da Ribeira (feat. Toco - extended remix) (5:40)",
+                "(Got To) Move On (feat. Afra Kane - remix) (3:31)",
+                "No Meio Do Samba (feat. Toco - remix) (3:24)",
+                "Odoya (feat. Toco - The Invisible Session remix) (4:46)",
+                "Midnight Sun (remix) (3:16)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1847,17 +2085,17 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "One Of Those Nights (3:45)", "One Of Those Nights (Beach Hotdog mix) (2:03)", "One Of Those Nights (No Vox) (3:46)"
+                "One Of Those Nights (3:45)",
+                "One Of Those Nights (Beach Hotdog mix) (2:03)",
+                "One Of Those Nights (No Vox) (3:46)"
               ],
               "Disc 1 Side B": [
-                "One Of Those Nights (Luca Quirky version) (6:25)", "One Of Those Nights (Green Mix) (3:43)", "One Of Those Nights (Woolfy version) (4:44)"
+                "One Of Those Nights (Luca Quirky version) (6:25)",
+                "One Of Those Nights (Green Mix) (3:43)",
+                "One Of Those Nights (Woolfy version) (4:44)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1890,23 +2128,20 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Vibe Your Room (4:05)", "Gossamer (4:03)"
+                "Vibe Your Room (4:05)",
+                "Gossamer (4:03)"
               ],
               "Disc 1 Side B": [
-                "Comfortable (LUXXURY remix) (6:21)", "Vibe Your Room (Tsudio Studio remix) (3:48)"
+                "Comfortable (LUXXURY remix) (6:21)",
+                "Vibe Your Room (Tsudio Studio remix) (3:48)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
       }
     ],
-
     "jazz": [
       {
         "id": 0,
@@ -1936,17 +2171,17 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Slow Drag (9:36)", "Secret Love (3:56)", "Book's Bossa (6:52)"
+                "Slow Drag (9:36)",
+                "Secret Love (3:56)",
+                "Book's Bossa (6:52)"
               ],
               "Disc 1 Side B": [
-                "Jelly Roll (5:08)", "The Loner (6:09)", "My Ideal (6:22)"
+                "Jelly Roll (5:08)",
+                "The Loner (6:09)",
+                "My Ideal (6:22)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -1979,17 +2214,17 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "African Village (12:09)", "Little Madimba (8:33)"
+                "African Village (12:09)",
+                "Little Madimba (8:33)"
               ],
               "Disc 1 Side B": [
-                "May Street (5:08)", "I Didn't Know What Time It Was (6:59)", "The Surrey With The Fringe On Top (5:10)", "I've Grown Accustomed To Your Face (4:27)"
+                "May Street (5:08)",
+                "I Didn't Know What Time It Was (6:59)",
+                "The Surrey With The Fringe On Top (5:10)",
+                "I've Grown Accustomed To Your Face (4:27)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -2022,17 +2257,18 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Like A Rainy Night", "No Broken Heart", "Baião", "Straussmania"
+                "Like A Rainy Night",
+                "No Broken Heart",
+                "Baião",
+                "Straussmania"
               ],
               "Disc 1 Side B": [
-                "Bridge Over Troubled Water", "A Song For A Helping Hand", "Atlantis"
+                "Bridge Over Troubled Water",
+                "A Song For A Helping Hand",
+                "Atlantis"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -2065,17 +2301,21 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Vôo Sobre O Horizonte", "Águia Não Come Mosca", "Despertar", "Tarde", "Circo Marimbondo"
+                "Vôo Sobre O Horizonte",
+                "Águia Não Come Mosca",
+                "Despertar",
+                "Tarde",
+                "Circo Marimbondo"
               ],
               "Disc 1 Side B": [
-                "Tamborim, Cuíca, Ganzá, Berimbau", "A Presa", "A Caça", "Falcon Love Call (Armazém No. 2)", "Águia Negra X Dragão Negro"
+                "Tamborim, Cuíca, Ganzá, Berimbau",
+                "A Presa",
+                "A Caça",
+                "Falcon Love Call (Armazém No. 2)",
+                "Águia Negra X Dragão Negro"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -2108,24 +2348,29 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "黒田節 Kuroda Bushi 3:12", "花笠踊り Hanagasa Odori 3:08", "そうらん節 Soran Bushi 3:09", "さんさ時雨 Sansa Shigure 3:14", "ひえつき節 Hietsuki Bushi 3:16", "佐渡おけさ Sado Okesa 3:34"
+                "黒田節 Kuroda Bushi 3:12",
+                "花笠踊り Hanagasa Odori 3:08",
+                "そうらん節 Soran Bushi 3:09",
+                "さんさ時雨 Sansa Shigure 3:14",
+                "ひえつき節 Hietsuki Bushi 3:16",
+                "佐渡おけさ Sado Okesa 3:34"
               ],
               "Disc 1 Side B": [
-                "五ッ木の子守唄 Itsuki No Komoriuta 3:01", "北海盆唄 Hokkai-Bonuta 3:51", "木曽節 Kiso Bushi 3:25", "貝殻節 Kaigara Bushi 3:17", "磯節 Iso Bushi 3:20", "南部牛追唄 Nanbu Ushioi Uta 3:36"
+                "五ッ木の子守唄 Itsuki No Komoriuta 3:01",
+                "北海盆唄 Hokkai-Bonuta 3:51",
+                "木曽節 Kiso Bushi 3:25",
+                "貝殻節 Kaigara Bushi 3:17",
+                "磯節 Iso Bushi 3:20",
+                "南部牛追唄 Nanbu Ushioi Uta 3:36"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
       }
     ],
-
-    "rockPop": [
+    "rock&pop": [
       {
         "id": 0,
         "name": "Touched - Purple",
@@ -2154,17 +2399,19 @@
             "color": "Dark Purple",
             "trackList": {
               "Disc 1 Side A": [
-                "Love Is Dangerous", "Hi Bully", "Call Me", "촛불"
+                "Love Is Dangerous",
+                "Hi Bully",
+                "Call Me",
+                "촛불"
               ],
               "Disc 1 Side B": [
-                "여정", "Back To You", "Where Am I Going", "Blue"
+                "여정",
+                "Back To You",
+                "Where Am I Going",
+                "Blue"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -2197,17 +2444,19 @@
             "color": "Dark Purple",
             "trackList": {
               "Disc 1 Side A": [
-                "1971", "도쿄로", "죽어가는 병사", "버그"
+                "1971",
+                "도쿄로",
+                "죽어가는 병사",
+                "버그"
               ],
               "Disc 1 Side B": [
-                "진통제", "오늘의 병", "별쓰레기", "기리에 엘레이손"
+                "진통제",
+                "오늘의 병",
+                "별쓰레기",
+                "기리에 엘레이손"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -2240,17 +2489,19 @@
             "color": "Dark Purple",
             "trackList": {
               "Disc 1 Side A": [
-                "연애 같은 걸 하니까", "AAA (Feat. 릴보이)", "To.", "너를 공부해"
+                "연애 같은 걸 하니까",
+                "AAA (Feat. 릴보이)",
+                "To.",
+                "너를 공부해"
               ],
               "Disc 1 Side B": [
-                "Perfect Day (Natural Groove ver.)", "AAA (Acoustic ver.)", "연애 같은 걸 하니까 (Inst.)", "너를 공부해 (Inst.)"
+                "Perfect Day (Natural Groove ver.)",
+                "AAA (Acoustic ver.)",
+                "연애 같은 걸 하니까 (Inst.)",
+                "너를 공부해 (Inst.)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -2283,17 +2534,23 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "UTOPIA (Album ver.)", "Sleep", "아침", "Leaving Now", "아이", "당신에게 피운 꽃은 지지 않아요"
+                "UTOPIA (Album ver.)",
+                "Sleep",
+                "아침",
+                "Leaving Now",
+                "아이",
+                "당신에게 피운 꽃은 지지 않아요"
               ],
               "Disc 1 Side B": [
-                "흉터", "삐뚤어진 입술", "지구", "감기", "무인도", "낮잠"
+                "흉터",
+                "삐뚤어진 입술",
+                "지구",
+                "감기",
+                "무인도",
+                "낮잠"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -2326,23 +2583,25 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Embarrassed (3:40)", "Verocai (3:14)", "How Can He Be? (2:33)", "I'll Glably Place Myself Below You (5:13)"
+                "Embarrassed (3:40)",
+                "Verocai (3:14)",
+                "How Can He Be? (2:33)",
+                "I'll Glably Place Myself Below You (5:13)"
               ],
               "Disc 1 Side B": [
-                "Clear (3:27)", "Polished (3:07)", "Nothing Yet (3:14)", "Butter (10:43)", "Dejavu (1:54)"
+                "Clear (3:27)",
+                "Polished (3:07)",
+                "Nothing Yet (3:14)",
+                "Butter (10:43)",
+                "Dejavu (1:54)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
       }
     ],
-
     "soundtrack": [
       {
         "id": 0,
@@ -2372,16 +2631,29 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Radiohead - Creep (Acoustic Version)", "Heart - Crazy On You", "Rainbow - Since You Been Gone", "Spacehog - In The Meantime"
+                "Radiohead - Creep (Acoustic Version)",
+                "Heart - Crazy On You",
+                "Rainbow - Since You Been Gone",
+                "Spacehog - In The Meantime"
               ],
               "Disc 1 Side B": [
-                "Earth, Wind & Fire - Reasons", "The Flaming Lips - Do You Realize?", "Faith No More - We Care A Lot", "Ehamic - Koinu No Carnival (from 'Minute Waltz)", "Alice Cooper - I'm Always Charsing Rainbows"
+                "Earth, Wind & Fire - Reasons",
+                "The Flaming Lips - Do You Realize?",
+                "Faith No More - We Care A Lot",
+                "Ehamic - Koinu No Carnival (from 'Minute Waltz)",
+                "Alice Cooper - I'm Always Charsing Rainbows"
               ],
               "Disc 2 Side A": [
-                "The Mowgli's - San Francisco", "X - Poor Girl", "The The - This Is The Day", "Beastie Boys - No Sleep Till Brooklyn"
+                "The Mowgli's - San Francisco",
+                "X - Poor Girl",
+                "The The - This Is The Day",
+                "Beastie Boys - No Sleep Till Brooklyn"
               ],
               "Disc 2 Side B": [
-                "Florence And The Machine - Dog Days Are Over", "Bruce Springsteen - Badlands", "The Replacements - I Will Dare", "Redbone - Come And Get Your Love"
+                "Florence And The Machine - Dog Days Are Over",
+                "Bruce Springsteen - Badlands",
+                "The Replacements - I Will Dare",
+                "Redbone - Come And Get Your Love"
               ]
             }
           }
@@ -2415,17 +2687,21 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Opening", "The Killing Fight", "Search", "Fists Of Justice / Main Theme", "Love Theme From 'The Big Boss'"
+                "Opening",
+                "The Killing Fight",
+                "Search",
+                "Fists Of Justice / Main Theme",
+                "Love Theme From 'The Big Boss'"
               ],
               "Disc 1 Side B": [
-                "Banquet", "The Battle At The Factory", "Pledge To Revenge", "The Life Or Death Struggle / To Be A Man", "Finale"
+                "Banquet",
+                "The Battle At The Factory",
+                "Pledge To Revenge",
+                "The Life Or Death Struggle / To Be A Man",
+                "Finale"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -2458,17 +2734,20 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "ミラクル・ガイ ~ '父の仇討ち'", "ミラクル・ガイ '偽りの和解 ~ 法愚の死' ~ ブロークン・ブロッサム", "チャイナ・ガール ~ '妖怪なんか怖くない ~ 鳳子をKO'", "五獣拳 ~ チャイナ・ガール2:02A5「記者会見」 (BGM) ブロークン・ブロッサム"
+                "ミラクル・ガイ ~ '父の仇討ち'",
+                "ミラクル・ガイ '偽りの和解 ~ 法愚の死' ~ ブロークン・ブロッサム",
+                "チャイナ・ガール ~ '妖怪なんか怖くない ~ 鳳子をKO'",
+                "五獣拳 ~ チャイナ・ガール2:02A5「記者会見」 (BGM) ブロークン・ブロッサム"
               ],
               "Disc 1 Side B": [
-                "拳法混乱 ~ 酔八仙 ~ あみだした自分自身の拳法", "蛇形拳伝授 ~ 三省拳士との対決 ~ 蛇形拳猫爪流=スネーキー・モンキー", "クレージー・モンキー ~ オカマ拳法VS道場破り ~ 笑拳伝授", "モンキー・マン", "クレージー・モンキー ~ 任との対決"
+                "拳法混乱 ~ 酔八仙 ~ あみだした自分自身の拳法",
+                "蛇形拳伝授 ~ 三省拳士との対決 ~ 蛇形拳猫爪流=スネーキー・モンキー",
+                "クレージー・モンキー ~ オカマ拳法VS道場破り ~ 笑拳伝授",
+                "モンキー・マン",
+                "クレージー・モンキー ~ 任との対決"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -2501,17 +2780,21 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Theme From Enter The Dragon", "Sampans", "The Monk", "The Gentle Softness", "The Big Battle"
+                "Theme From Enter The Dragon",
+                "Sampans",
+                "The Monk",
+                "The Gentle Softness",
+                "The Big Battle"
               ],
               "Disc 1 Side B": [
-                "Han's Island", "The Human Fly", "Bamboo Bird Cage", "Broken Mirrors", "Theme From Enter The Dragon (reprise)"
+                "Han's Island",
+                "The Human Fly",
+                "Bamboo Bird Cage",
+                "Broken Mirrors",
+                "Theme From Enter The Dragon (reprise)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
@@ -2544,23 +2827,423 @@
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
-                "Oh, Good Grief (2:23)", "Pebble Beach (2:49)", "Happiness Is (3:36)", "Schroeder (1:53)", "Charlie Brown Theme (4:17)"
+                "Oh, Good Grief (2:23)",
+                "Pebble Beach (2:49)",
+                "Happiness Is (3:36)",
+                "Schroeder (1:53)",
+                "Charlie Brown Theme (4:17)"
               ],
               "Disc 1 Side B": [
-                "Linus & Lucy (3:04)", "Blue Charlie Brown (7:27)", "Baseball Theme (3:14)", "Freda (With The Naturally Curly Hair) (4:26)"
+                "Linus & Lucy (3:04)",
+                "Blue Charlie Brown (7:27)",
+                "Baseball Theme (3:14)",
+                "Freda (With The Naturally Curly Hair) (4:26)"
               ],
-              "Disc 2 Side A": [
-                
-              ],
-              "Disc 2 Side B": [
-                
-              ]
+              "Disc 2 Side A": [],
+              "Disc 2 Side B": []
             }
           }
         }
       }
     ]
   },
-
-  "carts": []
+  "carts": [
+    {
+      "id": 0,
+      "name": "빈지노(Beenzino) - NOWITZKI",
+      "category": "korean",
+      "price": "60,000",
+      "priceOff": true,
+      "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1720413043049_1000.png",
+      "productType": "2LP",
+      "pressingYear": "2024",
+      "company": "BANA",
+      "usedType": "New",
+      "savings": "3%",
+      "deliveryFee": "3,000원",
+      "quantityTerms": true,
+      "inventory": 0,
+      "aboutItem": {
+        "title": "Beenzino - NOWITZKI",
+        "subTitle": "제 21회 한국대중음악상 '올해의 음반' 수상에 빛나는 '빈지노'의 정규 음반 [NOWITZKI] 발매 1주년 기념 바이닐(LP) 사전예약",
+        "text": "",
+        "quntityInfo": {
+          "period": "7/8(월) 정오 ~ 7/17(수)",
+          "arrivalDate": "9월 중",
+          "maximumPurchaseQuantity": "1인당 최대 구매수량 2장",
+          "price": "55,000원 (사전예약 할인가)",
+          "spec": "2LP / 게이트폴드 / 12inch 래커 / 180g",
+          "color": "각각 투명한 녹색/ 투명한 흰색 바이닐",
+          "trackList": {
+            "Disc 1 Side A": [
+              "Stinky Kiss(intro)",
+              "Monet",
+              "침대에서/막걸리",
+              "여행 Again (Feat. Cautious Clay)"
+            ],
+            "Disc 1 Side B": [
+              "Dope As (Interlude)",
+              "Coca Cola Red(Feat. Oygli)",
+              "990 (Feat.Kim Ximya)",
+              "Lemon",
+              "바보같이 (Feat.Y2K92)"
+            ],
+            "Disc 2 Side A": [
+              "Trippy (Feat. Lance Skiiiwalker",
+              "Crime (Feat.Bek Hyunjin, 250)",
+              "Camp",
+              "Sanso (Interlude)",
+              "Change"
+            ],
+            "Disc 2 Side B": [
+              "단 하루",
+              "Sandman",
+              "Radio",
+              "Gym",
+              "Bonus Track"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 0,
+      "name": "빈지노(Beenzino) - NOWITZKI",
+      "category": "korean",
+      "price": "60,000",
+      "priceOff": true,
+      "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1720413043049_1000.png",
+      "productType": "2LP",
+      "pressingYear": "2024",
+      "company": "BANA",
+      "usedType": "New",
+      "savings": "3%",
+      "deliveryFee": "3,000원",
+      "quantityTerms": true,
+      "inventory": 0,
+      "aboutItem": {
+        "title": "Beenzino - NOWITZKI",
+        "subTitle": "제 21회 한국대중음악상 '올해의 음반' 수상에 빛나는 '빈지노'의 정규 음반 [NOWITZKI] 발매 1주년 기념 바이닐(LP) 사전예약",
+        "text": "",
+        "quntityInfo": {
+          "period": "7/8(월) 정오 ~ 7/17(수)",
+          "arrivalDate": "9월 중",
+          "maximumPurchaseQuantity": "1인당 최대 구매수량 2장",
+          "price": "55,000원 (사전예약 할인가)",
+          "spec": "2LP / 게이트폴드 / 12inch 래커 / 180g",
+          "color": "각각 투명한 녹색/ 투명한 흰색 바이닐",
+          "trackList": {
+            "Disc 1 Side A": [
+              "Stinky Kiss(intro)",
+              "Monet",
+              "침대에서/막걸리",
+              "여행 Again (Feat. Cautious Clay)"
+            ],
+            "Disc 1 Side B": [
+              "Dope As (Interlude)",
+              "Coca Cola Red(Feat. Oygli)",
+              "990 (Feat.Kim Ximya)",
+              "Lemon",
+              "바보같이 (Feat.Y2K92)"
+            ],
+            "Disc 2 Side A": [
+              "Trippy (Feat. Lance Skiiiwalker",
+              "Crime (Feat.Bek Hyunjin, 250)",
+              "Camp",
+              "Sanso (Interlude)",
+              "Change"
+            ],
+            "Disc 2 Side B": [
+              "단 하루",
+              "Sandman",
+              "Radio",
+              "Gym",
+              "Bonus Track"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 0,
+      "name": "빈지노(Beenzino) - NOWITZKI",
+      "category": "korean",
+      "price": "60,000",
+      "priceOff": true,
+      "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1720413043049_1000.png",
+      "productType": "2LP",
+      "pressingYear": "2024",
+      "company": "BANA",
+      "usedType": "New",
+      "savings": "3%",
+      "deliveryFee": "3,000원",
+      "quantityTerms": true,
+      "inventory": 0,
+      "aboutItem": {
+        "title": "Beenzino - NOWITZKI",
+        "subTitle": "제 21회 한국대중음악상 '올해의 음반' 수상에 빛나는 '빈지노'의 정규 음반 [NOWITZKI] 발매 1주년 기념 바이닐(LP) 사전예약",
+        "text": "",
+        "quntityInfo": {
+          "period": "7/8(월) 정오 ~ 7/17(수)",
+          "arrivalDate": "9월 중",
+          "maximumPurchaseQuantity": "1인당 최대 구매수량 2장",
+          "price": "55,000원 (사전예약 할인가)",
+          "spec": "2LP / 게이트폴드 / 12inch 래커 / 180g",
+          "color": "각각 투명한 녹색/ 투명한 흰색 바이닐",
+          "trackList": {
+            "Disc 1 Side A": [
+              "Stinky Kiss(intro)",
+              "Monet",
+              "침대에서/막걸리",
+              "여행 Again (Feat. Cautious Clay)"
+            ],
+            "Disc 1 Side B": [
+              "Dope As (Interlude)",
+              "Coca Cola Red(Feat. Oygli)",
+              "990 (Feat.Kim Ximya)",
+              "Lemon",
+              "바보같이 (Feat.Y2K92)"
+            ],
+            "Disc 2 Side A": [
+              "Trippy (Feat. Lance Skiiiwalker",
+              "Crime (Feat.Bek Hyunjin, 250)",
+              "Camp",
+              "Sanso (Interlude)",
+              "Change"
+            ],
+            "Disc 2 Side B": [
+              "단 하루",
+              "Sandman",
+              "Radio",
+              "Gym",
+              "Bonus Track"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 0,
+      "name": "빈지노(Beenzino) - NOWITZKI",
+      "category": "korean",
+      "price": "60,000",
+      "priceOff": true,
+      "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1720413043049_1000.png",
+      "productType": "2LP",
+      "pressingYear": "2024",
+      "company": "BANA",
+      "usedType": "New",
+      "savings": "3%",
+      "deliveryFee": "3,000원",
+      "quantityTerms": true,
+      "inventory": 0,
+      "aboutItem": {
+        "title": "Beenzino - NOWITZKI",
+        "subTitle": "제 21회 한국대중음악상 '올해의 음반' 수상에 빛나는 '빈지노'의 정규 음반 [NOWITZKI] 발매 1주년 기념 바이닐(LP) 사전예약",
+        "text": "",
+        "quntityInfo": {
+          "period": "7/8(월) 정오 ~ 7/17(수)",
+          "arrivalDate": "9월 중",
+          "maximumPurchaseQuantity": "1인당 최대 구매수량 2장",
+          "price": "55,000원 (사전예약 할인가)",
+          "spec": "2LP / 게이트폴드 / 12inch 래커 / 180g",
+          "color": "각각 투명한 녹색/ 투명한 흰색 바이닐",
+          "trackList": {
+            "Disc 1 Side A": [
+              "Stinky Kiss(intro)",
+              "Monet",
+              "침대에서/막걸리",
+              "여행 Again (Feat. Cautious Clay)"
+            ],
+            "Disc 1 Side B": [
+              "Dope As (Interlude)",
+              "Coca Cola Red(Feat. Oygli)",
+              "990 (Feat.Kim Ximya)",
+              "Lemon",
+              "바보같이 (Feat.Y2K92)"
+            ],
+            "Disc 2 Side A": [
+              "Trippy (Feat. Lance Skiiiwalker",
+              "Crime (Feat.Bek Hyunjin, 250)",
+              "Camp",
+              "Sanso (Interlude)",
+              "Change"
+            ],
+            "Disc 2 Side B": [
+              "단 하루",
+              "Sandman",
+              "Radio",
+              "Gym",
+              "Bonus Track"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 0,
+      "name": "빈지노(Beenzino) - NOWITZKI",
+      "category": "korean",
+      "price": "60,000",
+      "priceOff": true,
+      "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1720413043049_1000.png",
+      "productType": "2LP",
+      "pressingYear": "2024",
+      "company": "BANA",
+      "usedType": "New",
+      "savings": "3%",
+      "deliveryFee": "3,000원",
+      "quantityTerms": true,
+      "inventory": 0,
+      "aboutItem": {
+        "title": "Beenzino - NOWITZKI",
+        "subTitle": "제 21회 한국대중음악상 '올해의 음반' 수상에 빛나는 '빈지노'의 정규 음반 [NOWITZKI] 발매 1주년 기념 바이닐(LP) 사전예약",
+        "text": "",
+        "quntityInfo": {
+          "period": "7/8(월) 정오 ~ 7/17(수)",
+          "arrivalDate": "9월 중",
+          "maximumPurchaseQuantity": "1인당 최대 구매수량 2장",
+          "price": "55,000원 (사전예약 할인가)",
+          "spec": "2LP / 게이트폴드 / 12inch 래커 / 180g",
+          "color": "각각 투명한 녹색/ 투명한 흰색 바이닐",
+          "trackList": {
+            "Disc 1 Side A": [
+              "Stinky Kiss(intro)",
+              "Monet",
+              "침대에서/막걸리",
+              "여행 Again (Feat. Cautious Clay)"
+            ],
+            "Disc 1 Side B": [
+              "Dope As (Interlude)",
+              "Coca Cola Red(Feat. Oygli)",
+              "990 (Feat.Kim Ximya)",
+              "Lemon",
+              "바보같이 (Feat.Y2K92)"
+            ],
+            "Disc 2 Side A": [
+              "Trippy (Feat. Lance Skiiiwalker",
+              "Crime (Feat.Bek Hyunjin, 250)",
+              "Camp",
+              "Sanso (Interlude)",
+              "Change"
+            ],
+            "Disc 2 Side B": [
+              "단 하루",
+              "Sandman",
+              "Radio",
+              "Gym",
+              "Bonus Track"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 0,
+      "name": "빈지노(Beenzino) - NOWITZKI",
+      "category": "korean",
+      "price": "60,000",
+      "priceOff": true,
+      "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1720413043049_1000.png",
+      "productType": "2LP",
+      "pressingYear": "2024",
+      "company": "BANA",
+      "usedType": "New",
+      "savings": "3%",
+      "deliveryFee": "3,000원",
+      "quantityTerms": true,
+      "inventory": 0,
+      "aboutItem": {
+        "title": "Beenzino - NOWITZKI",
+        "subTitle": "제 21회 한국대중음악상 '올해의 음반' 수상에 빛나는 '빈지노'의 정규 음반 [NOWITZKI] 발매 1주년 기념 바이닐(LP) 사전예약",
+        "text": "",
+        "quntityInfo": {
+          "period": "7/8(월) 정오 ~ 7/17(수)",
+          "arrivalDate": "9월 중",
+          "maximumPurchaseQuantity": "1인당 최대 구매수량 2장",
+          "price": "55,000원 (사전예약 할인가)",
+          "spec": "2LP / 게이트폴드 / 12inch 래커 / 180g",
+          "color": "각각 투명한 녹색/ 투명한 흰색 바이닐",
+          "trackList": {
+            "Disc 1 Side A": [
+              "Stinky Kiss(intro)",
+              "Monet",
+              "침대에서/막걸리",
+              "여행 Again (Feat. Cautious Clay)"
+            ],
+            "Disc 1 Side B": [
+              "Dope As (Interlude)",
+              "Coca Cola Red(Feat. Oygli)",
+              "990 (Feat.Kim Ximya)",
+              "Lemon",
+              "바보같이 (Feat.Y2K92)"
+            ],
+            "Disc 2 Side A": [
+              "Trippy (Feat. Lance Skiiiwalker",
+              "Crime (Feat.Bek Hyunjin, 250)",
+              "Camp",
+              "Sanso (Interlude)",
+              "Change"
+            ],
+            "Disc 2 Side B": [
+              "단 하루",
+              "Sandman",
+              "Radio",
+              "Gym",
+              "Bonus Track"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 0,
+      "name": "Little Simz - No Thank You",
+      "category": "hiphop&rnb",
+      "price": "55,000",
+      "priceOff": false,
+      "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1703410125062_1000.png",
+      "productType": "2LP",
+      "pressingYear": "2023",
+      "company": "Forever Living",
+      "usedType": "New",
+      "savings": "3%",
+      "deliveryFee": "3,000원",
+      "quantityTerms": false,
+      "inventory": 10,
+      "aboutItem": {
+        "title": "Little Simz - No Thank You",
+        "subTitle": "",
+        "text": "",
+        "quntityInfo": {
+          "period": "",
+          "arrivalDate": "",
+          "maximumPurchaseQuantity": "",
+          "price": "55,000",
+          "spec": "2LP",
+          "color": "Black",
+          "trackList": {
+            "Disc 1 Side A": [
+              "Angel (4:31)",
+              "Gorilla (5:26)",
+              "Silhouette (6:37)"
+            ],
+            "Disc 1 Side B": [
+              "No Merci (5:17)",
+              "X (5:49)"
+            ],
+            "Disc 2 Side A": [
+              "Heart On Fire (4:03)",
+              "Broken (7:32)"
+            ],
+            "Disc 2 Side B": [
+              "Sideways (2:10)",
+              "Who Even Cares (4:37)",
+              "Control (3:46)"
+            ]
+          }
+        }
+      }
+    }
+  ]
 }

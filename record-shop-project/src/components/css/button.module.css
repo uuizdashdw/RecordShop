@@ -1,0 +1,44 @@
+.button_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.button_list {
+    vertical-align: top;
+    display: inline-block;
+    width: calc(50% - 10px);
+    max-width: 160px;
+}
+
+.buy_button {
+    padding: 30px 0px;
+    border: 1px solid #222222;
+    background-color: #222222;
+    color: #fcfcfc;
+    width: 100%;
+}
+
+.cart_button {
+    padding: 30px 0px;
+    border: 1px solid #222222;
+    background-color: transparent;
+    width: 100%;
+}
+
+.buy_button_disabled {
+    padding: 20px 36px;
+    border: 1px solid #222222;
+    background-color: #222222;
+    color: #fcfcfc;
+    opacity: 0.4;
+    width: 100%;
+}
+
+.cart_button_disabled {
+    padding: 20px 36px;
+    border: 1px solid #222222;
+    background-color: transparent;
+    opacity: 0.4;
+    width: 100%;
+}

@@ -1,5 +1,5 @@
 const ProductDetailLayout = ({ children }) => {
-	return <main>{children}</main>;
+	return <>{children}</>;
 };
 
 export default ProductDetailLayout;

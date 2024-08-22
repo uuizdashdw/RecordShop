@@ -5,6 +5,13 @@
     list-style-type: none;
     box-sizing: border-box;
     color: black;
+    -webkit-font-smoothing: antialiased;
+    font-family: inherit;
+}
+
+body {
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 main {

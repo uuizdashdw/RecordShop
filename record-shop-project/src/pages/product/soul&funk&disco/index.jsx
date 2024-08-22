@@ -5,7 +5,7 @@ import styles from './index.module.css';
 import ProductLayout from '@/layouts/ProductLayout';
 
 // Components
-import ProductItem from '@/components/ProductItem';
+import ProductItem from '@/components/product/ProductItem';
 
 // Hooks
 import { useEffect, useState } from 'react';

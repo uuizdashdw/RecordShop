@@ -2,11 +2,11 @@
 import { fetchAllProducts } from '@/api';
 
 // Hooks
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 // Components
 import MainLayout from '@/layouts/MainLayout';
-import ProductItem from '@/components/ProductItem';
+import ProductItem from '@/components/product/ProductItem';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,6 +18,9 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
 import styles from './index.module.css';
+
+// Link
+import Link from 'next/link';
 
 export async function getServerSideProps() {
 	const { data } = await fetchAllProducts();
@@ -82,7 +85,9 @@ const MainPage = ({ data }) => {
 										{songs.map((item, index) => (
 											<SwiperSlide key={index}>
 												<div>
-													<ProductItem product={item} />
+													<Link href={`product/${item.category}/${item.id}`}>
+														<ProductItem product={item} />
+													</Link>
 												</div>
 											</SwiperSlide>
 										))}
