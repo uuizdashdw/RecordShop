@@ -30,11 +30,23 @@ const ProductDetailText = ({ product }) => {
 				</li>
 				<li className={styles.product_sub_info_list}>
 					<p className={styles.product_sub_info_title}>배송비</p>
+					<div className={styles.delivery_text_wrapper}>
+						<p className={styles.product_sub_info_content}>
+							3,000원 (70,000원 이상 구매 시 무료)
+						</p>
+						<p className={styles.product_sub_info_content}>
+							제주 및 도서 산간 3,000원 추가
+						</p>
+					</div>
 				</li>
 
 				{product.quantityTerms ? (
 					<li className={styles.product_sub_info_list}>
 						<p className={styles.product_sub_info_title}>수량조건</p>
+						<div className={styles.delivery_text_wrapper}>
+							<p className={styles.product_sub_info_content}>주문당 최대 2개</p>
+							<p className={styles.product_sub_info_content}>회원당 최대 2개</p>
+						</div>
 					</li>
 				) : (
 					''

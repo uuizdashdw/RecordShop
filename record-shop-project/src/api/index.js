@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { notFound } from 'next/navigation';
 
 const instance = axios.create({
 	baseURL: 'http://localhost:4000',
@@ -72,16 +71,6 @@ const fetchSoundtrackProducts = async () => {
 	return data.soundtrack;
 };
 
-// 장바구니 담기 함수
-const fetchProductPutInCart = product => {
-	return instance.post('/carts', product);
-};
-
-// 장바구니 정보 가져오기 함수
-const fetchProductsInCart = () => {
-	return instance.get('/carts');
-};
-
 export {
 	fetchAllProducts,
 	fetchProductDetails,
@@ -93,6 +82,4 @@ export {
 	fetchSoulFUnkDiscoProducts,
 	fetchRockPopProducts,
 	fetchSoundtrackProducts,
-	fetchProductPutInCart,
-	fetchProductsInCart,
 };

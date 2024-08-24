@@ -42,6 +42,9 @@
     font-weight: bold;
     letter-spacing: 0.01em;
     line-height: 1.2rem;
+    max-width: 80px;
+    width: 100%;
+    margin: 0;
 }
 
 .product_sub_info_content {
@@ -50,9 +53,18 @@
 
 .product_sub_info_list {
     display: flex;
-    align-items: center;
     margin-bottom: 20px;
     gap: 20px;
+}
+
+.product_sub_info_list:first-child {
+    align-items: center;
+}
+
+.delivery_text_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .no_inventory {

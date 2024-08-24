@@ -12,10 +12,18 @@ import Footer from '@/components/common/Footer';
 import { Provider } from 'react-redux';
 import store from '@/store';
 
+// Hook
+import { useEffect } from 'react';
+
 export default function App({ Component, pageProps }) {
 	const getLayout =
 		Component.getLayout || (page => <MainLayout>{page}</MainLayout>);
 
+	useEffect(() => {
+		if (!localStorage.getItem('carts')) {
+			localStorage.setItem('carts', JSON.stringify([]));
+		}
+	}, []);
 	return (
 		<>
 			<Header />

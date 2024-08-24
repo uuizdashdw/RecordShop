@@ -16,6 +16,7 @@ body {
 
 main {
     padding: 50px;
+    margin-top: 110px;
 }
 
 .swiper {
@@ -28,8 +29,15 @@ main {
 
 .swiper-button-prev, .swiper-button-next {
     color: ghostwhite !important;
+    background: #000;
 }
 
 .swiper-button-next, .swiper-rtl .swiper-button-prev {
     right: 36px !important;
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled,
+.swiper-button-next {
+    /* background: rgba(black, black, black, 0.5) !important; */
+    padding: 12px;
 }

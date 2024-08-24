@@ -9,12 +9,9 @@ import Button from '../buttons/Button';
 import ProductDetailText from './ProductDetailText';
 import ProductPlaylist from './ProductPlaylist';
 
-// Hooks
-import { useEffect, useState } from 'react';
-
 const ProductDetailItem = ({ product }) => {
 	return (
-		<div>
+		<>
 			<div className={styles.product_wrapper}>
 				<div style={{ display: 'flex' }}>
 					<Image
@@ -30,7 +27,7 @@ const ProductDetailItem = ({ product }) => {
 				</div>
 			</div>
 			<ProductPlaylist product={product} />
-		</div>
+		</>
 	);
 };
 

@@ -1,6 +1,9 @@
 // CSS
 import styles from './header.module.css';
 
+// Hooks
+import { useEffect, useState } from 'react';
+
 // Link
 import Link from 'next/link';
 
@@ -28,7 +31,12 @@ const Header = () => {
 					))}
 				</ul>
 				<ul className={styles.auth}>
-					<li>로그인</li>
+					<li>
+						<Link href={'/'}>로그인</Link>
+					</li>
+					<li>
+						<Link href={'/'}>회원가입</Link>
+					</li>
 					<li>
 						<Link href={'/cart'}>장바구니</Link>
 					</li>

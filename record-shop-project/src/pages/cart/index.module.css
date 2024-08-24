@@ -1,0 +1,161 @@
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.title {
+    margin-bottom: 50px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartlist {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.cartlist:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.cart_wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.cart_item_info {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item_title {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.quantity_wrapper:not(:last-child) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.quantity_wrapper {
+    gap: 5px;
+}
+
+.item_text {
+    font-size: 14px;
+}
+
+.delete_btn {
+    width: 100px;
+    border: 1px solid #222;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+}
+
+.delete_btn:hover {
+    background-color: #222;
+    color: #fff;
+    font-weight: bold;
+}
+
+.select_box {
+    width: 40px;
+    text-align: center;
+    outline: none;
+}
+
+.amount_info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.amount_info_list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 200px;
+    width: 100%;
+}
+
+.payment {
+    max-width: 100px;
+    width: 100%;
+    display: inline-block;
+}
+
+
+.delivery_fee_info_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.delivery_fee_info {
+    font-size: 12px;
+}
+
+.delivery_fee {
+    display: inline-block;
+}
+
+.cart_clear_button_wrapper{
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    text-align: right;
+}
+
+.cart_clear_button {
+    border: 1px solid #222;
+    outline: none;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+}
+
+.cart_clear_button:hover {
+    background: #222;
+    color: #fff;
+    font-weight: bold;
+}
+
+.order_button_wrapper {
+    text-align: right;
+}
+
+.order_button {
+    border: 1px solid #222;
+    background-color: transparent;
+    color: #222;
+    padding: 15px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+}
+
+.order_button:hover {
+    background-color: #222;
+    color: #fff;
+    font-weight: bold;
+}
+
+.final_total_amout > span {
+    font-weight: bold;
+}
