@@ -3,7 +3,9 @@ import styles from './signup.module.css';
 
 // Components
 import AuthLayout from '@/layouts/AuthLayout';
+import AddressSearch from '@/components/address/AddressSearch';
 
+// Hooks
 import { useState, useEffect } from 'react';
 
 const SignUpPage = () => {
@@ -11,8 +13,10 @@ const SignUpPage = () => {
 		userAccount: '',
 		userPassword: '',
 		userName: '',
+		zonecode: '',
 		userPhoneNumber: '',
-		// userAddress: '',
+		userAddress: '',
+		userDetailAddress: '',
 	});
 
 	const [isWrongPassword, setIsWrongPassword] = useState(false);
@@ -21,19 +25,15 @@ const SignUpPage = () => {
 		console.log('### formData ===> ', formData);
 	}, [formData]);
 
-	const onChangeUserAccount = event => {
-		const { value: userAccount } = event.target;
-		setFormData(prev => ({
-			...prev,
-			userAccount,
-		}));
-	};
+	useEffect(() => {
+		setUserZonecode(formData.zonecode);
+	}, [formData.zonecode]);
 
-	const onChangeUserPassword = event => {
-		const { value: userPassword } = event.target;
+	const onChangeUserInfo = event => {
+		const { name, value } = event.target;
 		setFormData(prev => ({
 			...prev,
-			userPassword,
+			[name]: value,
 		}));
 	};
 
@@ -41,25 +41,30 @@ const SignUpPage = () => {
 		const { value: password } = event.target;
 		const { userPassword } = formData;
 
-		userPassword !== password
+		userPassword !== password && password
 			? setIsWrongPassword(true)
 			: setIsWrongPassword(false);
 	};
 
-	const onChangeUserName = event => {
-		const { value: userName } = event.target;
+	const setUserZonecode = zonecode => {
 		setFormData(prev => ({
 			...prev,
-			userName,
+			zonecode,
 		}));
 	};
 
-	const onChangeUserPhoneNumber = event => {
-		const { value: userPhoneNumber } = event.target;
-		setFormData(prev => ({
-			...prev,
-			userPhoneNumber,
-		}));
+	const onSubmitToSignUp = e => {
+		e.preventDefault();
+
+		const emptyField = [];
+		for (const key in formData) {
+			if (formData[key].trim() === '') emptyField.push(key);
+		}
+
+		if (emptyField.length) {
+			console.log('비어있는 필드 ### => ', `${emptyField.join(', ')}`);
+			return;
+		}
 	};
 
 	return (
@@ -68,30 +73,32 @@ const SignUpPage = () => {
 				<h3 className={styles.title}>회원가입</h3>
 
 				<div className={styles.form_container}>
-					<ul className={styles.form_list}>
-						<li>
+					<form className={styles.form_list}>
+						<div>
 							<label htmlFor="userAccount" className={styles.label}>
 								아이디
 							</label>
 							<input
 								type="text"
+								name="userAccount"
 								className={styles.form_data}
 								value={formData.userAccount}
-								onChange={event => onChangeUserAccount(event)}
+								onChange={event => onChangeUserInfo(event)}
 							/>
-						</li>
-						<li>
+						</div>
+						<div>
 							<label htmlFor="userPassword" className={styles.label}>
 								비밀번호
 							</label>
 							<input
 								type="text"
+								name="userPassword"
 								className={styles.form_data}
 								value={formData.userPassword}
-								onChange={event => onChangeUserPassword(event)}
+								onChange={event => onChangeUserInfo(event)}
 							/>
-						</li>
-						<li>
+						</div>
+						<div>
 							<label htmlFor="userPasswordCheck" className={styles.label}>
 								비밀번호 확인
 							</label>
@@ -105,31 +112,50 @@ const SignUpPage = () => {
 									비밀번호를 확인해주세요!
 								</p>
 							)}
-						</li>
-						<li>
+						</div>
+						<div>
 							<label htmlFor="userName" className={styles.label}>
 								이름
 							</label>
 							<input
 								type="text"
+								name="userName"
 								className={styles.form_data}
 								value={formData.userName}
-								onChange={event => onChangeUserName(event)}
+								onChange={event => onChangeUserInfo(event)}
 							/>
-						</li>
-						<li>
+						</div>
+						<div>
 							<label htmlFor="userPhoneNumber" className={styles.label}>
 								전화번호
 							</label>
 							<input
 								type="text"
+								name="userPhoneNumber"
 								className={styles.form_data}
 								value={formData.userPhoneNumber}
-								onChange={event => onChangeUserPhoneNumber(event)}
+								onChange={event => onChangeUserInfo(event)}
 							/>
-						</li>
-						<li>주소 :</li>
-					</ul>
+						</div>
+						<div>
+							<label htmlFor="userAddress" className={styles.label}>
+								주소
+							</label>
+							<AddressSearch
+								address={formData.userAddress}
+								setFormData={setFormData}
+								onChangeUserInfo={onChangeUserInfo}
+							/>
+						</div>
+						<div>
+							<button
+								className={styles.signup_button}
+								onClick={e => onSubmitToSignUp(e)}
+							>
+								회원가입
+							</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</AuthLayout>

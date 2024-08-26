@@ -35,7 +35,7 @@ const Header = () => {
 						<Link href={'/'}>로그인</Link>
 					</li>
 					<li>
-						<Link href={'/'}>회원가입</Link>
+						<Link href={'/auth/signup'}>회원가입</Link>
 					</li>
 					<li>
 						<Link href={'/cart'}>장바구니</Link>

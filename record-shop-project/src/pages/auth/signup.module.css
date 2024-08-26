@@ -13,10 +13,14 @@
     gap: 20px;
 }
 
-.form_list > li {
+.form_list > div {
     display: flex;
     flex-direction: column;
     gap: 6px;
+}
+
+.form_list > div:last-child {
+    margin-top: 20px;
 }
 
 .label {
@@ -36,4 +40,14 @@
 .check_password {
     font-size: 12px;
     color: red;
+}
+
+.signup_button {
+    border: 1px solid #222;
+    border-radius: 4px;
+    font-weight: bold;
+    background: #222;
+    color: #fff;
+    height: 50px;
+    width: 100%;
 }

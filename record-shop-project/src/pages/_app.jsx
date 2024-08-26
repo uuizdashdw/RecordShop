@@ -15,6 +15,9 @@ import store from '@/store';
 // Hook
 import { useEffect } from 'react';
 
+// UI
+import { ChakraProvider } from '@chakra-ui/react';
+
 export default function App({ Component, pageProps }) {
 	const getLayout =
 		Component.getLayout || (page => <MainLayout>{page}</MainLayout>);
@@ -28,7 +31,9 @@ export default function App({ Component, pageProps }) {
 		<>
 			<Header />
 			<Provider store={store}>
-				{getLayout(<Component {...pageProps} />)}
+				<ChakraProvider>
+					{getLayout(<Component {...pageProps} />)}
+				</ChakraProvider>
 			</Provider>
 			<Footer />
 		</>

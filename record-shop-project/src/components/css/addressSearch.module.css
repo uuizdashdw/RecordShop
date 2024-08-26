@@ -1,0 +1,35 @@
+.form_data {
+    width: 300px;
+    outline: none;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    height: 30px;
+    padding: 0px 8px;
+    font-size: 13px;
+}
+
+.postal_code_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postal_code {
+    width: 170px;
+    outline: none;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    height: 30px;
+    padding: 0px 8px;
+    font-size: 13px;
+}
+
+.postal_code_button {
+    width: 120px;
+    border: 1px solid #222;
+    background-color: #222;
+    color: #fff;
+    border-radius: 4px;
+    height: 30px;
+    font-size: 13px;
+}
