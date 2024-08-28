@@ -29,8 +29,8 @@ export default function App({ Component, pageProps }) {
 	}, []);
 	return (
 		<>
-			<Header />
 			<Provider store={store}>
+				<Header />
 				<ChakraProvider>
 					{getLayout(<Component {...pageProps} />)}
 				</ChakraProvider>

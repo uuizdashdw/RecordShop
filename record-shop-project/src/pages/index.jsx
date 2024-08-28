@@ -47,18 +47,19 @@ const MainPage = ({ data }) => {
 	}, [data]);
 
 	const getGenreTitle = genre => {
+		console.log('### 장르 ==> ', genre);
 		switch (genre) {
-			case 'koreanMusic':
+			case 'korean':
 				return 'Korean';
-			case 'hiphopRnb':
+			case 'hiphop&rnb':
 				return 'Hiphop / R&B';
-			case 'beatsInstrumental':
+			case 'beats&instrumental':
 				return 'Beats / Instrumental';
-			case 'soulFunkDisco':
+			case 'soul&funk&disco':
 				return 'Soul / Funk / Disco';
-			case 'nuDiscoModernFunk':
+			case 'nu_disco&modern_funk':
 				return 'Nu Disco / Modern Funk';
-			case 'rockPop':
+			case 'rock&pop':
 				return 'Rock / Pop';
 			default:
 				return genre.charAt(0).toUpperCase() + genre.slice(1);

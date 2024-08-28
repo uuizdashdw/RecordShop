@@ -8,6 +8,19 @@ const initialStateCarts = {
 	carts: [],
 };
 
+const initialUserInfo = {
+	userInfo: {
+		userAccount: '',
+		userPassword: '',
+		userName: '',
+		zonecode: '',
+		userPhoneNumber: '',
+		userAddress: '',
+		userDetailAddress: '',
+	},
+	userId: 0,
+};
+
 const productSlice = createSlice({
 	name: 'products',
 	initialState: initialStateProduct,
@@ -82,10 +95,51 @@ const cartSlide = createSlice({
 	},
 });
 
+const userInfoSlide = createSlice({
+	name: 'userInfo',
+	initialState: initialUserInfo,
+	reducers: {
+		singup(state, action) {
+			state.userId += 1;
+			state.userInfo = {
+				...action.payload,
+				userId: state.userId,
+			};
+			localStorage.setItem('userInfo', JSON.stringify(state.userInfo));
+		},
+
+		signout(state) {
+			state.userInfo = initialUserInfo.userInfo;
+			localStorage.removeItem('userInfo');
+		},
+
+		getUserInfo(state) {
+			const storedUserInfo = localStorage.getItem('userInfo');
+			if (storedUserInfo) state.userInfo = JSON.parse(storedUserInfo);
+		},
+
+		deleteId(state) {
+			state.userInfo = {
+				userAccount: '',
+				userPassword: '',
+				userName: '',
+				zonecode: '',
+				userPhoneNumber: '',
+				userAddress: '',
+				userDetailAddress: '',
+				userId: null,
+			};
+
+			localStorage.removeItem('userInfo');
+		},
+	},
+});
+
 const store = configureStore({
 	reducer: {
 		products: productSlice.reducer,
 		carts: cartSlide.reducer,
+		userInfo: userInfoSlide.reducer,
 	},
 });
 
@@ -97,5 +151,7 @@ export const {
 	changeCartItemQuantity,
 	setInitialCarts,
 } = cartSlide.actions;
+
+export const { singup, signout, getUserInfo, deleteId } = userInfoSlide.actions;
 
 export default store;

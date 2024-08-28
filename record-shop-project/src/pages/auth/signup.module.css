@@ -1,4 +1,7 @@
 .title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
     margin-bottom: 36px;
 }
 
@@ -35,6 +38,36 @@
     border-radius: 4px;
     height: 30px;
     padding: 0px 8px;
+    font-size: 13px;
+}
+
+.gender_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.radio {
+    display: none;
+}
+
+.radioLabel {
+    width: 50%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #999;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.radio_checked {
+    color: #fff;
+    border-color: #222;
+    background-color: #222;
 }
 
 .check_password {
@@ -50,4 +83,14 @@
     color: #fff;
     height: 50px;
     width: 100%;
+}
+
+.signup_button_abled {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.signup_button_disabled {
+    opacity: 0.5;
+    cursor: default;
 }

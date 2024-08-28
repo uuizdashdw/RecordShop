@@ -2,7 +2,7 @@
 import styles from '../css/addressSearch.module.css';
 
 // Hooks
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // Library
 import DaumPostcodeEmbed from 'react-daum-postcode';
@@ -15,7 +15,7 @@ import {
 	ModalCloseButton,
 } from '@chakra-ui/react';
 
-const AddressSearch = ({ address, setFormData, onChangeUserInfo }) => {
+const AddressSearch = ({ address, setFormData, onUpdateUserInfo }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [postalCode, setPostalCode] = useState('');
 
@@ -37,9 +37,10 @@ const AddressSearch = ({ address, setFormData, onChangeUserInfo }) => {
 					type="text"
 					name="zonecode"
 					className={styles.postal_code}
+					placeholder="우편번호"
 					readOnly
 					value={postalCode}
-					onChange={e => onChangeUserInfo(e)}
+					onChange={e => onUpdateUserInfo(e)}
 					onClick={() => setIsOpen(true)}
 				/>
 				<button
@@ -56,6 +57,7 @@ const AddressSearch = ({ address, setFormData, onChangeUserInfo }) => {
 				type="text"
 				name="userAddress"
 				className={styles.form_data}
+				placeholder="주소"
 				readOnly
 				value={address}
 				onClick={() => setIsOpen(true)}
@@ -63,8 +65,10 @@ const AddressSearch = ({ address, setFormData, onChangeUserInfo }) => {
 			<input
 				type="text"
 				name="userDetailAddress"
+				placeholder="상세주소를 입력해주세요"
+				autoComplete="off"
 				className={styles.form_data}
-				onChange={e => onChangeUserInfo(e)}
+				onChange={e => onUpdateUserInfo(e)}
 			/>
 
 			<Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
