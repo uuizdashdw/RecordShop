@@ -178,7 +178,7 @@ const SignUpPage = () => {
 				<h3 className={styles.title}>회원가입</h3>
 
 				<div className={styles.form_container}>
-					<form className={styles.form_list}>
+					<form className={styles.form_list} onSubmit={e => e.preventDefault()}>
 						<div>
 							<label htmlFor="userAccount" className={styles.label}>
 								아이디
