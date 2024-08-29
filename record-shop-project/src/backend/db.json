@@ -2846,5 +2846,40 @@
         }
       }
     ]
-  }
+  },
+  "users": [
+    {
+      "id": 1,
+      "userAccount": "test",
+      "userPassword": "cksdnd77!@",
+      "userName": "강찬웅",
+      "userGender": "M",
+      "zonecode": "15863",
+      "userPhoneNumber": "213-2132-3213",
+      "userAddress": "경기 군포시 고산로 406",
+      "userDetailAddress": "ㅁㄴㅇ"
+    },
+    {
+      "id": 2,
+      "userAccount": "test2",
+      "userPassword": "cksdnd77!@",
+      "userName": "강찬웅",
+      "userGender": "M",
+      "zonecode": "15863",
+      "userPhoneNumber": "412-4214-2142",
+      "userAddress": "경기 군포시 고산로 406",
+      "userDetailAddress": "ㅁㄴㅇ"
+    },
+    {
+      "id": 3,
+      "userAccount": "test3",
+      "userPassword": "cksdnd77!@",
+      "userName": "강찬웅",
+      "userGender": "M",
+      "zonecode": "15841",
+      "userPhoneNumber": "213-2132-1321",
+      "userAddress": "경기 군포시 공단로 177",
+      "userDetailAddress": "123213"
+    }
+  ]
 }

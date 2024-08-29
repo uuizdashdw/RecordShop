@@ -195,7 +195,7 @@ const CartPage = () => {
 						<li>
 							<span className={styles.amount_info_title}>배송비 : </span>
 							{totalAmount >= 70000 || !totalAmount ? (
-								0
+								<span className={styles.payment}>0 원</span>
 							) : (
 								<span className={styles.payment}>3,000 원</span>
 							)}

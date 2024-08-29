@@ -51,6 +51,10 @@
     background-color: black;
 }
 
+.signout_button {
+    font-size: 14px;
+}
+
 @media screen and (max-width: 1440px){
     .header {
         width: 100%;

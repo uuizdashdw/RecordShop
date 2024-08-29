@@ -9,15 +9,7 @@ const initialStateCarts = {
 };
 
 const initialUserInfo = {
-	userInfo: {
-		userAccount: '',
-		userPassword: '',
-		userName: '',
-		zonecode: '',
-		userPhoneNumber: '',
-		userAddress: '',
-		userDetailAddress: '',
-	},
+	userInfo: [],
 	userId: 0,
 };
 
@@ -99,23 +91,51 @@ const userInfoSlide = createSlice({
 	name: 'userInfo',
 	initialState: initialUserInfo,
 	reducers: {
+		setUserInfo(state, action) {
+			state.userInfo = action.payload;
+		},
+
 		singup(state, action) {
-			state.userId += 1;
-			state.userInfo = {
-				...action.payload,
-				userId: state.userId,
-			};
-			localStorage.setItem('userInfo', JSON.stringify(state.userInfo));
+			const users = localStorage.getItem('userInfo');
+
+			let user;
+			let userArray = [];
+
+			if (users) {
+				console.log('### 로컬에 userInfo 있음 ###');
+				userArray = JSON.parse(users);
+				const nextId = userArray[userArray.length - 1].id;
+				user = {
+					...action.payload,
+					id: Number(nextId) + 1,
+				};
+			} else {
+				console.log('### 로컬에 userInfo 없음 ###');
+				state.userId += 1;
+				user = {
+					...action.payload,
+					id: state.userId,
+				};
+			}
+
+			state.userInfo.push(user);
+			userArray.push(user);
+			localStorage.setItem('userInfo', JSON.stringify(userArray));
 		},
 
 		signout(state) {
 			state.userInfo = initialUserInfo.userInfo;
-			localStorage.removeItem('userInfo');
+			localStorage.removeItem('user');
 		},
 
-		getUserInfo(state) {
-			const storedUserInfo = localStorage.getItem('userInfo');
-			if (storedUserInfo) state.userInfo = JSON.parse(storedUserInfo);
+		signin(state, action) {
+			const user = JSON.parse(localStorage.getItem('userInfo'));
+			if (user.userName) {
+				state.userInfo = {
+					...action.payload,
+					userId: state.userId,
+				};
+			}
 		},
 
 		deleteId(state) {
@@ -152,6 +172,7 @@ export const {
 	setInitialCarts,
 } = cartSlide.actions;
 
-export const { singup, signout, getUserInfo, deleteId } = userInfoSlide.actions;
+export const { setUserInfo, singup, signout, signin, deleteId } =
+	userInfoSlide.actions;
 
 export default store;

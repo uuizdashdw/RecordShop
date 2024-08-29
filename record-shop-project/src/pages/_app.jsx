@@ -12,8 +12,8 @@ import Footer from '@/components/common/Footer';
 import { Provider } from 'react-redux';
 import store from '@/store';
 
-// Hook
-import { useEffect } from 'react';
+// Hooks
+import { useEffect, useState } from 'react';
 
 // UI
 import { ChakraProvider } from '@chakra-ui/react';
@@ -22,17 +22,22 @@ export default function App({ Component, pageProps }) {
 	const getLayout =
 		Component.getLayout || (page => <MainLayout>{page}</MainLayout>);
 
+	const [user, setUser] = useState(null);
+
 	useEffect(() => {
 		if (!localStorage.getItem('carts')) {
 			localStorage.setItem('carts', JSON.stringify([]));
 		}
+
+		const userData = JSON.parse(localStorage.getItem('user'));
+		if (userData) setUser(userData);
 	}, []);
 	return (
 		<>
 			<Provider store={store}>
-				<Header />
+				<Header user={user} setUser={setUser} />
 				<ChakraProvider>
-					{getLayout(<Component {...pageProps} />)}
+					{getLayout(<Component {...pageProps} setUser={setUser} />)}
 				</ChakraProvider>
 			</Provider>
 			<Footer />

@@ -14,11 +14,7 @@ const fetchProductDetails = async params => {
 	const { data } = await instance.get('/products');
 	const { category, productId } = params;
 
-	const products = data[category];
-
-	if (!products) return { notFound: true };
-
-	const product = products.find(p => p.id === Number(productId));
+	const product = data[category].find(p => p.id === Number(productId));
 
 	return product ? product : { notFound: true };
 };
@@ -71,6 +67,26 @@ const fetchSoundtrackProducts = async () => {
 	return data.soundtrack;
 };
 
+// 회원가입 함수
+const fetchUserSignUp = userData => {
+	return instance.post('/users', userData);
+};
+
+// 전체 회원 정보 가져오기 함수
+const fetchGetUserList = () => {
+	return instance.get('/users');
+};
+
+// 특정 회원 정보 가져오기 함수
+const fetchTargetUserInfo = async id => {
+	const { data } = await instance.get('/users');
+
+	if (Array.isArray(data)) {
+		const user = data.find(user => user.id === Number(id));
+		return user;
+	}
+};
+
 export {
 	fetchAllProducts,
 	fetchProductDetails,
@@ -82,4 +98,7 @@ export {
 	fetchSoulFUnkDiscoProducts,
 	fetchRockPopProducts,
 	fetchSoundtrackProducts,
+	fetchUserSignUp,
+	fetchGetUserList,
+	fetchTargetUserInfo,
 };

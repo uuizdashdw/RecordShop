@@ -2,20 +2,23 @@
 import styles from './header.module.css';
 
 // Hooks
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 // Link
 import Link from 'next/link';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserInfo, signout } from '@/store';
+import { setUserInfo, signout } from '@/store';
 
-const Header = () => {
+// Router
+import { useRouter } from 'next/router';
+
+const Header = ({ user, setUser }) => {
 	const dispatch = useDispatch();
 	const userInfo = useSelector(state => state.userInfo.userInfo);
-	const [isUserInfo, setUserInfo] = useState({});
-	const [isUser, setIsUser] = useState(false);
+
+	const router = useRouter();
 
 	const gnbItem = [
 		{ name: 'Korean', link: '/product/korean' },
@@ -29,19 +32,22 @@ const Header = () => {
 	];
 
 	useEffect(() => {
-		// const userInfo = localStorage.getItem('userInfo');
-		// if (userInfo) {
-		// 	setUserInfo(userInfo);
-		// 	setIsUser(true);
-		// } else {
-		// 	setUserInfo({});
-		// 	setIsUser(false);
-		// }
-		dispatch(getUserInfo());
-	}, [dispatch]);
+		console.log('###  회원 정보  ===> ', userInfo);
+		const users = JSON.parse(localStorage.getItem('userInfo')) || [];
+		if (!userInfo && users.length) {
+			dispatch(setUserInfo(users));
+		}
+	}, [userInfo]);
+
+	useEffect(() => {
+		console.log('로그인 후 마운트');
+	}, []);
 
 	const isSignOut = () => {
 		dispatch(signout());
+		alert('로그아웃 되었습니다');
+		setUser(null);
+		router.replace('/');
 	};
 
 	return (
@@ -56,10 +62,10 @@ const Header = () => {
 					))}
 				</ul>
 				<ul className={styles.auth}>
-					{!isUser ? (
+					{!user ? (
 						<>
 							<li>
-								<Link href={'/'}>로그인</Link>
+								<Link href={'/auth/signin'}>로그인</Link>
 							</li>
 							<li>
 								<Link href={'/auth/signup'}>회원가입</Link>
@@ -67,9 +73,13 @@ const Header = () => {
 						</>
 					) : (
 						<>
-							<li>{userInfo.userName} 님 환영합니다!</li>
 							<li>
-								<Link href={'/'}>로그아웃</Link>
+								<span style={{ fontSize: '14px' }}>{user.userName} 님</span>
+							</li>
+							<li>
+								<button className={styles.signout_button} onClick={isSignOut}>
+									로그아웃
+								</button>
 							</li>
 						</>
 					)}

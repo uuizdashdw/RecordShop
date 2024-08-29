@@ -22,6 +22,7 @@ import styles from './index.module.css';
 // Link
 import Link from 'next/link';
 
+// 전체 상품 서버 사이드 렌더링
 export async function getServerSideProps() {
 	const { data } = await fetchAllProducts();
 
@@ -37,7 +38,6 @@ const MainPage = ({ data }) => {
 	const dispatchList = useSelector(state => state.products.products);
 
 	const dispatchProduct = () => {
-		console.log(data);
 		const productList = Object.entries(data);
 		dispatch(updateProducts(productList));
 	};
@@ -47,7 +47,6 @@ const MainPage = ({ data }) => {
 	}, [data]);
 
 	const getGenreTitle = genre => {
-		console.log('### 장르 ==> ', genre);
 		switch (genre) {
 			case 'korean':
 				return 'Korean';
