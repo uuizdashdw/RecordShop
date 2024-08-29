@@ -9,7 +9,7 @@ const ProductItem = ({ product }) => {
 			<Link href={`/product/${product.category}/${product.id}`}>
 				<Image
 					src={product.imageUrl}
-					alt={product.name}
+					alt={product.name || '상품 이미지'}
 					width={200}
 					height={200}
 					className={styles.img}

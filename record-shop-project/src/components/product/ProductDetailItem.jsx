@@ -13,7 +13,7 @@ const ProductDetailItem = ({ product }) => {
 	return (
 		<>
 			<div className={styles.product_wrapper}>
-				<div style={{ display: 'flex' }}>
+				<div style={{ display: 'flex', width: '100%' }}>
 					<Image
 						src={product.imageUrl}
 						width={450}

@@ -1,3 +1,5 @@
+import React from 'react';
+
 // CSS
 import styles from './header.module.css';
 
@@ -14,7 +16,7 @@ import { setUserInfo, signout } from '@/store';
 // Router
 import { useRouter } from 'next/router';
 
-const Header = ({ user, setUser }) => {
+const Header = React.memo(function Header({ user, setUser }) {
 	const dispatch = useDispatch();
 	const userInfo = useSelector(state => state.userInfo.userInfo);
 
@@ -90,6 +92,6 @@ const Header = ({ user, setUser }) => {
 			</div>
 		</header>
 	);
-};
+});
 
 export default Header;

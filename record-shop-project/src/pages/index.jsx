@@ -85,9 +85,7 @@ const MainPage = ({ data }) => {
 										{songs.map((item, index) => (
 											<SwiperSlide key={index}>
 												<div>
-													<Link href={`product/${item.category}/${item.id}`}>
-														<ProductItem product={item} />
-													</Link>
+													<ProductItem product={item} />
 												</div>
 											</SwiperSlide>
 										))}
