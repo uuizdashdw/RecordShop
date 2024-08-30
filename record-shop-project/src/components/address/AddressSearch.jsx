@@ -1,8 +1,10 @@
+import React from 'react';
+
 // CSS
 import styles from '../css/addressSearch.module.css';
 
 // Hooks
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // Library
 import DaumPostcodeEmbed from 'react-daum-postcode';
@@ -15,7 +17,11 @@ import {
 	ModalCloseButton,
 } from '@chakra-ui/react';
 
-const AddressSearch = ({ address, setFormData, onUpdateUserInfo }) => {
+const AddressSearch = React.memo(function AddressSearch({
+	address,
+	setFormData,
+	onUpdateUserInfo,
+}) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [postalCode, setPostalCode] = useState('');
 
@@ -83,6 +89,6 @@ const AddressSearch = ({ address, setFormData, onUpdateUserInfo }) => {
 			</Modal>
 		</>
 	);
-};
+});
 
 export default AddressSearch;

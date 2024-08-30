@@ -4,8 +4,11 @@ import styles from './index.module.css';
 // Layout
 import ProductLayout from '@/layouts/ProductLayout';
 
-// Components
-import ProductItem from '@/components/product/ProductItem';
+// Dynamic Component
+import dynamic from 'next/dynamic';
+const DynamicProductItem = dynamic(
+	() => import('@/components/product/ProductItem'),
+);
 
 // Hooks
 import { useEffect, useState } from 'react';
@@ -37,7 +40,7 @@ const SoundtrackPage = data => {
 			<ul className={styles.musicList}>
 				{music.map((item, index) => (
 					<li key={index}>
-						<ProductItem product={item} />
+						<DynamicProductItem product={item} />
 					</li>
 				))}
 			</ul>

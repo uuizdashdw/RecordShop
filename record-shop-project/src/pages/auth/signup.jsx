@@ -3,8 +3,13 @@ import styles from './signup.module.css';
 
 // Components
 import AuthLayout from '@/layouts/AuthLayout';
-import AddressSearch from '@/components/address/AddressSearch';
 import Loading from '@/components/common/Loading';
+
+// Dynamic Component
+import dynamic from 'next/dynamic';
+const DynamicAddressSearch = dynamic(
+	() => import('@/components/address/AddressSearch'),
+);
 
 // Hooks
 import { useState, useEffect, useRef } from 'react';
@@ -352,7 +357,7 @@ const SignUpPage = () => {
 								<label htmlFor="userAddress" className={styles.label}>
 									주소
 								</label>
-								<AddressSearch
+								<DynamicAddressSearch
 									address={formData.userAddress}
 									setFormData={setFormData}
 									onUpdateUserInfo={onUpdateUserInfo}

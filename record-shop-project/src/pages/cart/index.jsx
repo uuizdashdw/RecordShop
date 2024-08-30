@@ -8,9 +8,6 @@ import Image from 'next/image';
 // CSS
 import styles from './index.module.css';
 
-// Router
-import { useRouter } from 'next/router';
-
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -52,8 +49,6 @@ const CartPage = () => {
 			changeCartItemQuantity({ name: item.name, quantity: newQuantity }),
 		);
 	};
-
-	const router = useRouter();
 
 	// Remove Item In Cart
 	const removeCartItem = item => {

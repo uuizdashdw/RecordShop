@@ -2,25 +2,36 @@
 import { fetchAllProducts } from '@/api';
 
 // Hooks
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // Components
 import MainLayout from '@/layouts/MainLayout';
-import ProductItem from '@/components/product/ProductItem';
+
+// Swipers
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { updateProducts } from '@/store';
 
-// Swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/swiper-bundle.css';
-
+// CSS
 import styles from './index.module.css';
 
-// Link
-import Link from 'next/link';
+// Dynamic Import
+import dynamic from 'next/dynamic';
+// ProductItem
+const DynamicProductItem = dynamic(
+	() => import('@/components/product/ProductItem'),
+);
+
+// Dynamic Head Module
+const DynamicHeadModule = dynamic(
+	() => import('@/components/common/HeadModule'),
+);
+
+import { useRouter } from 'next/router';
 
 // 전체 상품 서버 사이드 렌더링
 export async function getServerSideProps() {
@@ -42,9 +53,16 @@ const MainPage = ({ data }) => {
 		dispatch(updateProducts(productList));
 	};
 
-	useEffect(() => {
-		dispatchProduct();
-	}, [data]);
+	const [metaData, setMetaData] = useState({
+		title: '',
+		description: '',
+		keywords: '',
+		imageUrl: '',
+		url: '',
+	});
+
+	const [nowPath, setNowPath] = useState('');
+	const router = useRouter();
 
 	const getGenreTitle = genre => {
 		switch (genre) {
@@ -64,6 +82,18 @@ const MainPage = ({ data }) => {
 				return genre.charAt(0).toUpperCase() + genre.slice(1);
 		}
 	};
+
+	useEffect(() => {
+		dispatchProduct();
+		// setMetaData({
+		// 	title: 'Wiz Records',
+		// 	description: '레코드 전문 판매',
+		// 	keywords: '레코드, LP, Music',
+		// 	imageUrl:
+		// 		'https://img.freepik.com/premium-vector/vector-illustration-vinyl-record-black_786040-379.jpg?w=996',
+		// 	url: '',
+		// });
+	}, [data]);
 
 	return (
 		<>
@@ -85,7 +115,7 @@ const MainPage = ({ data }) => {
 										{songs.map((item, index) => (
 											<SwiperSlide key={index}>
 												<div>
-													<ProductItem product={item} />
+													<DynamicProductItem product={item} />
 												</div>
 											</SwiperSlide>
 										))}

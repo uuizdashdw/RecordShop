@@ -50,7 +50,7 @@ const fetchNuDiscoModernFunkProducts = async () => {
 };
 
 // 소울, 펑크, 디스코 상품 조회 함수
-const fetchSoulFUnkDiscoProducts = async () => {
+const fetchSoulFunkDiscoProducts = async () => {
 	const { data } = await instance.get('/products');
 	return data['soul&funk&disco'];
 };
@@ -95,7 +95,7 @@ export {
 	fetchBeatsAndInstrumentalProdcuts,
 	fetchJazzProducts,
 	fetchNuDiscoModernFunkProducts,
-	fetchSoulFUnkDiscoProducts,
+	fetchSoulFunkDiscoProducts,
 	fetchRockPopProducts,
 	fetchSoundtrackProducts,
 	fetchUserSignUp,

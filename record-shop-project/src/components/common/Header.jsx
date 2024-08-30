@@ -6,6 +6,9 @@ import styles from './header.module.css';
 // Hooks
 import { useEffect } from 'react';
 
+// Component
+import Logo from './Logo';
+
 // Link
 import Link from 'next/link';
 
@@ -55,7 +58,9 @@ const Header = React.memo(function Header({ user, setUser }) {
 	return (
 		<header className={styles.header}>
 			<div className={styles.inner}>
-				<Link className={styles.logo} href={'/'}></Link>
+				<Link href={'/'}>
+					<Logo />
+				</Link>
 				<ul className={styles.gnb}>
 					{gnbItem.map((item, index) => (
 						<li key={index}>

@@ -18,11 +18,21 @@ import { useEffect, useState } from 'react';
 // UI
 import { ChakraProvider } from '@chakra-ui/react';
 
+// Router
+import { useRouter } from 'next/router';
+
+// Dynamic Head Module
+import dynamic from 'next/dynamic';
+const DynamicHeadModule = dynamic(
+	() => import('@/components/common/HeadModule'),
+);
+
 export default function App({ Component, pageProps }) {
 	const getLayout =
 		Component.getLayout || (page => <MainLayout>{page}</MainLayout>);
 
 	const [user, setUser] = useState(null);
+	const router = useRouter();
 
 	useEffect(() => {
 		if (!localStorage.getItem('carts')) {
@@ -34,6 +44,7 @@ export default function App({ Component, pageProps }) {
 	}, []);
 	return (
 		<>
+			<DynamicHeadModule nowPath={router.pathname} />
 			<Provider store={store}>
 				<Header user={user} setUser={setUser} />
 				<ChakraProvider>

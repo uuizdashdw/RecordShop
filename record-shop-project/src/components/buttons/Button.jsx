@@ -54,8 +54,8 @@ const Button = ({ product }) => {
 					<button
 						className={
 							!product.inventory
-								? `${styles.buy_button_disabled}`
-								: `${styles.buy_button}`
+								? `${styles.cart_button_disabled}`
+								: `${styles.cart_button}`
 						}
 						disabled={!product.inventory}
 						onClick={() => putInCartHandler(product)}

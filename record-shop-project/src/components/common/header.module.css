@@ -45,12 +45,6 @@
     font-size: 14px;
 }
 
-.logo {
-    width: 200px;
-    height: 90px;
-    background-color: black;
-}
-
 .signout_button {
     font-size: 14px;
 }
@@ -58,11 +52,5 @@
 @media screen and (max-width: 1440px){
     .header {
         width: 100%;
-        
-    }
-
-    .logo {
-        width: 150px;
-        height: 70px;
     }
 }

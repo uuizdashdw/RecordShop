@@ -21,10 +21,11 @@
 }
 
 .cart_button {
-    padding: 30px 0px;
+    padding: 22px 0px;
     border: 1px solid #222222;
     background-color: transparent;
     width: 100%;
+    font-size: 15px;
 }
 
 .buy_button_disabled {
@@ -42,4 +43,5 @@
     background-color: transparent;
     opacity: 0.4;
     width: 100%;
+    font-size: 15px;
 }

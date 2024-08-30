@@ -4,17 +4,20 @@ import styles from './index.module.css';
 // Layout
 import ProductLayout from '@/layouts/ProductLayout';
 
-// Components
-import ProductItem from '@/components/product/ProductItem';
+// Dynamic Component
+import dynamic from 'next/dynamic';
+const DynamicProductItem = dynamic(
+	() => import('@/components/product/ProductItem'),
+);
 
 // Hooks
 import { useEffect, useState } from 'react';
 
 // API
-import { fetchSoulFUnkDiscoProducts } from '@/api';
+import { fetchSoulFunkDiscoProducts } from '@/api';
 
 export async function getServerSideProps() {
-	const data = await fetchSoulFUnkDiscoProducts();
+	const data = await fetchSoulFunkDiscoProducts();
 
 	return {
 		props: {
@@ -38,7 +41,7 @@ const SoulFunkDiscoPage = data => {
 			<ul className={styles.musicList}>
 				{music.map((item, index) => (
 					<li key={index}>
-						<ProductItem product={item} />
+						<DynamicProductItem product={item} />
 					</li>
 				))}
 			</ul>

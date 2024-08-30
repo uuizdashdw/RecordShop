@@ -1,8 +1,11 @@
 // Layout
 import ProductDetailLayout from '@/layouts/ProductDetailLayout';
 
-// Components
-import ProductDetailItem from '@/components/product/ProductDetailItem';
+// Dynamic Components
+import dynamic from 'next/dynamic';
+const DynamicProductDetailItem = dynamic(
+	() => import('@/components/product/ProductDetailItem'),
+);
 
 // API
 import { fetchProductDetails } from '@/api';
@@ -34,7 +37,7 @@ const ProductDetailPage = product => {
 		<ProductDetailLayout>
 			<main>
 				<section className={styles.section}>
-					<ProductDetailItem product={music} />
+					<DynamicProductDetailItem product={music} />
 				</section>
 			</main>
 		</ProductDetailLayout>
