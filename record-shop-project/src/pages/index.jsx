@@ -1,8 +1,8 @@
 // API
-import { fetchAllProducts } from '@/api';
+import { fetchAllProducts } from '@/pages/api';
 
 // Hooks
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 // Components
 import MainLayout from '@/layouts/MainLayout';
@@ -26,13 +26,6 @@ const DynamicProductItem = dynamic(
 	() => import('@/components/product/ProductItem'),
 );
 
-// Dynamic Head Module
-const DynamicHeadModule = dynamic(
-	() => import('@/components/common/HeadModule'),
-);
-
-import { useRouter } from 'next/router';
-
 // 전체 상품 서버 사이드 렌더링
 export async function getServerSideProps() {
 	const { data } = await fetchAllProducts();
@@ -52,17 +45,6 @@ const MainPage = ({ data }) => {
 		const productList = Object.entries(data);
 		dispatch(updateProducts(productList));
 	};
-
-	const [metaData, setMetaData] = useState({
-		title: '',
-		description: '',
-		keywords: '',
-		imageUrl: '',
-		url: '',
-	});
-
-	const [nowPath, setNowPath] = useState('');
-	const router = useRouter();
 
 	const getGenreTitle = genre => {
 		switch (genre) {
@@ -85,14 +67,6 @@ const MainPage = ({ data }) => {
 
 	useEffect(() => {
 		dispatchProduct();
-		// setMetaData({
-		// 	title: 'Wiz Records',
-		// 	description: '레코드 전문 판매',
-		// 	keywords: '레코드, LP, Music',
-		// 	imageUrl:
-		// 		'https://img.freepik.com/premium-vector/vector-illustration-vinyl-record-black_786040-379.jpg?w=996',
-		// 	url: '',
-		// });
 	}, [data]);
 
 	return (

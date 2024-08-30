@@ -22,7 +22,7 @@ import { singup } from '../../store';
 import { useRouter } from 'next/router';
 
 // API
-import { fetchUserSignUp } from '@/api';
+import { fetchUserSignUp } from '@/pages/api';
 
 const SignUpPage = () => {
 	const dispatch = useDispatch();

@@ -14,7 +14,7 @@ const DynamicProductItem = dynamic(
 import { useEffect, useState } from 'react';
 
 // API
-import { fetchNuDiscoModernFunkProducts } from '@/api';
+import { fetchNuDiscoModernFunkProducts } from '@/pages/api';
 
 export async function getServerSideProps() {
 	const data = await fetchNuDiscoModernFunkProducts();

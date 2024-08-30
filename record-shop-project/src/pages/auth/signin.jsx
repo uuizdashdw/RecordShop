@@ -98,10 +98,6 @@ const SignInPage = ({ setUser }) => {
 		}
 	};
 
-	useEffect(() => {
-		console.log('## 로그인 정보 ==> ', formData);
-	}, [formData]);
-
 	if (isLoading) {
 		return (
 			<AuthLayout>

@@ -14,7 +14,7 @@ const DynamicProductItem = dynamic(
 import { useEffect, useState } from 'react';
 
 // API
-import { fetchSoundtrackProducts } from '@/api';
+import { fetchSoundtrackProducts } from '@/pages/api';
 
 export async function getServerSideProps() {
 	const data = await fetchSoundtrackProducts();

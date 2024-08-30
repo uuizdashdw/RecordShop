@@ -14,7 +14,7 @@ const DynamicProductItem = dynamic(
 import { useEffect, useState } from 'react';
 
 // API
-import { fetchRockPopProducts } from '@/api';
+import { fetchRockPopProducts } from '@/pages/api';
 
 export async function getServerSideProps() {
 	const data = await fetchRockPopProducts();

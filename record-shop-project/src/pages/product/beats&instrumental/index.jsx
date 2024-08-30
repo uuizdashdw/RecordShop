@@ -11,13 +11,10 @@ const DynamicProductItem = dynamic(
 );
 
 // API
-import { fetchBeatsAndInstrumentalProdcuts } from '@/api';
+import { fetchBeatsAndInstrumentalProdcuts } from '@/pages/api';
 
 // Hooks
 import { useEffect, useState } from 'react';
-
-// Dynamic HeadModule
-const DynamicHeadModule = dynamic(() => import('next/head'));
 
 export async function getServerSideProps() {
 	const data = await fetchBeatsAndInstrumentalProdcuts();
@@ -39,7 +36,6 @@ const BeatsAndInstrumentalPage = data => {
 
 	return (
 		<>
-			{/* <DynamicHeadModule /> */}
 			<ProductLayout>
 				<h3 className={styles.title}>Beats / Instrumental</h3>
 

@@ -11,7 +11,7 @@ const DynamicProductItem = dynamic(
 );
 
 // API
-import { fetchHiphopRnbProducts } from '@/api';
+import { fetchHiphopRnbProducts } from '@/pages/api';
 
 // Hooks
 import { useEffect, useState } from 'react';

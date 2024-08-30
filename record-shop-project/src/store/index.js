@@ -102,7 +102,6 @@ const userInfoSlide = createSlice({
 			let userArray = [];
 
 			if (users) {
-				console.log('### 로컬에 userInfo 있음 ###');
 				userArray = JSON.parse(users);
 				const nextId = userArray[userArray.length - 1].id;
 				user = {
@@ -110,7 +109,6 @@ const userInfoSlide = createSlice({
 					id: Number(nextId) + 1,
 				};
 			} else {
-				console.log('### 로컬에 userInfo 없음 ###');
 				state.userId += 1;
 				user = {
 					...action.payload,

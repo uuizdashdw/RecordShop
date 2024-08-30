@@ -102,8 +102,6 @@ const CartPage = () => {
 	};
 
 	useEffect(() => {
-		console.log('### carts ===> ', cartItems);
-
 		// 총 물건 값
 		const totalPrice = totalAmountHandle();
 		setTotalAmout(totalPrice);

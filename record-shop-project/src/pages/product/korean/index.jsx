@@ -11,18 +11,10 @@ const DynamicProductItem = dynamic(
 import { useEffect, useState } from 'react';
 
 // API
-import { fetchKoreanProducts } from '@/api';
+import { fetchKoreanProducts } from '@/pages/api';
 
 // CSS
 import styles from './index.module.css';
-
-// Dynamic Head Module
-const DynamicHeadModule = dynamic(
-	() => import('@/components/common/HeadModule'),
-);
-
-// Router
-import { useRouter } from 'next/router';
 
 export async function getServerSideProps() {
 	const data = await fetchKoreanProducts();
@@ -37,19 +29,14 @@ export async function getServerSideProps() {
 const KoreanPage = data => {
 	const [music, setMusic] = useState([]);
 
-	const [nowPath, setNowPath] = useState('');
-	const router = useRouter();
-
 	useEffect(() => {
 		const korean = data.children.props.data;
 		console.log('### product LIST', korean);
 		setMusic(korean);
-		// setNowPath(router.pathname);
 	}, [data]);
 
 	return (
 		<>
-			{/* <DynamicHeadModule nowPath={nowPath} /> */}
 			<ProductLayout>
 				<h3 className={styles.title}>Korean</h3>
 

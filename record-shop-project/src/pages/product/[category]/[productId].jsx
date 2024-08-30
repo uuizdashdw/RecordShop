@@ -8,7 +8,7 @@ const DynamicProductDetailItem = dynamic(
 );
 
 // API
-import { fetchProductDetails } from '@/api';
+import { fetchProductDetails } from '@/pages/api';
 
 // Hooks
 import { useEffect, useState } from 'react';

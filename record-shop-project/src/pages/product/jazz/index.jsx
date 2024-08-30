@@ -11,7 +11,7 @@ const DynamicProductItem = dynamic(
 );
 
 // API
-import { fetchJazzProducts } from '@/api';
+import { fetchJazzProducts } from '@/pages/api';
 
 // Hooks
 import { useEffect, useState } from 'react';
