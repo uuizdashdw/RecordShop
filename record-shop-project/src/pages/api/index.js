@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-	baseURL: 'http://localhost:4000',
+	baseURL: 'http://localhost:3000/api/data',
 });
 
 // 전체 상품 조회 함수
