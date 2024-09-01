@@ -1,12 +1,13 @@
 import axios from 'axios';
 
 const instance = axios.create({
-	baseURL: 'http://localhost:3000/api/data',
+	baseURL: 'http://localhost:3000/api',
 });
 
 // 전체 상품 조회 함수
-const fetchAllProducts = () => {
-	return instance.get('/products');
+const fetchAllProducts = async () => {
+	const { data } = await instance.get('/products');
+	return data;
 };
 
 // 각 상품 상세 페이지 조회 함수

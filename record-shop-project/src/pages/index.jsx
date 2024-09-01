@@ -1,3 +1,7 @@
+// Firebase
+import { db } from '../../lib/firebase';
+import { collection, getDocs } from 'firebase/firestore';
+
 // API
 import { fetchAllProducts } from '@/pages/api';
 
@@ -28,22 +32,33 @@ const DynamicProductItem = dynamic(
 
 // 전체 상품 서버 사이드 렌더링
 export async function getServerSideProps() {
-	const { data } = await fetchAllProducts();
+	let products = [];
+	try {
+		const productsCollection = collection(db, 'products');
+		const productsSnapshot = await getDocs(productsCollection);
+		products = productsSnapshot.docs.map(doc => ({
+			id: doc.id,
+			...doc.data(),
+		}));
+	} catch (reason) {
+		console.error('데이터를 가져오는 데 실패했습니다.', reason);
+	}
+
+	if (!products) products = [];
 
 	return {
 		props: {
-			data,
+			products,
 		},
 	};
 }
 
-const MainPage = ({ data }) => {
+const MainPage = ({ products }) => {
 	const dispatch = useDispatch();
 	const dispatchList = useSelector(state => state.products.products);
 
 	const dispatchProduct = () => {
-		const productList = Object.entries(data);
-		dispatch(updateProducts(productList));
+		dispatch(updateProducts([...products]));
 	};
 
 	const getGenreTitle = genre => {
@@ -67,16 +82,18 @@ const MainPage = ({ data }) => {
 
 	useEffect(() => {
 		dispatchProduct();
-	}, [data]);
+
+		// console.log('### products ==> ', test);
+	}, [products]);
 
 	return (
 		<>
 			<MainLayout>
 				<main>
 					<ul>
-						{dispatchList.map(([genre, songs], index) => (
+						{dispatchList.map(({ id, products }, index) => (
 							<li key={index} className={styles.genreList}>
-								<h3 className={styles.title}>{getGenreTitle(genre)}</h3>
+								<h3 className={styles.title}>{getGenreTitle(id)}</h3>
 
 								<Swiper
 									modules={[Navigation, Pagination]}
@@ -86,7 +103,7 @@ const MainPage = ({ data }) => {
 									pagination={{ clickable: true }}
 								>
 									<div className={styles.productList}>
-										{songs.map((item, index) => (
+										{products.map((item, index) => (
 											<SwiperSlide key={index}>
 												<div>
 													<DynamicProductItem product={item} />

@@ -1,5 +1,5 @@
 {
-  "products": {
+  "productList": {
     "korean": [
       {
         "id": 0,
@@ -261,7 +261,7 @@
         "company": "Beatball",
         "usedType": "New",
         "savings": "3%",
-        "deliveryFee": "3000원",
+        "deliveryFee": "3,000원",
         "quantityTerms": false,
         "inventory": 10,
         "aboutItem": {
@@ -305,7 +305,7 @@
         "company": "Beatball",
         "usedType": "New",
         "savings": "3%",
-        "deliveryFee": "3000원",
+        "deliveryFee": "3,000원",
         "quantityTerms": false,
         "inventory": 10,
         "aboutItem": {
@@ -326,7 +326,7 @@
                 "시간의 됐네 (It's Time)",
                 "사랑의 기도 (Prayer of Love)",
                 "짝 (Partner)",
-                "내 마음 너무도 몰라 (경음악) (Do't Know a Thing - instrumental)"
+                "내 마음 너무도 몰라 (경음악) (Don't Know a Thing - instrumental)"
               ],
               "Disc 1 Side B": [
                 "거울 (Mirror)",
@@ -354,7 +354,7 @@
         "company": "Beatball",
         "usedType": "New",
         "savings": "3%",
-        "deliveryFee": "3000원",
+        "deliveryFee": "3,000원",
         "quantityTerms": false,
         "inventory": 10,
         "aboutItem": {
@@ -403,7 +403,7 @@
         "company": "Beatball",
         "usedType": "New",
         "savings": "3%",
-        "deliveryFee": "3000원",
+        "deliveryFee": "3,000원",
         "quantityTerms": false,
         "inventory": 10,
         "aboutItem": {
@@ -448,7 +448,7 @@
         "company": "",
         "usedType": "New",
         "savings": "3%",
-        "deliveryFee": "3000원",
+        "deliveryFee": "3,000원",
         "quantityTerms": false,
         "inventory": 10,
         "aboutItem": {
@@ -555,7 +555,7 @@
                 "Love Jones"
               ],
               "Disc 1 Side B": [
-                "Love (feat. Pharoahe Monch",
+                "Love (feat. Pharoahe Monch)",
                 "Baby (feat. Madilb & Guilty Simpson)",
                 "So Far To Go (feat. Common & D 'Angelo)"
               ],
@@ -819,7 +819,7 @@
               "Disc 2 Side A": [
                 "Keys (2:33)",
                 "We Don't Go Out To Nightclubs Anymore/Candlelight Girl (5:00)",
-                " We're Not Even (4:15)"
+                "We're Not Even (4:15)"
               ],
               "Disc 2 Side B": [
                 "Homies (6:29)",
@@ -1226,7 +1226,7 @@
               ],
               "Disc 1 Side B": [
                 "Final Frontier (feat. Blueprint)",
-                "Ghostwirter",
+                "Ghostwriter",
                 "Cut Out To Fl",
                 "Shot In The Dark"
               ],
@@ -1343,7 +1343,7 @@
         "price": "33,000",
         "priceOff": false,
         "imageUrl": "https://contents.sixshop.com/thumbnails/uploadedFiles/103345/product/image_1663486715676_1000.jpeg",
-        "productType": "LP",
+        "productType": "2LP",
         "pressingYear": "2021",
         "company": "Jakarta",
         "usedType": "New",
@@ -1360,7 +1360,7 @@
             "arrivalDate": "",
             "maximumPurchaseQuantity": "",
             "price": "33,000",
-            "spec": "LP",
+            "spec": "2LP",
             "color": "Black",
             "trackList": {
               "Disc 1 Side A": [
@@ -2433,7 +2433,7 @@
         "inventory": 10,
         "aboutItem": {
           "title": "확인 - 칸",
-          "subTitle": "White Vinyl",
+          "subTitle": "",
           "text": "",
           "quntityInfo": {
             "period": "",
