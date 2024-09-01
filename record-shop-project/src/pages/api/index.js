@@ -1,3 +1,7 @@
+// Firebase
+import { db } from '../../../lib/firebase';
+import { collection, getDocs } from 'firebase/firestore';
+
 import axios from 'axios';
 
 const instance = axios.create({
@@ -6,8 +10,20 @@ const instance = axios.create({
 
 // 전체 상품 조회 함수
 const fetchAllProducts = async () => {
-	const { data } = await instance.get('/products');
-	return data;
+	let products = [];
+	try {
+		const productsCollection = collection(db, 'products');
+		const productsSnapshot = await getDocs(productsCollection);
+		products = productsSnapshot.docs.map(doc => ({
+			id: doc.id,
+			...doc.data(),
+		}));
+	} catch (reason) {
+		console.error('데이터를 가져오는 데 실패했습니다.', reason);
+	}
+
+	if (!products) products = [];
+	return products;
 };
 
 // 각 상품 상세 페이지 조회 함수

@@ -1,7 +1,3 @@
-// Firebase
-import { db } from '../../lib/firebase';
-import { collection, getDocs } from 'firebase/firestore';
-
 // API
 import { fetchAllProducts } from '@/pages/api';
 
@@ -32,19 +28,7 @@ const DynamicProductItem = dynamic(
 
 // 전체 상품 서버 사이드 렌더링
 export async function getServerSideProps() {
-	let products = [];
-	try {
-		const productsCollection = collection(db, 'products');
-		const productsSnapshot = await getDocs(productsCollection);
-		products = productsSnapshot.docs.map(doc => ({
-			id: doc.id,
-			...doc.data(),
-		}));
-	} catch (reason) {
-		console.error('데이터를 가져오는 데 실패했습니다.', reason);
-	}
-
-	if (!products) products = [];
+	const products = await fetchAllProducts();
 
 	return {
 		props: {
@@ -82,8 +66,6 @@ const MainPage = ({ products }) => {
 
 	useEffect(() => {
 		dispatchProduct();
-
-		// console.log('### products ==> ', test);
 	}, [products]);
 
 	return (
