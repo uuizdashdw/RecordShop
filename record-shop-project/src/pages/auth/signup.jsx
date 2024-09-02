@@ -28,6 +28,7 @@ const SignUpPage = () => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const [formData, setFormData] = useState({
+		id: 1,
 		userAccount: '',
 		userPassword: '',
 		userName: '',
@@ -36,6 +37,12 @@ const SignUpPage = () => {
 		userPhoneNumber: '',
 		userAddress: '',
 		userDetailAddress: '',
+		createdDate: new Date().toLocaleDateString('kr-KR', {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric',
+		}),
 	});
 
 	const userId = useSelector(state => state.userInfo.userId);
@@ -158,7 +165,7 @@ const SignUpPage = () => {
 	useEffect(() => {
 		console.log('### formData ===> ', formData);
 		const allFieldsFilled = Object.values(formData).every(
-			data => data.trim() !== '',
+			data => data.toString().trim() !== '',
 		);
 		console.log('### allFieldsFilled ==> ', allFieldsFilled);
 
@@ -172,7 +179,7 @@ const SignUpPage = () => {
 		const emptyField = [];
 
 		for (const key in formData) {
-			if (formData[key].trim() === '') emptyField.push(key);
+			if (formData[key].toString().trim() === '') emptyField.push(key);
 		}
 
 		// 필드 검증
@@ -191,8 +198,9 @@ const SignUpPage = () => {
 			id: targetId + 1,
 		});
 		dispatch(singup(formData));
-		alert('회원가입을 축하드립니다');
+		alert(`${formData.userName} 님 회원가입을 축하드립니다!`);
 		setFormData({
+			id: targetId + 1,
 			userAccount: '',
 			userPassword: '',
 			userName: '',
@@ -201,6 +209,7 @@ const SignUpPage = () => {
 			userPhoneNumber: '',
 			userAddress: '',
 			userDetailAddress: '',
+			createdDate: '',
 		});
 		router.replace('/auth/signin');
 	};

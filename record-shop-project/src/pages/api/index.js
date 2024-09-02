@@ -7,6 +7,7 @@ import {
 	doc,
 	query,
 	where,
+	addDoc,
 } from 'firebase/firestore';
 
 import axios from 'axios';
@@ -118,8 +119,12 @@ const fetchSoundtrackProducts = async () => {
 };
 
 // 회원가입 함수
-const fetchUserSignUp = userData => {
-	return instance.post('/users', userData);
+const fetchUserSignUp = async userData => {
+	try {
+		const docRef = await addDoc(collection(db, 'users'), userData);
+	} catch (reason) {
+		console.error('회원가입이 실패하였습니다.', reason);
+	}
 };
 
 // 전체 회원 정보 가져오기 함수
