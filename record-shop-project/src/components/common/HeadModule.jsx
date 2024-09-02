@@ -8,7 +8,7 @@ const HeadModule = React.memo(function HeadModule({ nowPath }) {
 		keywords: '',
 		imageUrl:
 			'https://img.freepik.com/premium-vector/vector-illustration-vinyl-record-black_786040-379.jpg?w=996',
-		url: '',
+		url: 'wizrecords-uuizdashdws-projects.vercel.app',
 	});
 
 	const getMetaDataConfig = useMemo(() => {
@@ -73,6 +73,24 @@ const HeadModule = React.memo(function HeadModule({ nowPath }) {
 					description: 'Wiz Records | 사운드트랙 레코드 모음',
 					keywords:
 						'사운드트랙 레코드, 사운드트랙 LP, OST, OST LP, OST Records, Soundtrack LP, Soundtrack Records',
+				};
+			case '/auth/signin':
+				return {
+					title: 'Wiz Records | 로그인',
+					description: 'Wiz Records | 로그인',
+					keywords: 'Wiz Records | 로그인',
+				};
+			case 'auth/signup':
+				return {
+					title: 'Wiz Records | 회원가입',
+					description: 'Wiz Records | 회원가입',
+					keywords: 'Wiz Records | 회원가입',
+				};
+			default:
+				return {
+					title: 'Wiz Records',
+					description: '레코드 전문 판매',
+					keywords: '레코드, LP, Music',
 				};
 		}
 	}, [nowPath]);
