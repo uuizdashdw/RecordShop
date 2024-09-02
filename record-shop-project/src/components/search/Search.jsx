@@ -2,7 +2,7 @@
 import styles from './search.module.css';
 
 // Hooks
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // Router
 import { useRouter } from 'next/router';

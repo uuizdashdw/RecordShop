@@ -6,7 +6,7 @@ import AuthLayout from '@/layouts/AuthLayout';
 import Loading from '@/components/common/Loading';
 
 // Hooks
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // Router
 import { useRouter } from 'next/router';
@@ -24,6 +24,8 @@ const SignInPage = ({ setUser }) => {
 	const [isRemember, setIsRemember] = useState(false);
 
 	const [isLoading, setIsLoading] = useState(true);
+
+	const accountRef = useRef(null);
 
 	const router = useRouter();
 
@@ -57,6 +59,7 @@ const SignInPage = ({ setUser }) => {
 		);
 	};
 
+	// 첫 마운트
 	useEffect(() => {
 		const rememberInfo = JSON.parse(localStorage.getItem('remember')) || {
 			remember: false,
@@ -68,6 +71,11 @@ const SignInPage = ({ setUser }) => {
 			account: rememberInfo.userAccount,
 		}));
 	}, []);
+
+	// 아이디 focusing
+	useEffect(() => {
+		if (accountRef.current) accountRef.current.focus();
+	}, [formData.account]);
 
 	// 로그인 로직
 	const onSignIn = async event => {
@@ -126,6 +134,7 @@ const SignInPage = ({ setUser }) => {
 							<input
 								type="text"
 								name="account"
+								ref={accountRef}
 								value={formData.account}
 								className={styles.input}
 								onChange={event => onChangeFormData(event)}
