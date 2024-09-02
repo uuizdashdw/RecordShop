@@ -41,6 +41,11 @@ export default function App({ Component, pageProps }) {
 
 	const [user, setUser] = useState(null);
 
+	useEffect(() => {
+		const userInfo = JSON.parse(localStorage.getItem('user'));
+		setUser(userInfo);
+		console.log('마운트 됐습니다');
+	}, []);
 	return (
 		<>
 			<DynamicHeadModule nowPath={router.pathname} />
