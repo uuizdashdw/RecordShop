@@ -15,7 +15,7 @@ const DynamicAddressSearch = dynamic(
 import { useState, useEffect, useRef } from 'react';
 
 // Redux
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { singup } from '../../store';
 
 // Router
@@ -45,10 +45,6 @@ const SignUpPage = () => {
 		}),
 	});
 
-	const userId = useSelector(state => state.userInfo.userId);
-
-	const [targetId, setTargetId] = useState(0);
-
 	const [isLoading, setIsLoading] = useState(true);
 
 	// 페이지 진입 유효성 검사
@@ -57,14 +53,6 @@ const SignUpPage = () => {
 
 		user ? router.replace('/') : setIsLoading(false);
 	}, [router]);
-
-	useEffect(() => {
-		const userList = JSON.parse(localStorage.getItem('userInfo')) || [];
-		if (Array.isArray(userList) && userList.length > 0) {
-			const lastId = userList[userList.length - 1].id;
-			setTargetId(lastId);
-		}
-	}, [userId]);
 
 	// 비밀번호 유효성
 	const [passwordError, setPasswordError] = useState(false);
@@ -161,7 +149,7 @@ const SignUpPage = () => {
 		}
 	};
 
-	// Form Data Check & Sign-Up Button Disabled State Change
+	//  Form Data 확인 및 회원가입 버튼 활성화 변경
 	useEffect(() => {
 		console.log('### formData ===> ', formData);
 		const allFieldsFilled = Object.values(formData).every(
@@ -173,7 +161,7 @@ const SignUpPage = () => {
 	}, [formData]);
 
 	// Submit Logic
-	const onSubmitToSignUp = e => {
+	const onSubmitToSignUp = async e => {
 		e.preventDefault();
 
 		const emptyField = [];
@@ -193,25 +181,26 @@ const SignUpPage = () => {
 			return;
 		}
 
-		fetchUserSignUp({
-			...formData,
-			id: targetId + 1,
-		});
-		dispatch(singup(formData));
-		alert(`${formData.userName} 님 회원가입을 축하드립니다!`);
-		setFormData({
-			id: targetId + 1,
-			userAccount: '',
-			userPassword: '',
-			userName: '',
-			userGender: '',
-			zonecode: '',
-			userPhoneNumber: '',
-			userAddress: '',
-			userDetailAddress: '',
-			createdDate: '',
-		});
-		router.replace('/auth/signin');
+		const resultAction = await dispatch(fetchUserSignUp(formData));
+
+		if (fetchUserSignUp.fulfilled.match(resultAction)) {
+			alert(`${formData.userName} 님 회원가입을 축하드립니다!`);
+			setFormData({
+				id: resultAction.payload.id,
+				userAccount: '',
+				userPassword: '',
+				userName: '',
+				userGender: '',
+				zonecode: '',
+				userPhoneNumber: '',
+				userAddress: '',
+				userDetailAddress: '',
+				createdDate: '',
+			});
+			router.replace('/auth/signin');
+		} else {
+			alert(`회원가입 실패 : ${resultAction.payload}`);
+		}
 	};
 
 	if (isLoading) {

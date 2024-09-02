@@ -11,10 +11,6 @@ import { useState, useEffect } from 'react';
 // Router
 import { useRouter } from 'next/router';
 
-// Redux
-import { useDispatch } from 'react-redux';
-import { signin } from '@/store';
-
 // API
 import { fetchUserLogin } from '../api';
 
@@ -27,10 +23,9 @@ const SignInPage = ({ setUser }) => {
 	// 아이디 기억하기
 	const [isRemember, setIsRemember] = useState(false);
 
-	const router = useRouter();
-	const dispatch = useDispatch();
-
 	const [isLoading, setIsLoading] = useState(true);
+
+	const router = useRouter();
 
 	// 페이지 진입 유효성 검사
 	useEffect(() => {
@@ -85,7 +80,6 @@ const SignInPage = ({ setUser }) => {
 
 			if (userInfo) {
 				isCheckAccountRemember(isRemember, account);
-				dispatch(signin(userInfo));
 				localStorage.setItem('user', JSON.stringify(userInfo));
 				setUser(JSON.parse(localStorage.getItem('user')));
 				alert(`${userInfo.userName} 님 환영합니다!`);

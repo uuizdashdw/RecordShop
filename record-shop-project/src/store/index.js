@@ -1,4 +1,7 @@
+import { fetchUserSignUp, incrementUserId } from '@/pages/api';
 import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../lib/firebase';
 
 const initialStateProduct = {
 	products: [],
@@ -95,45 +98,9 @@ const userInfoSlide = createSlice({
 			state.userInfo = action.payload;
 		},
 
-		singup(state, action) {
-			const users = localStorage.getItem('userInfo');
-
-			let user;
-			let userArray = [];
-
-			if (users) {
-				userArray = JSON.parse(users);
-				const nextId = userArray[userArray.length - 1].id;
-				user = {
-					...action.payload,
-					id: Number(nextId) + 1,
-				};
-			} else {
-				state.userId += 1;
-				user = {
-					...action.payload,
-					id: state.userId,
-				};
-			}
-
-			state.userInfo.push(user);
-			userArray.push(user);
-			localStorage.setItem('userInfo', JSON.stringify(userArray));
-		},
-
 		signout(state) {
 			state.userInfo = initialUserInfo.userInfo;
 			localStorage.removeItem('user');
-		},
-
-		signin(state, action) {
-			const user = JSON.parse(localStorage.getItem('userInfo'));
-			if (user.userName) {
-				state.userInfo = {
-					...action.payload,
-					userId: state.userId,
-				};
-			}
 		},
 
 		deleteId(state) {
@@ -150,6 +117,12 @@ const userInfoSlide = createSlice({
 
 			localStorage.removeItem('userInfo');
 		},
+	},
+
+	extraReducers: builder => {
+		builder.addCase(fetchUserSignUp.fulfilled, (state, action) => {
+			state.userInfo.push(action.payload);
+		});
 	},
 });
 
@@ -170,7 +143,6 @@ export const {
 	setInitialCarts,
 } = cartSlide.actions;
 
-export const { setUserInfo, singup, signout, signin, deleteId } =
-	userInfoSlide.actions;
+export const { setUserInfo, signout, deleteId } = userInfoSlide.actions;
 
 export default store;

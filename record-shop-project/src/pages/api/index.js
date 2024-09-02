@@ -13,6 +13,7 @@ import {
 
 import axios from 'axios';
 import { notFound } from 'next/navigation';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const instance = axios.create({
 	baseURL: 'http://localhost:3000/api',
@@ -119,14 +120,37 @@ const fetchSoundtrackProducts = async () => {
 	return await fetchCategoryIdProducts('soundtrack');
 };
 
-// 회원가입 함수
-const fetchUserSignUp = async userData => {
-	try {
-		const docRef = await addDoc(collection(db, 'users'), userData);
-	} catch (reason) {
-		console.error('회원가입이 실패하였습니다.', reason);
-	}
+// 회원가입 시 user ID 필드 값 증가 함수
+export const incrementUserId = async () => {
+	const userCollection = collection(db, 'users');
+	const userSnapshot = await getDocs(userCollection);
+
+	// 유저 ID 가 가장 높은 값 찾기
+	let maxUserId = 0;
+	userSnapshot.forEach(doc => {
+		const userData = doc.data();
+		if (Number(userData.id) > maxUserId) maxUserId = Number(userData.id);
+	});
+
+	return maxUserId + 1;
 };
+
+// 회원가입 함수
+const fetchUserSignUp = createAsyncThunk(
+	'user/signup',
+	async (userData, { rejectWithValue }) => {
+		try {
+			const userId = await incrementUserId();
+			const userWithId = { ...userData, id: userId };
+			await addDoc(collection(db, 'users'), userWithId);
+
+			return userWithId; // 가입된 유저 정보를 반환
+		} catch (error) {
+			console.error('회원가입이 실패하였습니다.', error);
+			return rejectWithValue(error.message); // 에러 메시지 반환
+		}
+	},
+);
 
 // 로그인 함수
 const fetchUserLogin = async (userAccount, password) => {
