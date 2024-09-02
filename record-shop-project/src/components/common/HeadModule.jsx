@@ -3,9 +3,9 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 const HeadModule = React.memo(function HeadModule({ nowPath }) {
 	const [metaData, setMetaData] = useState({
-		title: '',
-		description: '',
-		keywords: '',
+		title: 'Wiz Records',
+		description: '레코드 전문 판매',
+		keywords: '레코드, LP, Music, 엘피, Records',
 		imageUrl:
 			'https://img.freepik.com/premium-vector/vector-illustration-vinyl-record-black_786040-379.jpg?w=996',
 		url: 'wizrecords-uuizdashdws-projects.vercel.app',
