@@ -1,8 +1,16 @@
 // Firebase
 import { db } from '../../../lib/firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import {
+	collection,
+	getDocs,
+	getDoc,
+	doc,
+	query,
+	where,
+} from 'firebase/firestore';
 
 import axios from 'axios';
+import { notFound } from 'next/navigation';
 
 const instance = axios.create({
 	baseURL: 'http://localhost:3000/api',
@@ -28,12 +36,27 @@ const fetchAllProducts = async () => {
 
 // 각 상품 상세 페이지 조회 함수
 const fetchProductDetails = async params => {
-	const { data } = await instance.get('/products');
 	const { category, productId } = params;
 
-	const product = data[category].find(p => p.id === Number(productId));
+	try {
+		const productDocRef = doc(db, 'products', category);
+		const productDoc = await getDoc(productDocRef);
 
-	return product ? product : { notFound: true };
+		// 문서 존재 확인
+		if (!productDoc.exists()) {
+			console.log('카테고리 문서가 존재하지 않습니다.');
+		}
+
+		const data = productDoc.data();
+
+		const product = data.products.find(p => Number(p.id) === Number(productId));
+		console.log('### 상품 확인 ### ==> ', product);
+
+		return product ? product : { notFound: true };
+	} catch (reason) {
+		console.error('데이터를 가져오는 데 실패했습니다.', reason);
+		return { notFound: true };
+	}
 };
 
 // 한국 상품 조회 함수
