@@ -58,15 +58,6 @@ const SignInPage = ({ setUser }) => {
 		setIsRemember(isCheck);
 	}, []);
 
-	// 로그인 유저 아이디 찾기
-	const findUserIndex = userList => {
-		const { account, password } = formData;
-
-		return userList.findIndex(
-			user => user.userAccount === account && user.userPassword === password,
-		);
-	};
-
 	// 로그인 로직
 	const onSignIn = async event => {
 		if (event) event.preventDefault();
