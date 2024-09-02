@@ -83,8 +83,9 @@ const SignInPage = ({ setUser }) => {
 				isCheckAccountRemember(isRemember);
 				dispatch(signin(userInfo));
 				localStorage.setItem('user', JSON.stringify(userInfo));
+				setUser(JSON.parse(localStorage.getItem('user')));
 				alert(`${userInfo.userName} 님 환영합니다!`);
-				router.replace('/');
+				setTimeout(() => router.replace('/'), 0);
 			} else {
 				alert('아이디 혹은 비밀번호를 확인해주세요!');
 				setFormData({

@@ -31,17 +31,16 @@ export default function App({ Component, pageProps }) {
 	const getLayout =
 		Component.getLayout || (page => <MainLayout>{page}</MainLayout>);
 
-	const [user, setUser] = useState(null);
 	const router = useRouter();
 
 	useEffect(() => {
 		if (!localStorage.getItem('carts')) {
 			localStorage.setItem('carts', JSON.stringify([]));
 		}
-
-		const userData = JSON.parse(localStorage.getItem('user'));
-		if (userData) setUser(userData);
 	}, []);
+
+	const [user, setUser] = useState(null);
+
 	return (
 		<>
 			<DynamicHeadModule nowPath={router.pathname} />
