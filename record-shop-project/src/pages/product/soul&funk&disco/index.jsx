@@ -10,6 +10,9 @@ const DynamicProductItem = dynamic(
 	() => import('@/components/product/ProductItem'),
 );
 
+// Components
+import Search from '@/components/search/Search';
+
 // Hooks
 import { useEffect, useState } from 'react';
 
@@ -36,6 +39,7 @@ const SoulFunkDiscoPage = data => {
 
 	return (
 		<ProductLayout>
+			<Search />
 			<h3 className={styles.title}>Soul / Funk / Disco</h3>
 
 			<ul className={styles.musicList}>

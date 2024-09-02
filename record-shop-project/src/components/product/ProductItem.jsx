@@ -13,12 +13,13 @@ const ProductItem = ({ product }) => {
 					width={200}
 					height={200}
 					className={styles.img}
-				></Image>
+				/>
 				<p className={styles.title}>{product.name}</p>
 				<p className={styles.price}>
 					{product.priceOff
 						? product.aboutItem.quntityInfo.price
-						: product.price + '원'}
+						: (product.price ? product.price.toLocaleString() : '가격 없음') +
+							'원'}
 				</p>
 			</Link>
 		</>

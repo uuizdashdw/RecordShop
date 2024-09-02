@@ -15,6 +15,7 @@ import { fetchKoreanProducts } from '@/pages/api';
 
 // CSS
 import styles from './index.module.css';
+import Search from '@/components/search/Search';
 
 export async function getServerSideProps() {
 	const data = await fetchKoreanProducts();
@@ -38,6 +39,7 @@ const KoreanPage = data => {
 	return (
 		<>
 			<ProductLayout>
+				<Search />
 				<h3 className={styles.title}>Korean</h3>
 
 				<ul className={styles.musicList}>

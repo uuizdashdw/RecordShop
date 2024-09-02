@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 
 // Components
 import MainLayout from '@/layouts/MainLayout';
+import Search from '@/components/search/Search';
 
 // Swipers
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -72,6 +73,7 @@ const MainPage = ({ products }) => {
 		<>
 			<MainLayout>
 				<main>
+					<Search />
 					<ul>
 						{dispatchList.map(({ id, products }, index) => (
 							<li key={index} className={styles.genreList}>

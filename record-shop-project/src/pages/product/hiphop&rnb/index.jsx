@@ -10,6 +10,9 @@ const DynamicProductItem = dynamic(
 	() => import('@/components/product/ProductItem'),
 );
 
+// Components
+import Search from '@/components/search/Search';
+
 // API
 import { fetchHiphopRnbProducts } from '@/pages/api';
 
@@ -36,6 +39,7 @@ const HiphopRnbPage = data => {
 
 	return (
 		<ProductLayout>
+			<Search />
 			<h3 className={styles.title}>Hiphop / R&B</h3>
 			<ul className={styles.musicList}>
 				{music.map((item, index) => (

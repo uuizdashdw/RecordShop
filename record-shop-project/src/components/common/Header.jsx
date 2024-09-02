@@ -37,16 +37,11 @@ const Header = React.memo(function Header({ user, setUser }) {
 	];
 
 	useEffect(() => {
-		console.log('###  회원 정보  ===> ', userInfo);
 		const users = JSON.parse(localStorage.getItem('userInfo')) || [];
 		if (!userInfo && users.length) {
 			dispatch(setUserInfo(users));
 		}
 	}, [userInfo]);
-
-	useEffect(() => {
-		console.log('로그인 후 마운트');
-	}, []);
 
 	const isSignOut = () => {
 		dispatch(signout());

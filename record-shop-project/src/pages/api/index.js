@@ -11,8 +11,10 @@ import {
 	where,
 } from 'firebase/firestore';
 
+// Axios
 import axios from 'axios';
-import { notFound } from 'next/navigation';
+
+// Redux Toolkit 비동기화
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const instance = axios.create({
@@ -78,6 +80,35 @@ const fetchCategoryIdProducts = async categoryId => {
 	}
 
 	return categoryProducts;
+};
+
+// 상품 검색 함수
+const fetchProductsByName = async searchTerm => {
+	let filteredProducts = [];
+
+	try {
+		const productsCollection = collection(db, 'products');
+		const querySnapshot = await getDocs(productsCollection);
+
+		// 모든 문서에서 데이터 가져오기
+		querySnapshot.forEach(doc => {
+			const data = doc.data();
+			if (data.products) {
+				data.products.forEach(product => {
+					if (
+						product.name &&
+						product.name.toLowerCase().includes(searchTerm.toLowerCase())
+					) {
+						filteredProducts.push(product);
+					}
+				});
+			}
+		});
+	} catch (reason) {
+		console.error('데이터를 가져오는 데 실패했습니다.', reason);
+	}
+
+	return filteredProducts;
 };
 
 // 한국 상품 조회 함수
@@ -202,6 +233,7 @@ const fetchTargetUserInfo = async id => {
 export {
 	fetchAllProducts,
 	fetchProductDetails,
+	fetchProductsByName,
 	fetchKoreanProducts,
 	fetchHiphopRnbProducts,
 	fetchBeatsAndInstrumentalProdcuts,

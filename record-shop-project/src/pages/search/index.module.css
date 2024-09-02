@@ -1,0 +1,17 @@
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.product_list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.no_result {
+    text-align: center;
+    font-weight: bold;
+}

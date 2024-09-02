@@ -10,6 +10,9 @@ const DynamicProductItem = dynamic(
 	() => import('@/components/product/ProductItem'),
 );
 
+// Component
+import Search from '@/components/search/Search';
+
 // API
 import { fetchBeatsAndInstrumentalProdcuts } from '@/pages/api';
 
@@ -37,6 +40,7 @@ const BeatsAndInstrumentalPage = data => {
 	return (
 		<>
 			<ProductLayout>
+				<Search />
 				<h3 className={styles.title}>Beats / Instrumental</h3>
 
 				<ul className={styles.musicList}>

@@ -1,7 +1,5 @@
-import { fetchUserSignUp, incrementUserId } from '@/pages/api';
+import { fetchUserSignUp } from '@/pages/api';
 import { configureStore, createSlice } from '@reduxjs/toolkit';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../../lib/firebase';
 
 const initialStateProduct = {
 	products: [],
