@@ -44,7 +44,6 @@ export default function App({ Component, pageProps }) {
 	useEffect(() => {
 		const userInfo = JSON.parse(localStorage.getItem('user'));
 		setUser(userInfo);
-		console.log('마운트 됐습니다');
 	}, []);
 	return (
 		<>
