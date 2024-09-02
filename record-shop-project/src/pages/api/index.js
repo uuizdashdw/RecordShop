@@ -59,52 +59,62 @@ const fetchProductDetails = async params => {
 	}
 };
 
+// 특정 카테고리 상품 조회 함수 모듈
+const fetchCategoryIdProducts = async categoryId => {
+	let categoryProducts = [];
+	try {
+		const productDocRef = doc(db, 'products', categoryId);
+		const productDoc = await getDoc(productDocRef);
+
+		if (productDoc.exists()) {
+			const data = productDoc.data();
+			if (data.products) categoryProducts = data.products;
+		}
+	} catch (reason) {
+		console.error('데이터를 가져오는데 실패 했습니다.', reason);
+	}
+
+	return categoryProducts;
+};
+
 // 한국 상품 조회 함수
 const fetchKoreanProducts = async () => {
-	const { data } = await instance.get('/products');
-	return data.korean;
+	return await fetchCategoryIdProducts('korean');
 };
 
 // 힙합 , 알앤비 상품 조회 함수
 const fetchHiphopRnbProducts = async () => {
-	const { data } = await instance.get('/products');
-	return data['hiphop&rnb'];
+	return await fetchCategoryIdProducts('hiphop&rnb');
 };
 
 // 비트, 인스트루멘탈 상품 조회 함수
 const fetchBeatsAndInstrumentalProdcuts = async () => {
-	const { data } = await instance.get('/products');
-	return data['beats&instrumental'];
+	return await fetchCategoryIdProducts('beats&instrumental');
 };
 
 // 재즈 상품 조회 함수
 const fetchJazzProducts = async () => {
-	const { data } = await instance.get('/products');
-	return data.jazz;
+	return await fetchCategoryIdProducts('jazz');
 };
 
 // 뉴 디스코, 모던 펑크 상품 조회 함수
 const fetchNuDiscoModernFunkProducts = async () => {
-	const { data } = await instance.get('/products');
-	return data['nu_disco&modern_funk'];
+	return await fetchCategoryIdProducts('nu_disco&modern_funk');
 };
 
 // 소울, 펑크, 디스코 상품 조회 함수
 const fetchSoulFunkDiscoProducts = async () => {
-	const { data } = await instance.get('/products');
-	return data['soul&funk&disco'];
+	return fetchCategoryIdProducts('soul&funk&disco');
 };
 
 // 락, 팝 상품 조회 함수
 const fetchRockPopProducts = async () => {
-	const { data } = await instance.get('/products');
-	return data['rock&pop'];
+	return await fetchCategoryIdProducts('rock&pop');
 };
 
 // 사운드트랙 상품 조회 함수
 const fetchSoundtrackProducts = async () => {
-	const { data } = await instance.get('/products');
-	return data.soundtrack;
+	return await fetchCategoryIdProducts('soundtrack');
 };
 
 // 회원가입 함수
