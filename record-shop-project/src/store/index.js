@@ -52,7 +52,7 @@ const cartSlide = createSlice({
 									.match(/\d+/g)
 									.join(''),
 							)
-						: Number(action.payload.price.replace(/,/g, '')),
+						: action.payload.price,
 					imageUrl: action.payload.imageUrl,
 					quantity: 1, // 새로운 아이템 수량 1
 					quantityTerm: action.payload.quantityTerms,

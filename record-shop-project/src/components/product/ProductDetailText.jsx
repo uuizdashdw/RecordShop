@@ -15,12 +15,20 @@ const ProductDetailText = ({ product }) => {
 				{product.priceOff ? (
 					<span>
 						<span className={styles.price}>
-							{product.aboutItem.quntityInfo.price}
+							{product.aboutItem.quntityInfo.price.toLocaleString() + '원'}
 						</span>{' '}
-						<span className={styles.price_off}>{product.price}원</span>
+						<span className={styles.price_off}>
+							{product.price
+								? product.price.toLocaleString() + '원'
+								: '가격 정보가 없습니다.'}
+						</span>
 					</span>
 				) : (
-					product.price + '원'
+					<span>
+						{product.price
+							? product.price.toLocaleString() + '원'
+							: '가격 정보가 없습니다.'}
+					</span>
 				)}
 			</p>
 			<ul>
