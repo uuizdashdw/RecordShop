@@ -15,6 +15,9 @@ import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { signin } from '@/store';
 
+// API
+import { fetchUserLogin } from '../api';
+
 const SignInPage = ({ setUser }) => {
 	const [formData, setFormData] = useState({
 		account: '',
@@ -65,29 +68,33 @@ const SignInPage = ({ setUser }) => {
 	};
 
 	// 로그인 로직
-	const onSignIn = event => {
+	const onSignIn = async event => {
 		if (event) event.preventDefault();
-		const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-		const index = findUserIndex(userInfo);
 
-		const { userAccount, userPassword, userName } = userInfo[index];
 		const { account, password } = formData;
 
-		if (!userInfo) return alert('사용자 정보가 없습니다');
+		if (!account || !password)
+			return alert('아이디와 비밀번호를 입력해 주세요.');
 
-		if (userAccount === account && userPassword === password) {
-			isCheckAccountRemember(isRemember);
-			dispatch(signin(userInfo));
-			localStorage.setItem('user', JSON.stringify(userInfo[index]));
-			setUser(userInfo[index]);
-			alert(`${userName} 님 환영합니다`);
-			router.replace('/');
-		} else {
-			alert('아이디 혹은 비밀번호를 확인해주세요');
-			setFormData({
-				account: '',
-				password: '',
-			});
+		try {
+			const userInfo = await fetchUserLogin(account, password);
+
+			if (userInfo) {
+				isCheckAccountRemember(isRemember);
+				dispatch(signin(userInfo));
+				localStorage.setItem('user', JSON.stringify(userInfo));
+				alert(`${userInfo.userName} 님 환영합니다!`);
+				router.replace('/');
+			} else {
+				alert('아이디 혹은 비밀번호를 확인해주세요!');
+				setFormData({
+					account: '',
+					password: '',
+				});
+			}
+		} catch (reason) {
+			console.error('로그인 중 오류 발생 ::: ', reason);
+			alert('로그인 중 오류가 발생했습니다. 다시 시도해 주세요.');
 		}
 	};
 

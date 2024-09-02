@@ -5,9 +5,10 @@ import {
 	getDocs,
 	getDoc,
 	doc,
+	addDoc,
+	getFirestore,
 	query,
 	where,
-	addDoc,
 } from 'firebase/firestore';
 
 import axios from 'axios';
@@ -127,6 +128,38 @@ const fetchUserSignUp = async userData => {
 	}
 };
 
+// 로그인 함수
+const fetchUserLogin = async (userAccount, password) => {
+	const db = getFirestore();
+	try {
+		// users 컬렉션에서 userAccount 에 해당하는 사용자 찾기
+		const q = query(
+			collection(db, 'users'),
+			where('userAccount', '==', userAccount),
+		);
+		const querySnapshot = await getDocs(q);
+
+		if (querySnapshot.empty) {
+			console.error('사용자를 찾을 수 없습니다.');
+			return null;
+		}
+
+		// 사용자 데이터 가져오기
+		const userData = querySnapshot.docs[0].data();
+
+		// 비밀번호 확인
+		if (userData.userPassword === password) {
+			return userData;
+		} else {
+			console.error('비밀번호가 일치하지 않습니다');
+			return null;
+		}
+	} catch (reason) {
+		console.error('로그인 중 오류 발생 :: ', reason);
+		throw reason;
+	}
+};
+
 // 전체 회원 정보 가져오기 함수
 const fetchGetUserList = () => {
 	return instance.get('/users');
@@ -154,6 +187,7 @@ export {
 	fetchRockPopProducts,
 	fetchSoundtrackProducts,
 	fetchUserSignUp,
+	fetchUserLogin,
 	fetchGetUserList,
 	fetchTargetUserInfo,
 };
