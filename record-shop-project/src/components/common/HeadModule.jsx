@@ -98,7 +98,7 @@ const HeadModule = React.memo(function HeadModule({ nowPath }) {
 	useEffect(() => {
 		setMetaData(prev => ({
 			...prev,
-			getMetaDataConfig,
+			...getMetaDataConfig,
 		}));
 	}, [getMetaDataConfig]);
 
