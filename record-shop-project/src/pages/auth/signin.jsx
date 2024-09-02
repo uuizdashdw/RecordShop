@@ -58,7 +58,10 @@ const SignInPage = ({ setUser }) => {
 	};
 
 	useEffect(() => {
-		const rememberInfo = JSON.parse(localStorage.getItem('remember'));
+		const rememberInfo = JSON.parse(localStorage.getItem('remember')) || {
+			remember: false,
+			userAccout: '',
+		};
 		setIsRemember(rememberInfo.remember);
 		setFormData(prev => ({
 			...prev,
