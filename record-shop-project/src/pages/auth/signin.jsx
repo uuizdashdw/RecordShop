@@ -48,24 +48,28 @@ const SignInPage = ({ setUser }) => {
 	};
 
 	// 아이디 기억 로직
-	const isCheckAccountRemember = checked => {
-		checked && localStorage.setItem('remember', true);
-		!checked && localStorage.setItem('remember', false);
+	const isCheckAccountRemember = (checked, userAccount) => {
+		const rememberInfo = {
+			remember: true,
+			userAccount,
+		};
+
+		localStorage.setItem(
+			'remember',
+			JSON.stringify(
+				checked ? rememberInfo : { remember: false, userAccount: '' },
+			),
+		);
 	};
 
 	useEffect(() => {
-		const isCheck = JSON.parse(localStorage.getItem('remember'));
-		setIsRemember(isCheck);
+		const rememberInfo = JSON.parse(localStorage.getItem('remember'));
+		setIsRemember(rememberInfo.remember);
+		setFormData(prev => ({
+			...prev,
+			account: rememberInfo.userAccount,
+		}));
 	}, []);
-
-	// 로그인 유저 아이디 찾기
-	const findUserIndex = userList => {
-		const { account, password } = formData;
-
-		return userList.findIndex(
-			user => user.userAccount === account && user.userPassword === password,
-		);
-	};
 
 	// 로그인 로직
 	const onSignIn = async event => {
@@ -80,7 +84,7 @@ const SignInPage = ({ setUser }) => {
 			const userInfo = await fetchUserLogin(account, password);
 
 			if (userInfo) {
-				isCheckAccountRemember(isRemember);
+				isCheckAccountRemember(isRemember, account);
 				dispatch(signin(userInfo));
 				localStorage.setItem('user', JSON.stringify(userInfo));
 				setUser(JSON.parse(localStorage.getItem('user')));

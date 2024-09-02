@@ -52,7 +52,7 @@ const Header = React.memo(function Header({ user, setUser }) {
 		dispatch(signout());
 		alert('로그아웃 되었습니다');
 		setUser(null);
-		router.replace('/');
+		router.replace('/auth/signin');
 	};
 
 	return (
