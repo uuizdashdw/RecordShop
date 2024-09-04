@@ -46,7 +46,7 @@ const ProductPlaylist = ({ product }) => {
 						{qauntityInfo?.trackList?.['Disc 1 Side A'].map((item, index) => (
 							<li key={index}>
 								<p className={styles.playlist_text}>
-									{index + 1}. {item}
+									{item ? `${index + 1}. ${item}` : '정보 없음'}
 								</p>
 							</li>
 						))}
@@ -59,7 +59,7 @@ const ProductPlaylist = ({ product }) => {
 						{qauntityInfo?.trackList?.['Disc 1 Side B'].map((item, index) => (
 							<li key={index}>
 								<p className={styles.playlist_text}>
-									{index + 1}. {item}
+									{item ? `${index + 1}. ${item}` : '정보 없음'}
 								</p>
 							</li>
 						))}
@@ -74,7 +74,7 @@ const ProductPlaylist = ({ product }) => {
 									(item, index) => (
 										<li key={index}>
 											<p className={styles.playlist_text}>
-												{index + 1}. {item}
+												{item ? `${index + 1}. ${item}` : '정보 없음'}
 											</p>
 										</li>
 									),
@@ -88,7 +88,7 @@ const ProductPlaylist = ({ product }) => {
 									(item, index) => (
 										<li key={index}>
 											<p className={styles.playlist_text}>
-												{index + 1}. {item}
+												{item ? `${index + 1}. ${item}` : '정보 없음'}
 											</p>
 										</li>
 									),
