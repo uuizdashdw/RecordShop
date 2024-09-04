@@ -34,6 +34,9 @@ main {
 
 .swiper-button-next, .swiper-rtl .swiper-button-prev {
     right: 36px !important;
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev{
     top: var(--swiper-navigation-top-offset, 31%) !important;
 }
 
