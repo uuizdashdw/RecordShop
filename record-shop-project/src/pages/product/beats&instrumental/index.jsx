@@ -1,3 +1,5 @@
+import React from 'react';
+
 // CSS
 import styles from './index.module.css';
 
@@ -29,31 +31,33 @@ export async function getServerSideProps() {
 	};
 }
 
-const BeatsAndInstrumentalPage = data => {
-	const [music, setMusic] = useState([]);
+const BeatsAndInstrumentalPage = React.memo(
+	function BeatsAndInstrumentalPage(data) {
+		const [music, setMusic] = useState([]);
 
-	useEffect(() => {
-		const beatsInstrumental = data.children.props.data;
-		setMusic(beatsInstrumental);
-	}, []);
+		useEffect(() => {
+			const beatsInstrumental = data.children.props.data;
+			setMusic(beatsInstrumental);
+		}, []);
 
-	return (
-		<>
-			<ProductLayout>
-				<Search />
-				<h3 className={styles.title}>Beats / Instrumental</h3>
+		return (
+			<>
+				<ProductLayout>
+					<Search />
+					<h3 className={styles.title}>Beats / Instrumental</h3>
 
-				<ul className={styles.musicList}>
-					{music.map((item, index) => (
-						<li key={index}>
-							<DynamicProductItem product={item} />
-						</li>
-					))}
-				</ul>
-			</ProductLayout>
-		</>
-	);
-};
+					<ul className={styles.musicList}>
+						{music.map((item, index) => (
+							<li key={index}>
+								<DynamicProductItem product={item} />
+							</li>
+						))}
+					</ul>
+				</ProductLayout>
+			</>
+		);
+	},
+);
 
 BeatsAndInstrumentalPage.getLayout = function getLayout(page) {
 	return <BeatsAndInstrumentalPage>{page}</BeatsAndInstrumentalPage>;

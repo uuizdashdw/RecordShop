@@ -1,14 +1,18 @@
+import React from 'react';
+
 // CSS
 import styles from '../css/productDetailText.module.css';
 
-const ProductDetailText = ({ product }) => {
+const ProductDetailText = React.memo(function ProductDetailText({ product }) {
 	return (
 		<div>
 			<h1 className={styles.title}>{product.name}</h1>
 
 			<p className={styles.product_info}>{product.productType}</p>
 			<p className={styles.product_info}>
-				{product.company + ', ' + product.pressingYear}
+				{product.company && product.company + ', ' + product.pressingYear}
+				{!product.company &&
+					`정보없음, ${!product.pressingYear ? '정보없음' : ''}`}
 			</p>
 			<p className={styles.product_info}>{product.usedType}</p>
 			<p className={styles.product_info}>
@@ -68,6 +72,6 @@ const ProductDetailText = ({ product }) => {
 			)}
 		</div>
 	);
-};
+});
 
 export default ProductDetailText;

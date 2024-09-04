@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Image
 import Image from 'next/image';
 
@@ -9,7 +11,7 @@ import Button from '../buttons/Button';
 import ProductDetailText from './ProductDetailText';
 import ProductPlaylist from './ProductPlaylist';
 
-const ProductDetailItem = ({ product }) => {
+const ProductDetailItem = React.memo(function ProductDetailItem({ product }) {
 	return (
 		<>
 			<div className={styles.product_wrapper}>
@@ -29,6 +31,6 @@ const ProductDetailItem = ({ product }) => {
 			<ProductPlaylist product={product} />
 		</>
 	);
-};
+});
 
 export default ProductDetailItem;

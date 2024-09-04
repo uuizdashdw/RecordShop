@@ -1,9 +1,10 @@
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from '../css/productItem.module.css';
 
-const ProductItem = ({ product }) => {
+const ProductItem = React.memo(function ProductItem({ product }) {
 	return (
 		<>
 			<Link href={`/product/${product.category}/${product.id}`}>
@@ -24,6 +25,6 @@ const ProductItem = ({ product }) => {
 			</Link>
 		</>
 	);
-};
+});
 
 export default ProductItem;

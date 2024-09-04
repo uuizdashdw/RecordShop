@@ -1,3 +1,5 @@
+import React from 'react';
+
 // API
 import { fetchAllProducts } from '@/pages/api';
 
@@ -38,7 +40,7 @@ export async function getServerSideProps() {
 	};
 }
 
-const MainPage = ({ products }) => {
+const MainPage = React.memo(function MainPage({ products }) {
 	const dispatch = useDispatch();
 	const dispatchList = useSelector(state => state.products.products);
 
@@ -103,7 +105,7 @@ const MainPage = ({ products }) => {
 			</MainLayout>
 		</>
 	);
-};
+});
 
 MainPage.getLayout = function getLayout(page) {
 	return <MainLayout>{page}</MainLayout>;

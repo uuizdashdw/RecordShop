@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Layout
 import ProductDetailLayout from '@/layouts/ProductDetailLayout';
 
@@ -11,7 +13,7 @@ const DynamicProductDetailItem = dynamic(
 import { fetchProductDetails } from '@/pages/api';
 
 // Hooks
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 // CSS
 import styles from './[productId].module.css';
@@ -25,12 +27,19 @@ export async function getServerSideProps({ params }) {
 	};
 }
 
-const ProductDetailPage = product => {
+const ProductDetailPage = React.memo(function ProductDetailPage(product) {
 	const [music, setMusic] = useState({});
+
+	const memoizedSetMusic = useCallback(
+		data => {
+			setMusic(data);
+		},
+		[product],
+	);
 
 	useEffect(() => {
 		const data = product.children.props.product;
-		setMusic(data);
+		memoizedSetMusic(data);
 	}, [product]);
 
 	return (
@@ -42,7 +51,7 @@ const ProductDetailPage = product => {
 			</main>
 		</ProductDetailLayout>
 	);
-};
+});
 
 ProductDetailPage.getLayout = function getLayout(page) {
 	return <ProductDetailPage>{page}</ProductDetailPage>;

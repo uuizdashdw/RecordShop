@@ -49,7 +49,7 @@ export default function App({ Component, pageProps }) {
 		<>
 			<DynamicHeadModule nowPath={router.pathname} />
 			<Provider store={store}>
-				<Header user={user} setUser={setUser} />
+				<Header replace={router.replace} user={user} setUser={setUser} />
 				<ChakraProvider>
 					{getLayout(<Component {...pageProps} setUser={setUser} />)}
 				</ChakraProvider>

@@ -1,3 +1,5 @@
+import React from 'react';
+
 // CSS
 import styles from './index.module.css';
 
@@ -29,29 +31,31 @@ export async function getServerSideProps() {
 	};
 }
 
-const NuDiscoAndModernFunkPage = data => {
-	const [music, setMusic] = useState([]);
+const NuDiscoAndModernFunkPage = React.memo(
+	function NuDiscoAndModernFunkPage(data) {
+		const [music, setMusic] = useState([]);
 
-	useEffect(() => {
-		const nuDiscoAndModernFunk = data.children.props.data;
-		setMusic(nuDiscoAndModernFunk);
-	}, []);
+		useEffect(() => {
+			const nuDiscoAndModernFunk = data.children.props.data;
+			setMusic(nuDiscoAndModernFunk);
+		}, []);
 
-	return (
-		<ProductLayout>
-			<Search />
-			<h3 className={styles.title}>NU Disco / Modern Funk</h3>
+		return (
+			<ProductLayout>
+				<Search />
+				<h3 className={styles.title}>Nu Disco / Modern Funk</h3>
 
-			<ul className={styles.musicList}>
-				{music.map((item, index) => (
-					<li key={index}>
-						<DynamicProductItem product={item} />
-					</li>
-				))}
-			</ul>
-		</ProductLayout>
-	);
-};
+				<ul className={styles.musicList}>
+					{music.map((item, index) => (
+						<li key={index}>
+							<DynamicProductItem product={item} />
+						</li>
+					))}
+				</ul>
+			</ProductLayout>
+		);
+	},
+);
 
 NuDiscoAndModernFunkPage.getLayout = function getLayout(page) {
 	return <NuDiscoAndModernFunkPage>{page}</NuDiscoAndModernFunkPage>;

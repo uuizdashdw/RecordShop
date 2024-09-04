@@ -1,10 +1,12 @@
+import React from 'react';
+
 // CSS
 import styles from '../css/productPlaylist.module.css';
 
 // Hooks
 import { useEffect, useState } from 'react';
 
-const ProductPlaylist = ({ product }) => {
+const ProductPlaylist = React.memo(function ProductPlayList({ product }) {
 	const [aboutItem, setAboutItem] = useState({});
 	const [qauntityInfo, setQauntityInfo] = useState();
 
@@ -35,7 +37,9 @@ const ProductPlaylist = ({ product }) => {
 			)}
 
 			<div className={styles.item_spec_wrapper}>
-				<p className={styles.item_spec}>* 스펙 : {qauntityInfo?.spec}</p>
+				<p className={styles.item_spec}>
+					* 스펙 : {qauntityInfo?.spec ? qauntityInfo?.spec : 'LP'}
+				</p>
 				<p className={styles.item_spec}>* 색상 : {qauntityInfo?.color}</p>
 			</div>
 
@@ -43,55 +47,78 @@ const ProductPlaylist = ({ product }) => {
 				<li>
 					<h4 className={styles.playlist_title}>Disc 1 Side A</h4>
 					<ul>
-						{qauntityInfo?.trackList?.['Disc 1 Side A'].map((item, index) => (
-							<li key={index}>
-								<p className={styles.playlist_text}>
-									{item ? `${index + 1}. ${item}` : '정보 없음'}
-								</p>
+						{qauntityInfo?.trackList?.['Disc 1 Side A'].length ? (
+							qauntityInfo?.trackList?.['Disc 1 Side A'].map((item, index) => (
+								<li key={index}>
+									<p className={styles.playlist_text}>
+										{index + 1}. {item}
+									</p>
+								</li>
+							))
+						) : (
+							<li>
+								<p className={styles.playlist_text}>정보 없음</p>
 							</li>
-						))}
+						)}
 					</ul>
 				</li>
 
 				<li>
 					<h4 className={styles.playlist_title}>Disc 1 Side B</h4>
 					<ul>
-						{qauntityInfo?.trackList?.['Disc 1 Side B'].map((item, index) => (
-							<li key={index}>
-								<p className={styles.playlist_text}>
-									{item ? `${index + 1}. ${item}` : '정보 없음'}
-								</p>
+						{qauntityInfo?.trackList?.['Disc 1 Side B'].length ? (
+							qauntityInfo?.trackList?.['Disc 1 Side B'].map((item, index) => (
+								<li key={index}>
+									<p className={styles.playlist_text}>
+										{index + 1}. {item}
+									</p>
+								</li>
+							))
+						) : (
+							<li>
+								<p className={styles.playlist_text}>정보 없음</p>
 							</li>
-						))}
+						)}
 					</ul>
 				</li>
+
 				{qauntityInfo?.trackList?.['Disc 2 Side A'].length > 0 && (
 					<>
 						<li>
-							<h4 className={styles.playlist_title}>Disc 2 Side A</h4>
 							<ul>
-								{qauntityInfo?.trackList?.['Disc 2 Side A'].map(
-									(item, index) => (
-										<li key={index}>
-											<p className={styles.playlist_text}>
-												{item ? `${index + 1}. ${item}` : '정보 없음'}
-											</p>
-										</li>
-									),
+								{qauntityInfo?.trackList?.['Disc 2 Side A'].length ? (
+									qauntityInfo?.trackList?.['Disc 2 Side A'].map(
+										(item, index) => (
+											<li key={index}>
+												<p className={styles.playlist_text}>
+													{index + 1}. {item}
+												</p>
+											</li>
+										),
+									)
+								) : (
+									<li>
+										<p className={styles.playlist_text}>정보 없음</p>
+									</li>
 								)}
 							</ul>
 						</li>
 						<li>
-							<h4 className={styles.playlist_title}>Disc 2 Side B</h4>
 							<ul>
-								{qauntityInfo?.trackList?.['Disc 2 Side B'].map(
-									(item, index) => (
-										<li key={index}>
-											<p className={styles.playlist_text}>
-												{item ? `${index + 1}. ${item}` : '정보 없음'}
-											</p>
-										</li>
-									),
+								{qauntityInfo?.trackList?.['Disc 2 Side B'].length ? (
+									qauntityInfo?.trackList?.['Disc 2 Side B'].map(
+										(item, index) => (
+											<li key={index}>
+												<p className={styles.playlist_text}>
+													{index + 1}. {item}
+												</p>
+											</li>
+										),
+									)
+								) : (
+									<li>
+										<p className={styles.playlist_text}>정보 없음</p>
+									</li>
 								)}
 							</ul>
 						</li>
@@ -100,6 +127,6 @@ const ProductPlaylist = ({ product }) => {
 			</ul>
 		</div>
 	);
-};
+});
 
 export default ProductPlaylist;

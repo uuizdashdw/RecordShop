@@ -1,3 +1,5 @@
+import React from 'react';
+
 // CSS
 import styles from './index.module.css';
 
@@ -29,7 +31,7 @@ export async function getServerSideProps() {
 	};
 }
 
-const RockAndPopPage = data => {
+const RockAndPopPage = React.memo(function RockAndPopPage(data) {
 	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
@@ -52,7 +54,7 @@ const RockAndPopPage = data => {
 			</ul>
 		</ProductLayout>
 	);
-};
+});
 
 RockAndPopPage.getLayout = function getLayout(page) {
 	return <RockAndPopPage>{page}</RockAndPopPage>;

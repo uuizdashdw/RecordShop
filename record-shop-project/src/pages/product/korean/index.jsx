@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Layout
 import ProductLayout from '@/layouts/ProductLayout';
 
@@ -27,7 +29,7 @@ export async function getServerSideProps() {
 	};
 }
 
-const KoreanPage = data => {
+const KoreanPage = React.memo(function KoreanPage(data) {
 	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
@@ -52,7 +54,7 @@ const KoreanPage = data => {
 			</ProductLayout>
 		</>
 	);
-};
+});
 
 KoreanPage.getLayout = function getLayout(page) {
 	return <KoreanPage>{page}</KoreanPage>;

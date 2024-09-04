@@ -19,11 +19,11 @@ import { setUserInfo, signout } from '@/store';
 // Router
 import { useRouter } from 'next/router';
 
-const Header = React.memo(function Header({ user, setUser }) {
+const Header = React.memo(function Header({ replace, user, setUser }) {
 	const dispatch = useDispatch();
 	const userInfo = useSelector(state => state.userInfo.userInfo);
 
-	const router = useRouter();
+	// const router = useRouter();
 
 	const gnbItem = [
 		{ name: 'Korean', link: '/product/korean' },
@@ -47,7 +47,7 @@ const Header = React.memo(function Header({ user, setUser }) {
 		dispatch(signout());
 		alert('로그아웃 되었습니다');
 		setUser(null);
-		router.replace('/auth/signin');
+		replace('/auth/signin');
 	};
 
 	return (

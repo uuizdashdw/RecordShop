@@ -1,3 +1,5 @@
+import React from 'react';
+
 // CSS
 import styles from './index.module.css';
 
@@ -29,7 +31,7 @@ export async function getServerSideProps() {
 	};
 }
 
-const SoulFunkDiscoPage = data => {
+const SoulFunkDiscoPage = React.memo(function SoulFunkDiscoPage(data) {
 	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
@@ -51,7 +53,7 @@ const SoulFunkDiscoPage = data => {
 			</ul>
 		</ProductLayout>
 	);
-};
+});
 
 SoulFunkDiscoPage.getLayout = function getLayout(page) {
 	return <SoulFunkDiscoPage>{page}</SoulFunkDiscoPage>;

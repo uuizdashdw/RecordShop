@@ -1,3 +1,5 @@
+import React from 'react';
+
 // CSS
 import styles from './index.module.css';
 
@@ -29,7 +31,7 @@ export async function getServerSideProps() {
 	};
 }
 
-const JazzPage = data => {
+const JazzPage = React.memo(function JazzPage(data) {
 	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
@@ -51,7 +53,7 @@ const JazzPage = data => {
 			</ul>
 		</ProductLayout>
 	);
-};
+});
 
 JazzPage.getLayout = function getLayout(page) {
 	return <JazzPage>{page}</JazzPage>;
