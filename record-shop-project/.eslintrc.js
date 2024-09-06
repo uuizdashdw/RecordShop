@@ -1,4 +1,8 @@
 module.exports = {
+	env: {
+		browser: true,
+		es6: true,
+	},
 	extends: ['next/core-web-vitals', 'plugin:prettier/recommended'],
 	// plugins: ['prettier', 'unused-imports'],
 	plugins: ['prettier'],

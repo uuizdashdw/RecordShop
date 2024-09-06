@@ -9,7 +9,7 @@ import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 
 // Redux, Store
-import { Provider } from 'react-redux';
+import { Provider, } from 'react-redux';
 import store from '@/store';
 
 // Hooks
@@ -40,11 +40,18 @@ export default function App({ Component, pageProps }) {
 	}, []);
 
 	const [user, setUser] = useState(null);
-
+	
 	useEffect(() => {
 		const userInfo = JSON.parse(localStorage.getItem('user'));
-		setUser(userInfo);
+		
+		if(userInfo) {
+			setUser(userInfo);
+		} else {
+			setUser(null);
+			localStorage.removeItem('user');
+		}
 	}, []);
+
 	return (
 		<>
 			<DynamicHeadModule nowPath={router.pathname} />

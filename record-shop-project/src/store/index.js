@@ -1,4 +1,10 @@
-import { fetchUserSignUp } from '@/pages/api';
+import {
+	fetchDeleteUserAccount,
+	fetchUser,
+	fetchUserSignUp,
+	updateUserPassword,
+	updateUserPersonalInfo,
+} from '@/pages/api';
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 
 const initialStateProduct = {
@@ -9,9 +15,10 @@ const initialStateCarts = {
 	carts: [],
 };
 
-const initialUserInfo = {
-	userInfo: [],
-	userId: 0,
+const initialUsers = {
+	users: [],
+	userInfo: null,
+	error: null,
 };
 
 const productSlice = createSlice({
@@ -88,39 +95,68 @@ const cartSlide = createSlice({
 	},
 });
 
-const userInfoSlide = createSlice({
-	name: 'userInfo',
-	initialState: initialUserInfo,
+const usersSlide = createSlice({
+	name: 'users',
+	initialState: initialUsers,
 	reducers: {
-		setUserInfo(state, action) {
+		setUserInfo: (state, action) => {
 			state.userInfo = action.payload;
+			localStorage.setItem('user', JSON.stringify(action.payload));
 		},
-
-		signout(state) {
-			state.userInfo = initialUserInfo.userInfo;
+		signout: (state) => {
+			state.users = initialUsers.users;
+			state.userInfo = null;
 			localStorage.removeItem('user');
 		},
 
-		deleteId(state) {
-			state.userInfo = {
-				userAccount: '',
-				userPassword: '',
-				userName: '',
-				zonecode: '',
-				userPhoneNumber: '',
-				userAddress: '',
-				userDetailAddress: '',
-				userId: null,
-			};
+		deleteId: (state) => {
+			state.userInfo = null;
 
-			localStorage.removeItem('userInfo');
+			localStorage.removeItem('user');
 		},
 	},
 
 	extraReducers: builder => {
-		builder.addCase(fetchUserSignUp.fulfilled, (state, action) => {
-			state.userInfo.push(action.payload);
-		});
+		builder
+			// ------------------------ 회원가입 ------------------------
+			.addCase(fetchUserSignUp.fulfilled, (state, action) => {
+				state.userInfo.push(action.payload);
+			})
+			// ------------------------ 사용자 정보 설정 ------------------------
+			.addCase(fetchUser.fulfilled, (state, action) => {
+				state.userInfo = action.payload;
+				state.users.push(action.payload);
+			})
+			.addCase(fetchUser.rejected, (state, action) => {
+				state.error = action.payload;
+			})
+			// ------------------------ 비밀번호 변경 ------------------------
+			.addCase(updateUserPassword.fulfilled, (state, action) => {
+				state.userInfo = action.payload;
+				state.error = null;
+			})
+			.addCase(updateUserPassword.rejected, (state, action) => {
+				state.error = action.payload;
+			})
+			// ------------------------ 개인정보 변경 ------------------------
+			.addCase(updateUserPersonalInfo.fulfilled, (state, action) => {
+				state.userInfo = { ...state.userInfo, ...action.payload };
+			})
+			.addCase(updateUserPersonalInfo.rejected, (state, action) => {
+				state.error = action.payload;
+			})
+			// ------------------------ 회원탈퇴 ------------------------
+			.addCase(fetchDeleteUserAccount.pending, state => {
+				state.error = null;
+			})
+			.addCase(fetchDeleteUserAccount.fulfilled, (state, action) => {
+				state.users = state.users.filter(user => user.id !== action.payload);
+				state.userInfo = null;
+				localStorage.removeItem('user');
+			})
+			.addCase(fetchDeleteUserAccount.rejected, (state, action) => {
+				state.error = action.payload;
+			});
 	},
 });
 
@@ -128,7 +164,7 @@ const store = configureStore({
 	reducer: {
 		products: productSlice.reducer,
 		carts: cartSlide.reducer,
-		userInfo: userInfoSlide.reducer,
+		users: usersSlide.reducer,
 	},
 });
 
@@ -141,6 +177,6 @@ export const {
 	setInitialCarts,
 } = cartSlide.actions;
 
-export const { setUserInfo, signout, deleteId } = userInfoSlide.actions;
+export const { setUserInfo, signout, deleteId } = usersSlide.actions;
 
 export default store;

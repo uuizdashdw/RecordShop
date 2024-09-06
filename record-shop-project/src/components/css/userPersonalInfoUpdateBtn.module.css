@@ -1,0 +1,26 @@
+.button_wrapper {
+    text-align: center;
+}
+
+.button {
+    border: 1px solid #222;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    width: 300px;
+    height: 50px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.button_disabled {
+    border: 1px solid #222;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    width: 300px;
+    height: 50px;
+    margin-top: 50px;
+    cursor: default;
+    opacity: 0.3;
+}

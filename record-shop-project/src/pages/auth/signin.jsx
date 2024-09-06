@@ -14,6 +14,10 @@ import { useRouter } from 'next/router';
 // API
 import { fetchUserLogin } from '../api';
 
+// Redux 
+import { useDispatch } from 'react-redux';
+import { setUserInfo } from '@/store';
+
 const SignInPage = ({ setUser }) => {
 	const [formData, setFormData] = useState({
 		account: '',
@@ -23,17 +27,16 @@ const SignInPage = ({ setUser }) => {
 	// 아이디 기억하기
 	const [isRemember, setIsRemember] = useState(false);
 
-	const [isLoading, setIsLoading] = useState(true);
-
 	const accountRef = useRef(null);
 
 	const router = useRouter();
+	const dispatch = useDispatch();
 
 	// 페이지 진입 유효성 검사
 	useEffect(() => {
 		const user = JSON.parse(localStorage.getItem('user'));
 
-		user ? router.replace('/') : setIsLoading(false);
+		if(user) router.replace('/')
 	}, [router]);
 
 	const onChangeFormData = event => {
@@ -91,7 +94,7 @@ const SignInPage = ({ setUser }) => {
 
 			if (userInfo) {
 				isCheckAccountRemember(isRemember, account);
-				localStorage.setItem('user', JSON.stringify(userInfo));
+				dispatch(setUserInfo(userInfo));
 				setUser(JSON.parse(localStorage.getItem('user')));
 				alert(`${userInfo.userName} 님 환영합니다!`);
 				setTimeout(() => router.replace('/'), 0);
@@ -115,13 +118,7 @@ const SignInPage = ({ setUser }) => {
 		}
 	};
 
-	if (isLoading) {
-		return (
-			<AuthLayout>
-				<Loading reason={'유효하지 않은 접근입니다.'} />
-			</AuthLayout>
-		);
-	} else {
+	
 		return (
 			<AuthLayout>
 				<div className={styles.container}>
@@ -179,7 +176,7 @@ const SignInPage = ({ setUser }) => {
 				</div>
 			</AuthLayout>
 		);
-	}
+	
 };
 
 export default SignInPage;

@@ -60,4 +60,8 @@ const SearchPage = () => {
 	);
 };
 
+SearchPage.getLayout = function getLayout(page) {
+	return <ProductLayout>{page}</ProductLayout>;
+};
+
 export default SearchPage;

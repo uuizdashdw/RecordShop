@@ -1,5 +1,5 @@
 // Firebase
-import { db } from '../../../lib/firebase';
+import { db, auth } from '../../../lib/firebase';
 import {
 	collection,
 	getDocs,
@@ -9,6 +9,8 @@ import {
 	getFirestore,
 	query,
 	where,
+	deleteDoc,
+	updateDoc,
 } from 'firebase/firestore';
 
 // Axios
@@ -16,6 +18,7 @@ import axios from 'axios';
 
 // Redux Toolkit 비동기화
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { deleteUser, onAuthStateChanged } from 'firebase/auth';
 
 const instance = axios.create({
 	baseURL: 'http://localhost:3000/api',
@@ -183,6 +186,24 @@ const fetchUserSignUp = createAsyncThunk(
 	},
 );
 
+// 회원탈퇴 함수
+const fetchDeleteUserAccount = createAsyncThunk(
+	'user/deleteAccount',
+	async (_, { rejectWithValue }) => {
+		const user = auth.currentUser;
+		if (user) {
+			try {
+				await deleteUser(user);
+				return user.uid;
+			} catch (reason) {
+				return rejectWithValue(reason.message);
+			}
+		} else {
+			return rejectWithValue('로그인된 사용자가 없습니다.');
+		}
+	},
+);
+
 // 로그인 함수
 const fetchUserLogin = async (userAccount, password) => {
 	const db = getFirestore();
@@ -220,15 +241,99 @@ const fetchGetUserList = () => {
 	return instance.get('/users');
 };
 
-// 특정 회원 정보 가져오기 함수
-const fetchTargetUserInfo = async id => {
-	const { data } = await instance.get('/users');
+// 로그인 회원 정보 가져오기 함수 1
+const fetchUserByAccount = async userAccount => {
+	try {
+		const usersRef = collection(db, 'users');
+		const q = query(usersRef, where('userAccount', '==', userAccount));
+		const querySnapshot = await getDocs(q);
 
-	if (Array.isArray(data)) {
-		const user = data.find(user => user.id === Number(id));
-		return user;
+		if (querySnapshot.empty) {
+			throw new Error('사용자 정보를 찾을 수 없습니다.');
+		}
+
+		let userData;
+		querySnapshot.forEach(doc => {
+			userData = { id: doc.data().id, ...doc.data() };
+		});
+
+		return userData;
+	} catch (reason) {
+		throw new Error('정보를 가져오는 데 실패했습니다.', reason);
 	}
 };
+
+// 로그인 회원 정보 가져오기 함수 2
+const fetchUser = createAsyncThunk(
+	'user/fetchUser',
+	async (userAccount, { rejectWithValue }) => {
+		try {
+			const userInfo = await fetchUserByAccount(userAccount);
+
+			return userInfo;
+		} catch (reason) {
+			return rejectWithValue(reason.message);
+		}
+	},
+);
+
+// 비밀번호 변경 함수
+const updateUserPassword = createAsyncThunk(
+	'user/updatePasword',
+	async({ userAccount, newPassword }, { rejectWithValue }) => {
+		try {
+			const usersRef = collection(db, 'users');
+			const q = query(usersRef, where('userAccount', '==', userAccount));
+			const querySnapshot = await getDocs(q);
+
+			if(!querySnapshot.empty) {
+				const doc = querySnapshot.docs[0];
+				await updateDoc(doc.ref, {
+					userPassword: newPassword,
+				})
+				
+				const updatedUserData = {
+					...doc.data(),
+				}
+		
+				return updatedUserData;
+			
+				
+			} else {
+				throw new Error('해당 사용자가 존재하지 않습니다.');
+			}
+		} catch (reason) {
+			console.error('오류 발생', reason);
+			return rejectWithValue('비밀번호 변경 중 오류가 발생했습니다! :: ' + reason.message)
+		}
+	}
+);
+
+// 유저 개인정보 변경 함수
+const updateUserPersonalInfo = createAsyncThunk(
+	'user/updateUserInfo',
+	async({ userAccount, userInfo }, { rejectWithValue }) => {
+		try {
+			
+			const userRef = collection(db, 'users');
+			const q = query(userRef, where('userAccount', '==', userAccount));
+			const querySnapshot = await getDocs(q);
+
+			if(querySnapshot.empty) {
+				throw new Error('사용자를 찾을 수 없습니다.');
+			}
+
+			const docId = querySnapshot.docs[0].id;
+			const userDocRef = doc(db, 'users', docId);
+			await updateDoc(userDocRef, userInfo);
+
+			return userInfo;
+		} catch(reason) {
+			console.error('개인정보 변경 중 에러 발생.', reason);
+			return rejectWithValue(reason.message);
+		}
+	}
+)
 
 export {
 	fetchAllProducts,
@@ -243,7 +348,10 @@ export {
 	fetchRockPopProducts,
 	fetchSoundtrackProducts,
 	fetchUserSignUp,
+	fetchDeleteUserAccount,
 	fetchUserLogin,
 	fetchGetUserList,
-	fetchTargetUserInfo,
+	fetchUser,
+	updateUserPassword,
+	updateUserPersonalInfo
 };

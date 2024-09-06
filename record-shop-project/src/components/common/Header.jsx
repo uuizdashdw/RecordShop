@@ -14,16 +14,15 @@ import Link from 'next/link';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
-import { setUserInfo, signout } from '@/store';
+import { signout } from '@/store';
 
-// Router
 import { useRouter } from 'next/router';
 
-const Header = React.memo(function Header({ replace, user, setUser }) {
+const Header = React.memo(function Header({ user, setUser }) {
 	const dispatch = useDispatch();
-	const userInfo = useSelector(state => state.userInfo.userInfo);
+	const userInfo = useSelector(state => state.users.userInfo);
 
-	// const router = useRouter();
+	const router = useRouter();
 
 	const gnbItem = [
 		{ name: 'Korean', link: '/product/korean' },
@@ -36,18 +35,13 @@ const Header = React.memo(function Header({ replace, user, setUser }) {
 		{ name: 'Soundtrack', link: '/product/soundtrack' },
 	];
 
-	useEffect(() => {
-		const users = JSON.parse(localStorage.getItem('userInfo')) || [];
-		if (!userInfo && users.length) {
-			dispatch(setUserInfo(users));
-		}
-	}, [userInfo]);
-
 	const isSignOut = () => {
-		dispatch(signout());
-		alert('로그아웃 되었습니다');
-		setUser(null);
-		replace('/auth/signin');
+		if(confirm('로그아웃 하시겠습니까?')) {
+			dispatch(signout());
+			alert('로그아웃 되었습니다');
+			setUser(null);
+			router.replace('/auth/signin');
+		}
 	};
 
 	return (
@@ -76,7 +70,9 @@ const Header = React.memo(function Header({ replace, user, setUser }) {
 					) : (
 						<>
 							<li>
-								<span style={{ fontSize: '14px' }}>{user.userName} 님</span>
+								<Link style={{ fontSize: '14px' }} href={'/mypage'}>
+									{user.userName} 님
+								</Link>
 							</li>
 							<li>
 								<button className={styles.signout_button} onClick={isSignOut}>

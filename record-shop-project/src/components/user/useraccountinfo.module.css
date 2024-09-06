@@ -1,0 +1,75 @@
+.container{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.userInfo_container {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 30px 30px 40px 30px;
+}
+
+.auth_container {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 50px;
+}
+
+.auth_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 15px;
+}
+
+.auth_wrapper_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.user_container {
+    
+}
+
+.user_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 30px;
+    padding-top: 50px;
+}
+
+.formdata_container {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 30px 30px 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.label {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 15px;
+}
+
+.input {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    width: 300px;
+    height: 30px;
+    padding: 0px 12px;
+    outline: none;
+    font-size: 14px;
+}
+
+.wrong_password {
+    color: red;
+    font-size: 13px;
+    margin-top: 6px;
+}

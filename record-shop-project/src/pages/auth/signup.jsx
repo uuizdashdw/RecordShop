@@ -5,6 +5,9 @@ import styles from './signup.module.css';
 import AuthLayout from '@/layouts/AuthLayout';
 import Loading from '@/components/common/Loading';
 
+// Util
+import phoneNumberHandler from '../../../utils/getPhoneNumber';
+
 // Dynamic Component
 import dynamic from 'next/dynamic';
 const DynamicAddressSearch = dynamic(
@@ -16,7 +19,6 @@ import { useState, useEffect, useRef } from 'react';
 
 // Redux
 import { useDispatch } from 'react-redux';
-import { singup } from '../../store';
 
 // Router
 import { useRouter } from 'next/router';
@@ -91,27 +93,6 @@ const SignUpPage = () => {
 			: setIsWrongPassword(false);
 	};
 
-	// Phone Number Logic
-	const phoneNumberHandler = e => {
-		const { value } = e.target;
-
-		let formattedValue = '';
-
-		// Only Numbers
-		const cleanedValue = value.replace(/\D/g, '');
-
-		// Formatting Value Logic
-		if (cleanedValue.length > 0) formattedValue += cleanedValue.substring(0, 3);
-
-		if (cleanedValue.length >= 4)
-			formattedValue += '-' + cleanedValue.substring(3, 7);
-
-		if (cleanedValue.length >= 7)
-			formattedValue += '-' + cleanedValue.substring(7, 11);
-
-		return formattedValue;
-	};
-
 	// Update User Zonecode(postal code)
 	const onUpdateUserZonecode = zonecode => {
 		setFormData(prev => ({
@@ -151,11 +132,11 @@ const SignUpPage = () => {
 
 	//  Form Data 확인 및 회원가입 버튼 활성화 변경
 	useEffect(() => {
-		console.log('### formData ===> ', formData);
+		// console.log('### formData ===> ', formData);
 		const allFieldsFilled = Object.values(formData).every(
 			data => data.toString().trim() !== '',
 		);
-		console.log('### allFieldsFilled ==> ', allFieldsFilled);
+		// console.log('### allFieldsFilled ==> ', allFieldsFilled);
 
 		allFieldsFilled ? setIsAbleBtn(false) : setIsAbleBtn(true);
 	}, [formData]);
