@@ -52,7 +52,7 @@ const ProductDetailText = React.memo(function ProductDetailText({ product }) {
 					</div>
 				</li>
 
-				{product.quantityTerms ? (
+				{product.quantityTerms && (
 					<li className={styles.product_sub_info_list}>
 						<p className={styles.product_sub_info_title}>수량조건</p>
 						<div className={styles.delivery_text_wrapper}>
@@ -60,15 +60,11 @@ const ProductDetailText = React.memo(function ProductDetailText({ product }) {
 							<p className={styles.product_sub_info_content}>회원당 최대 2개</p>
 						</div>
 					</li>
-				) : (
-					''
 				)}
 			</ul>
 
-			{!product.inventory ? (
+			{!product.inventory && (
 				<p className={styles.no_inventory}>품절된 상품입니다.</p>
-			) : (
-				''
 			)}
 		</div>
 	);

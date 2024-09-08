@@ -21,18 +21,6 @@
     margin-bottom: 20px
 }
 
-.key_point {
-    font-size: 14px;
-    font-weight: bold;
-    font-style: italic;
-    margin-bottom: 16px;
-}
-
-.key_point_wrapper {
-    margin: 30px 0;
-    text-align: center;
-}
-
 .item_spec {
     font-size: 14px;
     margin-bottom: 16px;
@@ -49,16 +37,4 @@
     text-align: center;
     width: 100%;
     gap: 30px;
-}
-
-.playlist_title {
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.playlist_text {
-    font-size: 14px;
-    font-style: italic;
-    margin-bottom: 8px;
-
 }

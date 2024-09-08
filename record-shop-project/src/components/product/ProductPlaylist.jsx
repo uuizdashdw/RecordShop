@@ -6,6 +6,11 @@ import styles from '../css/productPlaylist.module.css';
 // Hooks
 import { useEffect, useState } from 'react';
 
+// Component
+import dynamic from 'next/dynamic';
+const DynamicTrackList = dynamic(() => import('./TrackList'));
+import PeriodInfo from './PeriodInfo';
+
 const ProductPlaylist = React.memo(function ProductPlayList({ product }) {
 	const [aboutItem, setAboutItem] = useState({});
 	const [qauntityInfo, setQauntityInfo] = useState();
@@ -21,19 +26,10 @@ const ProductPlaylist = React.memo(function ProductPlayList({ product }) {
 			<h3 className={styles.aboutItem_title}>{aboutItem?.title}</h3>
 			<p className={styles.aboutItem_subTitle}>{aboutItem?.subTitle}</p>
 			{product.quantityTerms && (
-				<div className={styles.key_point_wrapper}>
-					{qauntityInfo?.period && (
-						<p className={styles.key_point}>
-							* 사전예약 기간 : {qauntityInfo?.period}
-						</p>
-					)}
-					<p className={styles.key_point}>
-						* 입고 예정일 : {qauntityInfo?.arrivalDate}
-					</p>
-					<p className={styles.key_point}>
-						* 1인당 최대 구매수량 : {qauntityInfo?.maximumPurchaseQuantity}장
-					</p>
-				</div>
+				<PeriodInfo 
+					period={qauntityInfo?.period}
+					arrivalDate={qauntityInfo?.arrivalDate}
+					maximum={qauntityInfo?.maximumPurchaseQuantity} />
 			)}
 
 			<div className={styles.item_spec_wrapper}>
@@ -44,85 +40,13 @@ const ProductPlaylist = React.memo(function ProductPlayList({ product }) {
 			</div>
 
 			<ul className={styles.playlist}>
-				<li>
-					<h4 className={styles.playlist_title}>Disc 1 Side A</h4>
-					<ul>
-						{qauntityInfo?.trackList?.['Disc 1 Side A'].length ? (
-							qauntityInfo?.trackList?.['Disc 1 Side A'].map((item, index) => (
-								<li key={index}>
-									<p className={styles.playlist_text}>
-										{index + 1}. {item}
-									</p>
-								</li>
-							))
-						) : (
-							<li>
-								<p className={styles.playlist_text}>정보 없음</p>
-							</li>
-						)}
-					</ul>
-				</li>
-
-				<li>
-					<h4 className={styles.playlist_title}>Disc 1 Side B</h4>
-					<ul>
-						{qauntityInfo?.trackList?.['Disc 1 Side B'].length ? (
-							qauntityInfo?.trackList?.['Disc 1 Side B'].map((item, index) => (
-								<li key={index}>
-									<p className={styles.playlist_text}>
-										{index + 1}. {item}
-									</p>
-								</li>
-							))
-						) : (
-							<li>
-								<p className={styles.playlist_text}>정보 없음</p>
-							</li>
-						)}
-					</ul>
-				</li>
-
+				<DynamicTrackList disc={'Disc 1 Side A'} trackList={qauntityInfo?.trackList?.['Disc 1 Side A']} />
+				<DynamicTrackList disc={'Disc 1 Side B'} trackList={qauntityInfo?.trackList?.['Disc 1 Side B']} />
 				{qauntityInfo?.trackList?.['Disc 2 Side A'].length > 0 && (
-					<>
-						<li>
-							<ul>
-								{qauntityInfo?.trackList?.['Disc 2 Side A'].length ? (
-									qauntityInfo?.trackList?.['Disc 2 Side A'].map(
-										(item, index) => (
-											<li key={index}>
-												<p className={styles.playlist_text}>
-													{index + 1}. {item}
-												</p>
-											</li>
-										),
-									)
-								) : (
-									<li>
-										<p className={styles.playlist_text}>정보 없음</p>
-									</li>
-								)}
-							</ul>
-						</li>
-						<li>
-							<ul>
-								{qauntityInfo?.trackList?.['Disc 2 Side B'].length ? (
-									qauntityInfo?.trackList?.['Disc 2 Side B'].map(
-										(item, index) => (
-											<li key={index}>
-												<p className={styles.playlist_text}>
-													{index + 1}. {item}
-												</p>
-											</li>
-										),
-									)
-								) : (
-									<li>
-										<p className={styles.playlist_text}>정보 없음</p>
-									</li>
-								)}
-							</ul>
-						</li>
-					</>
+					<DynamicTrackList disc={'Disc 2 Side A'} trackList={qauntityInfo.trackList['Disc 2 Side A']} />
+				)}
+				{qauntityInfo?.trackList?.['Disc 2 Side B'].length > 0 && (
+					<DynamicTrackList disc={'Disc 2 Side B'} trackList={qauntityInfo.trackList['Disc 2 Side B']} />
 				)}
 			</ul>
 		</div>

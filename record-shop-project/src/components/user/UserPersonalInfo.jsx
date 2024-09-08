@@ -1,7 +1,14 @@
 // CSS
 import styles from './userPersonalInfo.module.css';
 
-const UserPersonalInfo = ({ userInfo }) => {
+const UserPersonalInfo = ({ 
+    userName, 
+    userGender, 
+    userPhoneNumber, 
+    zonecode, 
+    userAddress, 
+    userDetailAddress 
+}) => {
 
     return (
         <div className={styles.user_wrapper}>
@@ -12,7 +19,7 @@ const UserPersonalInfo = ({ userInfo }) => {
                 <input
                     type="text"
                     className={styles.input}
-                    value={userInfo.userName}
+                    value={userName}
                     readOnly
                 />
             </div>
@@ -23,7 +30,7 @@ const UserPersonalInfo = ({ userInfo }) => {
                 <input
                     type="text"
                     className={styles.input}
-                    value={userInfo.userGender === 'M' ? '남성' : '여성'}
+                    value={userGender === 'M' ? '남성' : '여성'}
                     readOnly
                 />
             </div>
@@ -34,7 +41,7 @@ const UserPersonalInfo = ({ userInfo }) => {
                 <input
                     type="text"
                     className={styles.input}
-                    value={userInfo.userPhoneNumber}
+                    value={userPhoneNumber}
                     readOnly
                 />
             </div>
@@ -45,7 +52,7 @@ const UserPersonalInfo = ({ userInfo }) => {
                 <input
                     type="text"
                     className={styles.input}
-                    value={userInfo.zonecode}
+                    value={zonecode}
                     readOnly
                 />
             </div>
@@ -56,7 +63,7 @@ const UserPersonalInfo = ({ userInfo }) => {
                 <input
                     type="text"
                     className={styles.input}
-                    value={userInfo.userAddress}
+                    value={userAddress}
                     readOnly
                 />
             </div>
@@ -67,7 +74,7 @@ const UserPersonalInfo = ({ userInfo }) => {
                 <input
                     type="text"
                     className={styles.input}
-                    value={userInfo.userDetailAddress}
+                    value={userDetailAddress}
                     readOnly
                 />
             </div>

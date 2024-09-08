@@ -1,8 +1,12 @@
 // Hook
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 // CSS
 import styles from './usercheck.module.css';
+
+// Component
+import dynamic from 'next/dynamic';
+const DynamicAccountPassword = dynamic(() => import('./AccountPassword'));
 
 const UserCheck = React.memo(function UserCheck({
 	isDisabled,
@@ -11,11 +15,6 @@ const UserCheck = React.memo(function UserCheck({
 	onSubmitFormData,
 	onEnterSubmitFormData,
 }) {
-	const userAccountRef = useRef(null);
-
-	useEffect(() => {
-		if (userAccountRef.current) userAccountRef.current.focus();
-	}, []);
 
 	return (
 		<div className={styles.container}>
@@ -23,7 +22,13 @@ const UserCheck = React.memo(function UserCheck({
 				본인 확인을 위해 아이디와 비밀번호를 입력해주세요
 			</h1>
 			<div className={styles.formdata_container}>
-				<div>
+				<DynamicAccountPassword 
+					userAccount={formData.userAccount}
+					userPassword={formData.userPassword}
+					onChangeFormData={onChangeFormData}
+					onEnterSubmitFormData={onEnterSubmitFormData}	
+				/>
+				{/* <div>
 					<label htmlFor="" className={styles.label}>
 						아이디
 					</label>
@@ -49,7 +54,7 @@ const UserCheck = React.memo(function UserCheck({
 						onChange={e => onChangeFormData(e)}
 						onKeyDown={e => onEnterSubmitFormData(e)}
 					/>
-				</div>
+				</div> */}
 
 				<div>
 					<button

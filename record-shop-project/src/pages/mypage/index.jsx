@@ -1,5 +1,8 @@
 import React from 'react';
 
+// CSS
+import styles from './index.module.css'
+
 // Layout
 import MyPageLayout from '@/layouts/MyPageLayout';
 
@@ -9,10 +12,10 @@ const DynamicUserInfo = dynamic(() => import('@/components/user/UserInfo'));
 
 const MyPage = React.memo(function MyPage({ setUser }) {
 	return (
-		<div>
-			<h1>마이페이지</h1>
+		<>
+			<h1 className={styles.title}>마이페이지</h1>
 			<DynamicUserInfo setUser={setUser}></DynamicUserInfo>
-		</div>
+		</>
 	);
 });
 

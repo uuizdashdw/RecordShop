@@ -72,36 +72,35 @@ const MainPage = React.memo(function MainPage({ products }) {
 	}, [products]);
 
 	return (
-		<MainLayout>
-			<main>
-				<Search />
-				<ul>
-					{dispatchList.map(({ id, products }, index) => (
-						<li key={index} className={styles.genreList}>
-							<h3 className={styles.title}>{getGenreTitle(id)}</h3>
+		
+		<>
+			<Search placeholder={'찾으시는 상품이 있으신가요?'} />
+			<ul>
+				{dispatchList.map(({ id, products }, index) => (
+					<li key={index} className={styles.genreList}>
+						<h3 className={styles.title}>{getGenreTitle(id)}</h3>
 
-							<Swiper
-								modules={[Navigation, Pagination]}
-								spaceBetween={0}
-								slidesPerView={6}
-								navigation
-								pagination={{ clickable: true }}
-							>
-								<div className={styles.productList}>
-									{products.map((item, index) => (
-										<SwiperSlide key={index}>
-											<div>
-												<DynamicProductItem product={item} />
-											</div>
-										</SwiperSlide>
-									))}
-								</div>
-							</Swiper>
-						</li>
-					))}
-				</ul>
-			</main>
-		</MainLayout>
+						<Swiper
+							modules={[Navigation, Pagination]}
+							spaceBetween={0}
+							slidesPerView={6}
+							navigation
+							pagination={{ clickable: true }}
+						>
+						<div className={styles.productList}>
+								{products.map((item, index) => (
+									<SwiperSlide key={index}>
+										<div>
+											<DynamicProductItem product={item} />
+										</div>
+									</SwiperSlide>
+								))}
+							</div>
+						</Swiper>
+					</li>
+				))}
+			</ul>			
+		</>
 	);
 });
 

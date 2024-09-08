@@ -182,7 +182,7 @@ const CartPage = () => {
 						<li className={styles.amount_info_list_item}>
 							<span className={styles.amount_info_title}>결제 금액 : </span>
 							<span className={styles.payment}>
-								{totalAmount.toLocaleString()}원
+								{totalAmount.toLocaleString()} 원
 							</span>
 						</li>
 						<li>
@@ -196,25 +196,10 @@ const CartPage = () => {
 						<li className={styles.final_total_amout}>
 							<span className={styles.amount_info_title}>총 결제 금액 : </span>
 							<span className={styles.payment}>
-								{finalTotalAmout.toLocaleString()}원
+								{finalTotalAmout.toLocaleString()} 원
 							</span>
 						</li>
 					</ul>
-					{/* <li className={styles.amount_info_list}>
-						<div>{totalAmount.toLocaleString()}원</div>
-						<div>
-							{totalAmount >= 70000 || !totalAmount ? (
-								0
-							) : (
-								<>
-									<p>3,000 원</p>
-									<p>(70,000원 이상 구매 시 무료)</p>
-								</>
-							)}
-						</div>
-
-						<div>{finalTotalAmout.toLocaleString()}원</div>
-					</li> */}
 				</div>
 				<div className={styles.order_button_wrapper}>
 					<button className={styles.order_button}>주문하기</button>

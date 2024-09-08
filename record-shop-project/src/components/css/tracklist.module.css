@@ -1,0 +1,11 @@
+.playlist_title {
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.playlist_text {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 8px;
+
+}

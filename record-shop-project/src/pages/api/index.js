@@ -18,7 +18,7 @@ import axios from 'axios';
 
 // Redux Toolkit 비동기화
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { deleteUser, onAuthStateChanged } from 'firebase/auth';
+import { deleteUser } from 'firebase/auth';
 
 const instance = axios.create({
 	baseURL: 'http://localhost:3000/api',

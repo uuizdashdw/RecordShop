@@ -3,10 +3,9 @@ import styles from './signin.module.css';
 
 // Components
 import AuthLayout from '@/layouts/AuthLayout';
-import Loading from '@/components/common/Loading';
 
 // Hooks
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 // Router
 import { useRouter } from 'next/router';
@@ -18,16 +17,18 @@ import { fetchUserLogin } from '../api';
 import { useDispatch } from 'react-redux';
 import { setUserInfo } from '@/store';
 
+// Component
+import dynamic from 'next/dynamic';
+const DynamicAccountPassword = dynamic(() => import('../../components/user/AccountPassword'));
+
 const SignInPage = ({ setUser }) => {
 	const [formData, setFormData] = useState({
-		account: '',
-		password: '',
+		userAccount: '',
+		userPassword: '',
 	});
 
 	// 아이디 기억하기
 	const [isRemember, setIsRemember] = useState(false);
-
-	const accountRef = useRef(null);
 
 	const router = useRouter();
 	const dispatch = useDispatch();
@@ -71,29 +72,24 @@ const SignInPage = ({ setUser }) => {
 		setIsRemember(rememberInfo.remember);
 		setFormData(prev => ({
 			...prev,
-			account: rememberInfo.userAccount,
+			userAccount: rememberInfo.userAccount,
 		}));
 	}, []);
-
-	// 아이디 focusing
-	useEffect(() => {
-		if (accountRef.current) accountRef.current.focus();
-	}, [formData.account]);
 
 	// 로그인 로직
 	const onSignIn = async event => {
 		if (event) event.preventDefault();
 
-		const { account, password } = formData;
+		const { userAccount, userPassword } = formData;
 
-		if (!account || !password)
+		if (!userAccount || !userPassword)
 			return alert('아이디와 비밀번호를 입력해 주세요.');
 
 		try {
-			const userInfo = await fetchUserLogin(account, password);
+			const userInfo = await fetchUserLogin(userAccount, userPassword);
 
 			if (userInfo) {
-				isCheckAccountRemember(isRemember, account);
+				isCheckAccountRemember(isRemember, userAccount);
 				dispatch(setUserInfo(userInfo));
 				setUser(JSON.parse(localStorage.getItem('user')));
 				alert(`${userInfo.userName} 님 환영합니다!`);
@@ -101,8 +97,8 @@ const SignInPage = ({ setUser }) => {
 			} else {
 				alert('아이디 혹은 비밀번호를 확인해주세요!');
 				setFormData({
-					account: '',
-					password: '',
+					userAccount: '',
+					userPassword: '',
 				});
 			}
 		} catch (reason) {
@@ -111,7 +107,7 @@ const SignInPage = ({ setUser }) => {
 		}
 	};
 
-	const onEnterSignin = event => {
+	const onEnterSubmitFormData = event => {
 		if (event.key === 'Enter') {
 			event.preventDefault();
 			onSignIn();
@@ -124,33 +120,12 @@ const SignInPage = ({ setUser }) => {
 				<div className={styles.container}>
 					<h3 className={styles.title}>로그인</h3>
 					<form onSubmit={e => e.preventDefault()} className={styles.form}>
-						<div className={styles.input_wrapper}>
-							<label htmlFor="userAccount" className={styles.label}>
-								아이디
-							</label>
-							<input
-								type="text"
-								name="account"
-								ref={accountRef}
-								value={formData.account}
-								className={styles.input}
-								onChange={event => onChangeFormData(event)}
-							/>
-						</div>
-						<div className={styles.input_wrapper}>
-							<label htmlFor="userPassword" className={styles.label}>
-								비밀번호
-							</label>
-							<input
-								type="password"
-								name="password"
-								maxLength={12}
-								value={formData.password}
-								className={styles.input}
-								onKeyDown={event => onEnterSignin(event)}
-								onChange={event => onChangeFormData(event)}
-							/>
-						</div>
+						<DynamicAccountPassword 
+							userAccount={formData.userAccount}
+							userPassword={formData.userPassword}
+							onChangeFormData={onChangeFormData}
+							onEnterSubmitFormData={onEnterSubmitFormData} />
+						
 						<div className={styles.btn_wrapper}>
 							<button className={styles.signin_button} onClick={onSignIn}>
 								로그인

@@ -7,16 +7,8 @@ import styles from './userPersonalInfoChange.module.css'
 // Util
 import phoneNumberHandler from '../../../utils/getPhoneNumber';
 
-// Libraries
-import DaumPostcodeEmbed from 'react-daum-postcode';
-import {
-	Modal,
-	ModalOverlay,
-	ModalContent,
-	ModalHeader,
-	ModalBody,
-	ModalCloseButton,
-} from '@chakra-ui/react';
+// Component
+import AddressModal from '../modal/AddressModal';
 
 const UserPersonalInfoChange = React.memo(function UserPersonalInfoChange({ 
     formData,
@@ -158,16 +150,11 @@ const UserPersonalInfoChange = React.memo(function UserPersonalInfoChange({
                     onKeyDown={e => onEnterInfoChange(e)}
                 />
             </div>
-            <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-				<ModalOverlay />
-				<ModalContent>
-					<ModalHeader>주소 검색</ModalHeader>
-					<ModalCloseButton />
-					<ModalBody>
-						<DaumPostcodeEmbed onComplete={onCompleteHandle} />
-					</ModalBody>
-				</ModalContent>
-			</Modal>
+            <AddressModal
+                isOpen={isOpen} 
+                setIsOpen={setIsOpen} 
+                onCompleteHandle={onCompleteHandle} 
+             />
         </div>
     )
 });

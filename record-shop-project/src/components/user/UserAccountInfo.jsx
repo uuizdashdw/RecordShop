@@ -77,6 +77,7 @@ const UserAccountInfo = React.memo(function UserAccountInfo({
                 setUser(null)
                 alert('변경 완료되었습니다.');
                 router.replace('/');
+				
             } catch (error) {
                 console.error("오류 발생:", error);
                 alert('비밀번호 변경 중 오류가 발생했습니다.');
@@ -178,7 +179,7 @@ const UserAccountInfo = React.memo(function UserAccountInfo({
 				<div className={styles.user_container}>
 					{!personalInfoChange&& (
 						<>
-							<DynamicUserPersonalInfo userInfo={userInfo} />
+							<DynamicUserPersonalInfo {...userInfo} />
 							<DynamicUserInfoButton 
 								type={'userInfo'} 
 								setPersonalInfoChange={setPersonalInfoChange} 

@@ -36,7 +36,6 @@ const RockAndPopPage = React.memo(function RockAndPopPage(data) {
 
 	useEffect(() => {
 		const rockAndPop = data.children.props.data;
-
 		setMusic(rockAndPop);
 	}, []);
 

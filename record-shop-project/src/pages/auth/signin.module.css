@@ -20,26 +20,6 @@
     gap: 30px;
 }
 
-.input_wrapper {
-    width: 70%;
-}
-
-.label {
-    font-size: 14px;
-    display: block;
-    margin-bottom: 12px;
-}
-
-.input {
-    width: 100%;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    outline: none;
-    padding: 0px 8px;
-    font-size: 14px;
-    height: 30px;
-}
-
 .btn_wrapper {
     width: 70%;
     text-align: center;

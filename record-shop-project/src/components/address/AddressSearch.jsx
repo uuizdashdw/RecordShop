@@ -6,16 +6,9 @@ import styles from '../css/addressSearch.module.css';
 // Hooks
 import { useState } from 'react';
 
-// Library
-import DaumPostcodeEmbed from 'react-daum-postcode';
-import {
-	Modal,
-	ModalOverlay,
-	ModalContent,
-	ModalHeader,
-	ModalBody,
-	ModalCloseButton,
-} from '@chakra-ui/react';
+// Component
+import AddressModal from '../modal/AddressModal';
+
 
 const AddressSearch = React.memo(function AddressSearch({
 	address,
@@ -76,17 +69,11 @@ const AddressSearch = React.memo(function AddressSearch({
 				className={styles.form_data}
 				onChange={e => onUpdateUserInfo(e)}
 			/>
-
-			<Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-				<ModalOverlay />
-				<ModalContent>
-					<ModalHeader>주소 검색</ModalHeader>
-					<ModalCloseButton />
-					<ModalBody>
-						<DaumPostcodeEmbed onComplete={onCompleteHandle} />
-					</ModalBody>
-				</ModalContent>
-			</Modal>
+			<AddressModal 
+				isOpen={isOpen} 
+				setIsOpen={setIsOpen} 
+				onCompleteHandle={onCompleteHandle} 
+			/>
 		</>
 	);
 });

@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from 'react';
 // Router
 import { useRouter } from 'next/router';
 
-const Search = () => {
+const Search = ({ placeholder }) => {
 	const [searchData, setSearchData] = useState('');
 
 	const inputRef = useRef(null);
@@ -15,8 +15,7 @@ const Search = () => {
 	const router = useRouter();
 
 	const onSearchProduct = e => {
-		const { value } = e.target;
-		setSearchData(value);
+		setSearchData(e.target.value);
 	};
 
 	const onClickToSearch = async () => {
@@ -48,7 +47,7 @@ const Search = () => {
 				value={searchData}
 				onKeyDown={event => onEnterToSearch(event)}
 				onChange={e => onSearchProduct(e)}
-				placeholder="찾으시는 상품이 있으신가요?"
+				placeholder={placeholder}
 			/>
 			<button className={styles.search_button} onClick={onClickToSearch}>
 				검색
