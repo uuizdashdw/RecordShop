@@ -1,61 +1,61 @@
-import React from 'react';
+import React from "react";
 
 // CSS
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
 // Layout
-import ProductLayout from '@/layouts/ProductLayout';
+import ProductLayout from "@/layouts/ProductLayout";
 
 // Dynamic Component
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 const DynamicProductItem = dynamic(
-	() => import('@/components/product/ProductItem'),
+  () => import("@/components/product/ProductItem")
 );
 
 // Components
-import Search from '@/components/search/Search';
+import Search from "@/components/search/Search";
 
 // API
-import { fetchHiphopRnbProducts } from '@/pages/api';
+import { fetchHiphopRnbProducts } from "@/pages/api";
 
 // Hooks
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export async function getServerSideProps() {
-	const data = await fetchHiphopRnbProducts();
+  const data = await fetchHiphopRnbProducts();
 
-	return {
-		props: {
-			data,
-		},
-	};
+  return {
+    props: {
+      data,
+    },
+  };
 }
 
 const HiphopRnbPage = React.memo(function HiiphopRnbPage(data) {
-	const [music, setMusic] = useState([]);
+  const [music, setMusic] = useState([]);
 
-	useEffect(() => {
-		const hiphopMusic = data.children.props.data;
-		setMusic(hiphopMusic);
-	}, []);
+  useEffect(() => {
+    const hiphopMusic = data.children.props.data;
+    setMusic(hiphopMusic);
+  }, []);
 
-	return (
-		<ProductLayout>
-			<Search />
-			<h3 className={styles.title}>Hiphop / R&B</h3>
-			<ul className={styles.musicList}>
-				{music.map((item, index) => (
-					<li key={index}>
-						<DynamicProductItem product={item} />
-					</li>
-				))}
-			</ul>
-		</ProductLayout>
-	);
+  return (
+    <ProductLayout>
+      <Search />
+      <h3 className={styles.title}>Hiphop / R&B</h3>
+      <ul className={styles.musicList}>
+        {music.map((item, index) => (
+          <li key={index}>
+            <DynamicProductItem product={item} />
+          </li>
+        ))}
+      </ul>
+    </ProductLayout>
+  );
 });
 
 HiphopRnbPage.getLayout = function getLayout(page) {
-	return <HiphopRnbPage>{page}</HiphopRnbPage>;
+  return <HiphopRnbPage>{page}</HiphopRnbPage>;
 };
 
 export default HiphopRnbPage;
