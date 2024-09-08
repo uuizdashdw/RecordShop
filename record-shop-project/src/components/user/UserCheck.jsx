@@ -1,33 +1,33 @@
 // Hook
-import React from "react";
+import React from 'react';
 
 // CSS
-import styles from "./usercheck.module.css";
+import styles from './usercheck.module.css';
 
 // Component
-import dynamic from "next/dynamic";
-const DynamicAccountPassword = dynamic(() => import("./AccountPassword"));
+import dynamic from 'next/dynamic';
+const DynamicAccountPassword = dynamic(() => import('./AccountPassword'));
 
 const UserCheck = React.memo(function UserCheck({
-  isDisabled,
-  formData,
-  onChangeFormData,
-  onSubmitFormData,
-  onEnterSubmitFormData,
+	isDisabled,
+	formData,
+	onChangeFormData,
+	onSubmitFormData,
+	onEnterSubmitFormData,
 }) {
-  return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>
-        본인 확인을 위해 아이디와 비밀번호를 입력해주세요
-      </h1>
-      <div className={styles.formdata_container}>
-        <DynamicAccountPassword
-          userAccount={formData.userAccount}
-          userPassword={formData.userPassword}
-          onChangeFormData={onChangeFormData}
-          onEnterSubmitFormData={onEnterSubmitFormData}
-        />
-        {/* <div>
+	return (
+		<div className={styles.container}>
+			<h1 className={styles.title}>
+				본인 확인을 위해 아이디와 비밀번호를 입력해주세요
+			</h1>
+			<div className={styles.formdata_container}>
+				<DynamicAccountPassword
+					userAccount={formData.userAccount}
+					userPassword={formData.userPassword}
+					onChangeFormData={onChangeFormData}
+					onEnterSubmitFormData={onEnterSubmitFormData}
+				/>
+				{/* <div>
 					<label htmlFor="" className={styles.label}>
 						아이디
 					</label>
@@ -55,18 +55,18 @@ const UserCheck = React.memo(function UserCheck({
 					/>
 				</div> */}
 
-        <div>
-          <button
-            className={isDisabled ? styles.button_disabled : styles.button}
-            disabled={isDisabled}
-            onClick={(e) => onSubmitFormData(e)}
-          >
-            제출
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+				<div>
+					<button
+						className={isDisabled ? styles.button_disabled : styles.button}
+						disabled={isDisabled}
+						onClick={e => onSubmitFormData(e)}
+					>
+						제출
+					</button>
+				</div>
+			</div>
+		</div>
+	);
 });
 
 export default UserCheck;

@@ -1,62 +1,62 @@
-import React from "react";
+import React from 'react';
 
 // CSS
-import styles from "./index.module.css";
+import styles from './index.module.css';
 
 // Layout
-import ProductLayout from "@/layouts/ProductLayout";
+import ProductLayout from '@/layouts/ProductLayout';
 
 // Dynamic Component
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 const DynamicProductItem = dynamic(
-  () => import("@/components/product/ProductItem")
+	() => import('@/components/product/ProductItem'),
 );
 
 // Components
-import Search from "@/components/search/Search";
+import Search from '@/components/search/Search';
 
 // Hooks
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 // API
-import { fetchRockPopProducts } from "@/pages/api";
+import { fetchRockPopProducts } from '@/pages/api';
 
 export async function getServerSideProps() {
-  const data = await fetchRockPopProducts();
+	const data = await fetchRockPopProducts();
 
-  return {
-    props: {
-      data,
-    },
-  };
+	return {
+		props: {
+			data,
+		},
+	};
 }
 
 const RockAndPopPage = React.memo(function RockAndPopPage(data) {
-  const [music, setMusic] = useState([]);
+	const [music, setMusic] = useState([]);
 
-  useEffect(() => {
-    const rockAndPop = data.children.props.data;
-    setMusic(rockAndPop);
-  }, []);
+	useEffect(() => {
+		const rockAndPop = data.children.props.data;
+		setMusic(rockAndPop);
+	}, []);
 
-  return (
-    <ProductLayout>
-      <Search />
-      <h3 className={styles.title}>Rock / Pop</h3>
+	return (
+		<ProductLayout>
+			<Search />
+			<h3 className={styles.title}>Rock / Pop</h3>
 
-      <ul className={styles.musicList}>
-        {music.map((item, index) => (
-          <li key={index}>
-            <DynamicProductItem product={item} />
-          </li>
-        ))}
-      </ul>
-    </ProductLayout>
-  );
+			<ul className={styles.musicList}>
+				{music.map((item, index) => (
+					<li key={index}>
+						<DynamicProductItem product={item} />
+					</li>
+				))}
+			</ul>
+		</ProductLayout>
+	);
 });
 
 RockAndPopPage.getLayout = function getLayout(page) {
-  return <RockAndPopPage>{page}</RockAndPopPage>;
+	return <RockAndPopPage>{page}</RockAndPopPage>;
 };
 
 export default RockAndPopPage;

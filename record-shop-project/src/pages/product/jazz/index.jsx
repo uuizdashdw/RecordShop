@@ -1,62 +1,62 @@
-import React from "react";
+import React from 'react';
 
 // CSS
-import styles from "./index.module.css";
+import styles from './index.module.css';
 
 // Layout
-import ProductLayout from "@/layouts/ProductLayout";
+import ProductLayout from '@/layouts/ProductLayout';
 
 // Dynamic Component
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 const DynamicProductItem = dynamic(
-  () => import("@/components/product/ProductItem")
+	() => import('@/components/product/ProductItem'),
 );
 
 // Components
-import Search from "@/components/search/Search";
+import Search from '@/components/search/Search';
 
 // API
-import { fetchJazzProducts } from "@/pages/api";
+import { fetchJazzProducts } from '@/pages/api';
 
 // Hooks
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export async function getServerSideProps() {
-  const data = await fetchJazzProducts();
+	const data = await fetchJazzProducts();
 
-  return {
-    props: {
-      data,
-    },
-  };
+	return {
+		props: {
+			data,
+		},
+	};
 }
 
 const JazzPage = React.memo(function JazzPage(data) {
-  const [music, setMusic] = useState([]);
+	const [music, setMusic] = useState([]);
 
-  useEffect(() => {
-    const jazz = data.children.props.data;
-    setMusic(jazz);
-  }, []);
+	useEffect(() => {
+		const jazz = data.children.props.data;
+		setMusic(jazz);
+	}, []);
 
-  return (
-    <ProductLayout>
-      <Search />
-      <h3 className={styles.title}>Jazz Page</h3>
+	return (
+		<ProductLayout>
+			<Search />
+			<h3 className={styles.title}>Jazz Page</h3>
 
-      <ul className={styles.musicList}>
-        {music.map((item, index) => (
-          <li key={index}>
-            <DynamicProductItem product={item} />
-          </li>
-        ))}
-      </ul>
-    </ProductLayout>
-  );
+			<ul className={styles.musicList}>
+				{music.map((item, index) => (
+					<li key={index}>
+						<DynamicProductItem product={item} />
+					</li>
+				))}
+			</ul>
+		</ProductLayout>
+	);
 });
 
 JazzPage.getLayout = function getLayout(page) {
-  return <JazzPage>{page}</JazzPage>;
+	return <JazzPage>{page}</JazzPage>;
 };
 
 export default JazzPage;

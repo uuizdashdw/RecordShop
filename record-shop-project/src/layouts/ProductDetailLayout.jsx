@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const ProductDetailLayout = React.memo(function ProductDetailLayout({
-  children,
+	children,
 }) {
-  return <>{children}</>;
+	return <>{children}</>;
 });
 
 export default ProductDetailLayout;

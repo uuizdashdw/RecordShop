@@ -5,8 +5,8 @@ import styles from '../css/button.module.css';
 import { useRouter } from 'next/router';
 
 // Redux
-import { useDispatch, useSelector } from 'react-redux';
-import { setInitialCarts, addToCarts } from '@/store';
+import { useDispatch } from 'react-redux';
+import { addToCarts } from '@/store';
 
 const Button = ({ product }) => {
 	const dispatch = useDispatch();
