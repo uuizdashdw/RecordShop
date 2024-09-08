@@ -117,42 +117,41 @@ const SignInPage = ({ setUser }) => {
 	};
 
 	return (
-		<AuthLayout>
-			<div className={styles.container}>
-				<h3 className={styles.title}>로그인</h3>
-				<form onSubmit={e => e.preventDefault()} className={styles.form}>
-					<DynamicAccountPassword
-						userAccount={formData.userAccount}
-						userPassword={formData.userPassword}
-						onChangeFormData={onChangeFormData}
-						onEnterSubmitFormData={onEnterSubmitFormData}
-					/>
+		<div className={styles.container}>
+			<h3 className={styles.title}>로그인</h3>
+			<form onSubmit={e => e.preventDefault()} className={styles.form}>
+				<DynamicAccountPassword
+					userAccount={formData.userAccount}
+					userPassword={formData.userPassword}
+					onChangeFormData={onChangeFormData}
+					onEnterSubmitFormData={onEnterSubmitFormData}
+				/>
 
-					<div className={styles.btn_wrapper}>
-						<button className={styles.signin_button} onClick={onSignIn}>
-							로그인
-						</button>
-						<div className={styles.checkbox_wrapper}>
-							<input
-								id="save_userAccount"
-								type="checkbox"
-								value={isRemember}
-								checked={isRemember}
-								className={styles.checkbox}
-								onChange={() => setIsRemember(!isRemember)}
-							/>
-							<label
-								htmlFor="save_userAccount"
-								className={styles.checkbox_label}
-							>
-								<span>아이디 기억하기</span>
-							</label>
-						</div>
+				<div className={styles.btn_wrapper}>
+					<button className={styles.signin_button} onClick={onSignIn}>
+						로그인
+					</button>
+					<div className={styles.checkbox_wrapper}>
+						<input
+							id="save_userAccount"
+							type="checkbox"
+							value={isRemember}
+							checked={isRemember}
+							className={styles.checkbox}
+							onChange={() => setIsRemember(!isRemember)}
+						/>
+						<label htmlFor="save_userAccount" className={styles.checkbox_label}>
+							<span>아이디 기억하기</span>
+						</label>
 					</div>
-				</form>
-			</div>
-		</AuthLayout>
+				</div>
+			</form>
+		</div>
 	);
+};
+
+SignInPage.getLayout = function getLayout(page) {
+	return <AuthLayout>{page}</AuthLayout>;
 };
 
 export default SignInPage;
