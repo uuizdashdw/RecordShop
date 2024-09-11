@@ -21,7 +21,7 @@ import { useEffect, useState } from 'react';
 // API
 import { fetchSoundtrackProducts } from '@/pages/api';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const data = await fetchSoundtrackProducts();
 	return {
 		props: {

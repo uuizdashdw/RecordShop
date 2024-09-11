@@ -29,8 +29,8 @@ const DynamicProductItem = dynamic(
 	() => import('@/components/product/ProductItem'),
 );
 
-// 전체 상품 서버 사이드 렌더링
-export async function getServerSideProps() {
+// 전체 상품 SSG
+export async function getStaticProps() {
 	const products = await fetchAllProducts();
 
 	return {
@@ -63,7 +63,8 @@ const MainPage = React.memo(function MainPage({ products }) {
 			case 'rock&pop':
 				return 'Rock / Pop';
 			default:
-				return genre.charAt(0).toUpperCase() + genre.slice(1);
+				return '';
+			// return genre.charAt(0).toUpperCase() + genre.slice(1);
 		}
 	};
 
@@ -75,9 +76,9 @@ const MainPage = React.memo(function MainPage({ products }) {
 		<>
 			<Search placeholder={'찾으시는 상품이 있으신가요?'} />
 			<ul>
-				{dispatchList.map(({ id, products }, index) => (
+				{dispatchList.map(({ genre, products }, index) => (
 					<li key={index} className={styles.genreList}>
-						<h3 className={styles.title}>{getGenreTitle(id)}</h3>
+						<h3 className={styles.title}>{getGenreTitle(genre)}</h3>
 
 						<Swiper
 							modules={[Navigation, Pagination]}

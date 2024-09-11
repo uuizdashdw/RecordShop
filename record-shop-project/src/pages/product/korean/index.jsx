@@ -19,7 +19,7 @@ import { fetchKoreanProducts } from '@/pages/api';
 import styles from './index.module.css';
 import Search from '@/components/search/Search';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const data = await fetchKoreanProducts();
 
 	return {

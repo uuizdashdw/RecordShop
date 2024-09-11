@@ -21,7 +21,7 @@ import { fetchJazzProducts } from '@/pages/api';
 // Hooks
 import { useEffect, useState } from 'react';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const data = await fetchJazzProducts();
 
 	return {

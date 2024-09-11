@@ -21,7 +21,7 @@ import { useEffect, useState } from 'react';
 // API
 import { fetchNuDiscoModernFunkProducts } from '@/pages/api';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const data = await fetchNuDiscoModernFunkProducts();
 
 	return {
