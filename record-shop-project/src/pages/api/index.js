@@ -110,7 +110,6 @@ const fetchProductsByName = async searchTerm => {
 	} catch (reason) {
 		console.error('데이터를 가져오는 데 실패했습니다.', reason);
 	}
-
 	return filteredProducts;
 };
 

@@ -21,21 +21,26 @@ import { useRouter } from 'next/router';
 import { fetchProductsByName } from '../api';
 import Search from '@/components/search/Search';
 
-const SearchPage = () => {
+export async function getServerSideProps(context) {
+	const { query } = context;
+	const data = await fetchProductsByName(query.query);
+
+	return {
+		props: {
+			data,
+		},
+	};
+}
+
+const SearchPage = data => {
 	const router = useRouter();
 	const { query } = router;
+
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
-		const fetchResults = async () => {
-			if (query.query) {
-				const results = await fetchProductsByName(query.query);
-				setProducts(results);
-			}
-		};
-
-		fetchResults();
-	}, [query]);
+		setProducts(data.children.props.data);
+	}, [data]);
 
 	return (
 		<SearchLayout>
