@@ -28,18 +28,24 @@ const SearchPage = () => {
 	const [products, setProducts] = useState([]);
 
 	const fetchSearchResult = async () => {
-		const results = await fetchProductsByName(query);
-		setProducts(results);
+		if (query) {
+			try {
+				const results = await fetchProductsByName(query);
+				setProducts(results);
+			} catch (reason) {
+				console.error(reason);
+			}
+		}
 	};
 
 	useEffect(() => {
-		if (query) {
+		if (router.isReady) {
 			fetchSearchResult();
 		}
-	}, [query]);
+	}, [query, router.isReady]);
 
 	return (
-		<SearchLayout>
+		<>
 			<Search placeholder={'찾으시는 상품이 있으신가요?'} />
 			{products.length ? (
 				<div>
@@ -54,15 +60,15 @@ const SearchPage = () => {
 				</div>
 			) : (
 				<div className={styles.no_result}>
-					{query.query} 와(과) 관련된 상품이 없습니다.
+					{query} 와(과) 관련된 상품이 없습니다.
 				</div>
 			)}
-		</SearchLayout>
+		</>
 	);
 };
 
 SearchPage.getLayout = function getLayout(page) {
-	return <SearchPage>{page}</SearchPage>;
+	return <SearchLayout>{page}</SearchLayout>;
 };
 
 export default SearchPage;

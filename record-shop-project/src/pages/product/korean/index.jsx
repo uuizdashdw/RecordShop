@@ -40,24 +40,22 @@ const KoreanPage = React.memo(function KoreanPage(data) {
 
 	return (
 		<>
-			<ProductLayout>
-				<Search />
-				<h3 className={styles.title}>Korean</h3>
+			<Search />
+			<h3 className={styles.title}>Korean</h3>
 
-				<ul className={styles.musicList}>
-					{music.map((item, index) => (
-						<li key={index}>
-							<DynamicProductItem product={item} />
-						</li>
-					))}
-				</ul>
-			</ProductLayout>
+			<ul className={styles.musicList}>
+				{music.map((item, index) => (
+					<li key={index}>
+						<DynamicProductItem product={item} />
+					</li>
+				))}
+			</ul>
 		</>
 	);
 });
 
 KoreanPage.getLayout = function getLayout(page) {
-	return <KoreanPage>{page}</KoreanPage>;
+	return <ProductLayout>{page}</ProductLayout>;
 };
 
 export default KoreanPage;

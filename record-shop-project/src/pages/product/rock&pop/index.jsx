@@ -40,7 +40,7 @@ const RockAndPopPage = React.memo(function RockAndPopPage(data) {
 	}, []);
 
 	return (
-		<ProductLayout>
+		<>
 			<Search />
 			<h3 className={styles.title}>Rock / Pop</h3>
 
@@ -51,12 +51,12 @@ const RockAndPopPage = React.memo(function RockAndPopPage(data) {
 					</li>
 				))}
 			</ul>
-		</ProductLayout>
+		</>
 	);
 });
 
 RockAndPopPage.getLayout = function getLayout(page) {
-	return <RockAndPopPage>{page}</RockAndPopPage>;
+	return <ProductLayout>{page}</ProductLayout>;
 };
 
 export default RockAndPopPage;

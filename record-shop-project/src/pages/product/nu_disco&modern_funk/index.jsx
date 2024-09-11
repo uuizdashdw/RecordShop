@@ -41,7 +41,7 @@ const NuDiscoAndModernFunkPage = React.memo(
 		}, []);
 
 		return (
-			<ProductLayout>
+			<>
 				<Search />
 				<h3 className={styles.title}>Nu Disco / Modern Funk</h3>
 
@@ -52,13 +52,13 @@ const NuDiscoAndModernFunkPage = React.memo(
 						</li>
 					))}
 				</ul>
-			</ProductLayout>
+			</>
 		);
 	},
 );
 
 NuDiscoAndModernFunkPage.getLayout = function getLayout(page) {
-	return <NuDiscoAndModernFunkPage>{page}</NuDiscoAndModernFunkPage>;
+	return <ProductLayout>{page}</ProductLayout>;
 };
 
 export default NuDiscoAndModernFunkPage;

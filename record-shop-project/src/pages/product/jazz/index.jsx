@@ -40,7 +40,7 @@ const JazzPage = React.memo(function JazzPage(data) {
 	}, []);
 
 	return (
-		<ProductLayout>
+		<>
 			<Search />
 			<h3 className={styles.title}>Jazz Page</h3>
 
@@ -51,12 +51,12 @@ const JazzPage = React.memo(function JazzPage(data) {
 					</li>
 				))}
 			</ul>
-		</ProductLayout>
+		</>
 	);
 });
 
 JazzPage.getLayout = function getLayout(page) {
-	return <JazzPage>{page}</JazzPage>;
+	return <ProductLayout>{page}</ProductLayout>;
 };
 
 export default JazzPage;

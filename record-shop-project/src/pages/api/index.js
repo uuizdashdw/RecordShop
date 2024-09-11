@@ -58,11 +58,10 @@ const fetchProductDetails = async params => {
 		const data = productDoc.data();
 
 		const product = data.products.find(p => Number(p.id) === Number(productId));
-		console.log('### 상품 확인 ### ==> ', product);
 
 		return product ? product : { notFound: true };
 	} catch (reason) {
-		console.error('데이터를 가져오는 데 실패했습니다.', reason);
+		console.error('상세 데이터를 가져오는 데 실패했습니다.', reason);
 		return { notFound: true };
 	}
 };

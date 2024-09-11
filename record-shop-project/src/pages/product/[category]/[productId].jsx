@@ -17,9 +17,33 @@ import { useEffect, useState, useCallback } from 'react';
 
 // CSS
 import styles from './[productId].module.css';
+import { useRouter } from 'next/router';
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+	const categories = await fetchAllProducts();
+
+	const paths = categories.flatMap(category =>
+		category.products.map(product => ({
+			params: {
+				category: String(category.id),
+				productId: String(product.id),
+			},
+		})),
+	);
+
+	return {
+		paths,
+		fallback: 'blocking',
+	};
+}
+
+export async function getStaticProps({ params }) {
 	const product = await fetchProductDetails(params);
+	if (!product) {
+		return {
+			notFound: true,
+		};
+	}
 	return {
 		props: {
 			product,
@@ -27,8 +51,9 @@ export async function getServerSideProps({ params }) {
 	};
 }
 
-const ProductDetailPage = React.memo(function ProductDetailPage(product) {
+const ProductDetailPage = React.memo(function ProductDetailPage({ product }) {
 	const [music, setMusic] = useState({});
+	const router = useRouter();
 
 	const memoizedSetMusic = useCallback(
 		data => {
@@ -38,23 +63,23 @@ const ProductDetailPage = React.memo(function ProductDetailPage(product) {
 	);
 
 	useEffect(() => {
-		const data = product.children.props.product;
-		memoizedSetMusic(data);
+		memoizedSetMusic(product);
 	}, [product]);
 
+	if (router.isFallback) return '로딩 중...';
+	if (!product) return '문제가 발생하였습니다. 다시 시도해주세요.';
+
 	return (
-		<ProductDetailLayout>
-			<main>
-				<section className={styles.section}>
-					<DynamicProductDetailItem product={music} />
-				</section>
-			</main>
-		</ProductDetailLayout>
+		<>
+			<section className={styles.section}>
+				<DynamicProductDetailItem product={music} />
+			</section>
+		</>
 	);
 });
 
 ProductDetailPage.getLayout = function getLayout(page) {
-	return <ProductDetailPage>{page}</ProductDetailPage>;
+	return <ProductDetailLayout>{page}</ProductDetailLayout>;
 };
 
 export default ProductDetailPage;

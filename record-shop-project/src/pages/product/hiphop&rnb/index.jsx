@@ -40,7 +40,7 @@ const HiphopRnbPage = React.memo(function HiiphopRnbPage(data) {
 	}, []);
 
 	return (
-		<ProductLayout>
+		<>
 			<Search />
 			<h3 className={styles.title}>Hiphop / R&B</h3>
 			<ul className={styles.musicList}>
@@ -50,12 +50,12 @@ const HiphopRnbPage = React.memo(function HiiphopRnbPage(data) {
 					</li>
 				))}
 			</ul>
-		</ProductLayout>
+		</>
 	);
 });
 
 HiphopRnbPage.getLayout = function getLayout(page) {
-	return <HiphopRnbPage>{page}</HiphopRnbPage>;
+	return <ProductLayout>{page}</ProductLayout>;
 };
 
 export default HiphopRnbPage;

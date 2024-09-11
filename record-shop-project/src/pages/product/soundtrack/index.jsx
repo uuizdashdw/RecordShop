@@ -39,7 +39,7 @@ const SoundtrackPage = React.memo(function SoundtrackPage(data) {
 	}, []);
 
 	return (
-		<ProductLayout>
+		<>
 			<Search />
 			<h3 className={styles.title}>Soundtrack</h3>
 
@@ -50,12 +50,12 @@ const SoundtrackPage = React.memo(function SoundtrackPage(data) {
 					</li>
 				))}
 			</ul>
-		</ProductLayout>
+		</>
 	);
 });
 
 SoundtrackPage.getLayout = function getLayout(page) {
-	return <SoundtrackPage>{page}</SoundtrackPage>;
+	return <ProductLayout>{page}</ProductLayout>;
 };
 
 export default SoundtrackPage;

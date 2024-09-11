@@ -42,25 +42,23 @@ const BeatsAndInstrumentalPage = React.memo(
 
 		return (
 			<>
-				<ProductLayout>
-					<Search />
-					<h3 className={styles.title}>Beats / Instrumental</h3>
+				<Search />
+				<h3 className={styles.title}>Beats / Instrumental</h3>
 
-					<ul className={styles.musicList}>
-						{music.map((item, index) => (
-							<li key={index}>
-								<DynamicProductItem product={item} />
-							</li>
-						))}
-					</ul>
-				</ProductLayout>
+				<ul className={styles.musicList}>
+					{music.map((item, index) => (
+						<li key={index}>
+							<DynamicProductItem product={item} />
+						</li>
+					))}
+				</ul>
 			</>
 		);
 	},
 );
 
 BeatsAndInstrumentalPage.getLayout = function getLayout(page) {
-	return <BeatsAndInstrumentalPage>{page}</BeatsAndInstrumentalPage>;
+	return <ProductLayout>{page}</ProductLayout>;
 };
 
 export default BeatsAndInstrumentalPage;

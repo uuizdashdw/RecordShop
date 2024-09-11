@@ -40,7 +40,7 @@ const SoulFunkDiscoPage = React.memo(function SoulFunkDiscoPage(data) {
 	}, []);
 
 	return (
-		<ProductLayout>
+		<>
 			<Search />
 			<h3 className={styles.title}>Soul / Funk / Disco</h3>
 
@@ -51,12 +51,12 @@ const SoulFunkDiscoPage = React.memo(function SoulFunkDiscoPage(data) {
 					</li>
 				))}
 			</ul>
-		</ProductLayout>
+		</>
 	);
 });
 
 SoulFunkDiscoPage.getLayout = function getLayout(page) {
-	return <SoulFunkDiscoPage>{page}</SoulFunkDiscoPage>;
+	return <ProductLayout>{page}</ProductLayout>;
 };
 
 export default SoulFunkDiscoPage;
