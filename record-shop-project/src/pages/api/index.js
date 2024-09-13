@@ -33,9 +33,16 @@ const fetchAllProducts = async () => {
 			id: doc.id,
 			...doc.data(),
 		}));
-
-		const response = await fetch(`${instance.getUri()}/revalidate?path=/`);
-		if (!response.ok) console.error('재검증 실패 :: ', await response.text());
+		// try {
+		// 	const response = await fetch(
+		// 		'http://localhost:3000/api/revalidate?path=/',
+		// 	);
+		// 	if (!response.ok) {
+		// 		console.error('메인 페이지 재검증 실패 :: ', await response.text());
+		// 	}
+		// } catch (error) {
+		// 	throw new Error(error);
+		// }
 	} catch (reason) {
 		console.error('데이터를 가져오는 데 실패했습니다.', reason);
 	}
@@ -61,12 +68,12 @@ const fetchProductDetails = async params => {
 
 		const product = data.products.find(p => Number(p.id) === Number(productId));
 
-		if (product) {
-			const response = await fetch(
-				`${instance.getUri()}/revalidate?path=/product/${category}/${productId}`,
-			);
-			if (!response.ok) console.error('재검증 실패 :: ', await response.text());
-		}
+		// if (product) {
+		// 	const response = await fetch(
+		// 		`${instance.getUri()}/revalidate?path=/product/${category}/${productId}`,
+		// 	);
+		// 	if (!response.ok) console.error('재검증 실패 :: ', await response.text());
+		// }
 
 		return product ? product : { notFound: true };
 	} catch (reason) {
@@ -87,12 +94,12 @@ const fetchCategoryIdProducts = async categoryId => {
 			if (data.products) {
 				categoryProducts = data.products;
 
-				const response = await fetch(
-					`${instance.getUri()}/revalidate?path=/product/${categoryId}`,
-				);
+				// const response = await fetch(
+				// 	`${instance.getUri()}/revalidate?path=/product/${categoryId}`,
+				// );
 
-				if (!response.ok)
-					console.error('재검증 실패 : ', await response.text());
+				// if (!response.ok)
+				// 	console.error('재검증 실패 : ', await response.text());
 			}
 		}
 	} catch (reason) {

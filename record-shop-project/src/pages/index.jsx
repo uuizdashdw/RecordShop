@@ -37,7 +37,6 @@ export async function getStaticProps() {
 		props: {
 			products,
 		},
-		revalidate: 3,
 	};
 }
 
@@ -71,7 +70,7 @@ const MainPage = React.memo(function MainPage({ products }) {
 
 	useEffect(() => {
 		dispatchProduct();
-	}, [products]);
+	}, []);
 
 	return (
 		<>
