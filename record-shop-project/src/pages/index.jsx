@@ -32,7 +32,6 @@ const DynamicProductItem = dynamic(
 // 전체 상품 SSG
 export async function getStaticProps() {
 	const products = await fetchAllProducts();
-
 	return {
 		props: {
 			products,
@@ -70,7 +69,7 @@ const MainPage = React.memo(function MainPage({ products }) {
 
 	useEffect(() => {
 		dispatchProduct();
-	}, []);
+	}, [products]);
 
 	return (
 		<>
