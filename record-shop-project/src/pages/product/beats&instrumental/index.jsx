@@ -31,31 +31,30 @@ export async function getStaticProps() {
 	};
 }
 
-const BeatsAndInstrumentalPage = React.memo(
-	function BeatsAndInstrumentalPage(data) {
-		const [music, setMusic] = useState([]);
+const BeatsAndInstrumentalPage = React.memo(function BeatsAndInstrumentalPage({
+	data,
+}) {
+	const [music, setMusic] = useState([]);
 
-		useEffect(() => {
-			const beatsInstrumental = data.children.props.data;
-			setMusic(beatsInstrumental);
-		}, []);
+	useEffect(() => {
+		setMusic(data);
+	}, []);
 
-		return (
-			<>
-				<Search />
-				<h3 className={styles.title}>Beats / Instrumental</h3>
+	return (
+		<>
+			<Search />
+			<h3 className={styles.title}>Beats / Instrumental</h3>
 
-				<ul className={styles.musicList}>
-					{music.map((item, index) => (
-						<li key={index}>
-							<DynamicProductItem product={item} />
-						</li>
-					))}
-				</ul>
-			</>
-		);
-	},
-);
+			<ul className={styles.musicList}>
+				{music.map((item, index) => (
+					<li key={index}>
+						<DynamicProductItem product={item} />
+					</li>
+				))}
+			</ul>
+		</>
+	);
+});
 
 BeatsAndInstrumentalPage.getLayout = function getLayout(page) {
 	return <ProductLayout>{page}</ProductLayout>;

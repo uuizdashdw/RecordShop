@@ -31,31 +31,30 @@ export async function getStaticProps() {
 	};
 }
 
-const NuDiscoAndModernFunkPage = React.memo(
-	function NuDiscoAndModernFunkPage(data) {
-		const [music, setMusic] = useState([]);
+const NuDiscoAndModernFunkPage = React.memo(function NuDiscoAndModernFunkPage({
+	data,
+}) {
+	const [music, setMusic] = useState([]);
 
-		useEffect(() => {
-			const nuDiscoAndModernFunk = data.children.props.data;
-			setMusic(nuDiscoAndModernFunk);
-		}, []);
+	useEffect(() => {
+		setMusic(data);
+	}, []);
 
-		return (
-			<>
-				<Search />
-				<h3 className={styles.title}>Nu Disco / Modern Funk</h3>
+	return (
+		<>
+			<Search />
+			<h3 className={styles.title}>Nu Disco / Modern Funk</h3>
 
-				<ul className={styles.musicList}>
-					{music.map((item, index) => (
-						<li key={index}>
-							<DynamicProductItem product={item} />
-						</li>
-					))}
-				</ul>
-			</>
-		);
-	},
-);
+			<ul className={styles.musicList}>
+				{music.map((item, index) => (
+					<li key={index}>
+						<DynamicProductItem product={item} />
+					</li>
+				))}
+			</ul>
+		</>
+	);
+});
 
 NuDiscoAndModernFunkPage.getLayout = function getLayout(page) {
 	return <ProductLayout>{page}</ProductLayout>;

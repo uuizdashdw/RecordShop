@@ -29,13 +29,11 @@ export async function getStaticProps() {
 	};
 }
 
-const KoreanPage = React.memo(function KoreanPage(data) {
+const KoreanPage = React.memo(function KoreanPage({ data }) {
 	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
-		const korean = data.children.props.data;
-
-		setMusic(korean);
+		setMusic(data);
 	}, [data]);
 
 	return (

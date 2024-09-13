@@ -31,12 +31,11 @@ export async function getStaticProps() {
 	};
 }
 
-const RockAndPopPage = React.memo(function RockAndPopPage(data) {
+const RockAndPopPage = React.memo(function RockAndPopPage({ data }) {
 	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
-		const rockAndPop = data.children.props.data;
-		setMusic(rockAndPop);
+		setMusic(data);
 	}, []);
 
 	return (

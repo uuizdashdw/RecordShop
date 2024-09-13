@@ -31,12 +31,11 @@ export async function getStaticProps() {
 	};
 }
 
-const HiphopRnbPage = React.memo(function HiiphopRnbPage(data) {
+const HiphopRnbPage = React.memo(function HiiphopRnbPage({ data }) {
 	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
-		const hiphopMusic = data.children.props.data;
-		setMusic(hiphopMusic);
+		setMusic(data);
 	}, []);
 
 	return (

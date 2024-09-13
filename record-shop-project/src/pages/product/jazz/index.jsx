@@ -31,12 +31,11 @@ export async function getStaticProps() {
 	};
 }
 
-const JazzPage = React.memo(function JazzPage(data) {
+const JazzPage = React.memo(function JazzPage({ data }) {
 	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
-		const jazz = data.children.props.data;
-		setMusic(jazz);
+		setMusic(data);
 	}, []);
 
 	return (

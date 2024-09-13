@@ -31,12 +31,11 @@ export async function getStaticProps() {
 	};
 }
 
-const SoulFunkDiscoPage = React.memo(function SoulFunkDiscoPage(data) {
+const SoulFunkDiscoPage = React.memo(function SoulFunkDiscoPage({ data }) {
 	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
-		const soulFunkDisco = data.children.props.data;
-		setMusic(soulFunkDisco);
+		setMusic(data);
 	}, []);
 
 	return (

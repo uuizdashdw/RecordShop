@@ -30,12 +30,11 @@ export async function getStaticProps() {
 	};
 }
 
-const SoundtrackPage = React.memo(function SoundtrackPage(data) {
+const SoundtrackPage = React.memo(function SoundtrackPage({ data }) {
 	const [music, setMusic] = useState([]);
 
 	useEffect(() => {
-		const soundtrack = data.children.props.data;
-		setMusic(soundtrack);
+		setMusic(data);
 	}, []);
 
 	return (
