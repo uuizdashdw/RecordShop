@@ -21,7 +21,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { deleteUser } from 'firebase/auth';
 
 const instance = axios.create({
-	baseURL: 'http://localhost:3000/api',
+	baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
 // 전체 상품 조회 함수
@@ -35,7 +35,9 @@ const fetchAllProducts = async () => {
 			...doc.data(),
 		}));
 
-		const response = await fetch('/api/revalidate?path=/');
+		const response = await fetch(
+			`${process.env.NEXT_PUBLIC_API_URL}/revalidate?path=/`,
+		);
 		if (!response.ok) console.error('재검증 실패 :: ', await response.text());
 	} catch (reason) {
 		console.error('데이터를 가져오는 데 실패했습니다.', reason);
@@ -64,7 +66,7 @@ const fetchProductDetails = async params => {
 
 		if (product) {
 			const response = await fetch(
-				`/api/revalidate?path=/product/${category}/${productId}`,
+				`${process.env.NEXT_PUBLIC_API_URL}/revalidate?path=/product/${category}/${productId}`,
 			);
 			if (!response.ok) console.error('재검증 실패 :: ', await response.text());
 		}
@@ -89,7 +91,7 @@ const fetchCategoryIdProducts = async categoryId => {
 				categoryProducts = data.products;
 
 				const response = await fetch(
-					`api/revalidate?path=/product/${categoryId}`,
+					`${process.env.NEXT_PUBLIC_API_URL}/revalidate?path=/product/${categoryId}`,
 				);
 
 				if (!response.ok)
