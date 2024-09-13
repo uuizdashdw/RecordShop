@@ -34,6 +34,9 @@ const fetchAllProducts = async () => {
 			id: doc.id,
 			...doc.data(),
 		}));
+
+		const response = await fetch('/api/revalidate?path=/');
+		if (!response.ok) console.error('재검증 실패 :: ', await response.text());
 	} catch (reason) {
 		console.error('데이터를 가져오는 데 실패했습니다.', reason);
 	}
@@ -59,6 +62,13 @@ const fetchProductDetails = async params => {
 
 		const product = data.products.find(p => Number(p.id) === Number(productId));
 
+		if (product) {
+			const response = await fetch(
+				`/api/revalidate?path=/product/${category}/${productId}`,
+			);
+			if (!response.ok) console.error('재검증 실패 :: ', await response.text());
+		}
+
 		return product ? product : { notFound: true };
 	} catch (reason) {
 		console.error('상세 데이터를 가져오는 데 실패했습니다.', reason);
@@ -75,7 +85,16 @@ const fetchCategoryIdProducts = async categoryId => {
 
 		if (productDoc.exists()) {
 			const data = productDoc.data();
-			if (data.products) categoryProducts = data.products;
+			if (data.products) {
+				categoryProducts = data.products;
+
+				const response = await fetch(
+					`api/revalidate?path=/product/${categoryId}`,
+				);
+
+				if (!response.ok)
+					console.error('재검증 실패 : ', await response.text());
+			}
 		}
 	} catch (reason) {
 		console.error('데이터를 가져오는데 실패 했습니다.', reason);
