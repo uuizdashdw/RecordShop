@@ -24,6 +24,7 @@ import styles from './index.module.css';
 
 // Dynamic Import
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 // ProductItem
 const DynamicProductItem = dynamic(
 	() => import('@/components/product/ProductItem'),
@@ -31,54 +32,51 @@ const DynamicProductItem = dynamic(
 
 // 전체 상품 SSG
 export async function getStaticProps() {
-	const products = await fetchAllProducts();
+	const allProducts = await fetchAllProducts();
 	return {
 		props: {
-			products,
+			allProducts,
 		},
 	};
 }
 
-const MainPage = React.memo(function MainPage({ products }) {
+const MainPage = React.memo(function MainPage({ allProducts }) {
 	const dispatch = useDispatch();
 	const dispatchList = useSelector(state => state.products.products);
 
 	const dispatchProduct = () => {
-		dispatch(updateProducts([...products]));
-	};
-
-	const getGenreTitle = genre => {
-		switch (genre) {
-			case 'korean':
-				return 'Korean';
-			case 'hiphop&rnb':
-				return 'Hiphop / R&B';
-			case 'beats&instrumental':
-				return 'Beats / Instrumental';
-			case 'soul&funk&disco':
-				return 'Soul / Funk / Disco';
-			case 'nu_disco&modern_funk':
-				return 'Nu Disco / Modern Funk';
-			case 'rock&pop':
-				return 'Rock / Pop';
-			default:
-				return '';
-			// return genre.charAt(0).toUpperCase() + genre.slice(1);
+		if (JSON.stringify(dispatchList) !== JSON.stringify(allProducts)) {
+			dispatch(updateProducts([...allProducts]));
 		}
 	};
 
+	const genreTitles = {
+		korean: 'Korean',
+		jazz: 'Jazz',
+		soundtrack: 'Soundtrack',
+		'hiphop&rnb': 'Hiphop / R&B',
+		'beats&instrumental': 'Beats / Instrumental',
+		'soul&funk&disco': 'Soul / Funk / Disco',
+		'nu_disco&modern_funk': 'Nu Disco / Modern Funk',
+		'rock&pop': 'Rock / Pop',
+	};
+
+	const getGenreTitle = genre => genreTitles[genre] || genre;
+
 	useEffect(() => {
 		dispatchProduct();
-	}, [products]);
+		console.log('### DISPATCH ==> ', dispatchList);
+	}, [allProducts]);
 
 	return (
 		<>
 			<Search placeholder={'찾으시는 상품이 있으신가요?'} />
 			<ul>
-				{dispatchList.map(({ genre, products }, index) => (
-					<li key={index} className={styles.genreList}>
-						<h3 className={styles.title}>{getGenreTitle(genre)}</h3>
-
+				{dispatchList.map(({ id, products }) => (
+					<li key={id} className={styles.genreList}>
+						<h3 className={styles.title}>
+							<Link href={`/product/${id}`}>{getGenreTitle(id)}</Link>
+						</h3>
 						<Swiper
 							modules={[Navigation, Pagination]}
 							spaceBetween={0}
@@ -87,13 +85,12 @@ const MainPage = React.memo(function MainPage({ products }) {
 							pagination={{ clickable: true }}
 						>
 							<div className={styles.productList}>
-								{products.map((item, index) => (
-									<SwiperSlide key={index}>
-										<div>
+								{Array.isArray(products) &&
+									products.map(item => (
+										<SwiperSlide key={item.id}>
 											<DynamicProductItem product={item} />
-										</div>
-									</SwiperSlide>
-								))}
+										</SwiperSlide>
+									))}
 							</div>
 						</Swiper>
 					</li>

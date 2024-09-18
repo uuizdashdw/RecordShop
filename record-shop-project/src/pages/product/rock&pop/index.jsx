@@ -40,7 +40,7 @@ const RockAndPopPage = React.memo(function RockAndPopPage({ data }) {
 
 	return (
 		<>
-			<Search />
+			<Search placeholder={'찾으시는 상품이 있으신가요?'} />
 			<h3 className={styles.title}>Rock / Pop</h3>
 
 			<ul className={styles.musicList}>

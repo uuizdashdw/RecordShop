@@ -38,7 +38,7 @@ const KoreanPage = React.memo(function KoreanPage({ data }) {
 
 	return (
 		<>
-			<Search />
+			<Search placeholder={'찾으시는 상품이 있으신가요?'} />
 			<h3 className={styles.title}>Korean</h3>
 
 			<ul className={styles.musicList}>

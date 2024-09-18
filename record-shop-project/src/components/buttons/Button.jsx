@@ -5,15 +5,38 @@ import styles from '../css/button.module.css';
 import { useRouter } from 'next/router';
 
 // Redux
-import { useDispatch } from 'react-redux';
-import { addToCarts } from '@/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCarts, setUserInfo } from '@/store';
+
+// Hook
+import { useEffect } from 'react';
 
 const Button = ({ product }) => {
 	const dispatch = useDispatch();
+	const user = useSelector(state => state.users.userInfo);
+
 	const router = useRouter();
 
+	useEffect(() => {
+		const userInfo = JSON.parse(localStorage.getItem('user'));
+		userInfo && dispatch(setUserInfo(userInfo));
+	}, [dispatch]);
+
+	const checkAuthHandler = () => {
+		if (
+			!user &&
+			confirm(
+				'회원가입이 필요한 서비스입니다. 로그인 페이지로 이동하시겠습니까?',
+			)
+		) {
+			router.push('/auth/signin');
+		}
+		return user ? true : false;
+	};
+
 	const putInCartHandler = product => {
-		if (confirm('장바구니에 추가하시겠습니까?')) {
+		const auth = checkAuthHandler();
+		if (auth && confirm('장바구니에 추가하시겠습니까?')) {
 			const carts = JSON.parse(localStorage.getItem('carts'));
 			const existingIndex = carts.findIndex(
 				item => item.id === Number(product.id),
@@ -26,7 +49,6 @@ const Button = ({ product }) => {
 				carts.push(product);
 			}
 
-			localStorage.setItem('carts', JSON.stringify(carts));
 			dispatch(addToCarts(product));
 
 			alert(`${product.name} (이)가 장바구니에 추가되었습니다.`);

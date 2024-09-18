@@ -42,7 +42,7 @@ const BeatsAndInstrumentalPage = React.memo(function BeatsAndInstrumentalPage({
 
 	return (
 		<>
-			<Search />
+			<Search placeholder={'찾으시는 상품이 있으신가요?'} />
 			<h3 className={styles.title}>Beats / Instrumental</h3>
 
 			<ul className={styles.musicList}>

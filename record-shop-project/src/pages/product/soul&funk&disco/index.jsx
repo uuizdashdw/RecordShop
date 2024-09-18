@@ -40,7 +40,7 @@ const SoulFunkDiscoPage = React.memo(function SoulFunkDiscoPage({ data }) {
 
 	return (
 		<>
-			<Search />
+			<Search placeholder={'찾으시는 상품이 있으신가요?'} />
 			<h3 className={styles.title}>Soul / Funk / Disco</h3>
 
 			<ul className={styles.musicList}>

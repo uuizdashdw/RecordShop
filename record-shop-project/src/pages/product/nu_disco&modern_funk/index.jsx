@@ -42,7 +42,7 @@ const NuDiscoAndModernFunkPage = React.memo(function NuDiscoAndModernFunkPage({
 
 	return (
 		<>
-			<Search />
+			<Search placeholder={'찾으시는 상품이 있으신가요?'} />
 			<h3 className={styles.title}>Nu Disco / Modern Funk</h3>
 
 			<ul className={styles.musicList}>
