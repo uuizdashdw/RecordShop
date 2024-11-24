@@ -1,12 +1,5 @@
 // Hooks
-import React, {
-	useState,
-	useEffect,
-	useRef,
-	ReactNode,
-	ChangeEvent,
-	SetStateAction,
-} from 'react';
+import React, { useState, useEffect, useRef, ChangeEvent } from 'react';
 
 // API
 import { updateUserPassword, updateUserPersonalInfo } from '../../pages/api';
@@ -21,7 +14,7 @@ import { useRouter } from 'next/router';
 // CSS
 import styles from './useraccountinfo.module.css';
 
-// Component
+// Components
 import dynamic from 'next/dynamic';
 const DynamicPasswordUpdateBtn = dynamic(
 	() => import('../buttons/PasswordUpdateBtn'),

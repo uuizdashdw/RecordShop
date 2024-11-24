@@ -15,12 +15,12 @@ const DynamicAddressSearch = dynamic(
 );
 
 // Hooks
-import {
+import React, {
 	useState,
 	useEffect,
 	useRef,
 	ReactNode,
-	MutableRefObject,
+	ChangeEvent,
 } from 'react';
 
 // Redux
@@ -87,14 +87,14 @@ const SignUpPage = () => {
 	};
 
 	// 비밀번호 유효성 검사
-	const validatePassword = (password: any) => {
+	const validatePassword = (password: string) => {
 		const passwordRegex =
 			/^(?=.*[a-zA-Z])(?=.*\d)(?=(.*[!@#$%^&*()_+[\]{};':"\\|,.<>\/?]){2,}).{8,}$/;
 		return passwordRegex.test(password);
 	};
 
 	// 동일 비밀번호 확인
-	const isCheckingUserPassword = (event: any) => {
+	const isCheckingUserPassword = (event: ChangeEvent<HTMLInputElement>) => {
 		const { value: password } = event.target;
 		const { userPassword } = formData;
 
@@ -104,7 +104,7 @@ const SignUpPage = () => {
 	};
 
 	// Update User Zonecode(postal code)
-	const onUpdateUserZonecode = (zonecode: any) => {
+	const onUpdateUserZonecode = (zonecode: string) => {
 		setFormData(prev => ({
 			...prev,
 			zonecode,
@@ -116,7 +116,7 @@ const SignUpPage = () => {
 	}, [formData.zonecode]);
 
 	// 유저 정보 업데이트
-	const onUpdateUserInfo = (event: any) => {
+	const onUpdateUserInfo = (event: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
 
 		if (name === 'userPhoneNumber') {
@@ -152,7 +152,7 @@ const SignUpPage = () => {
 	}, [formData]);
 
 	// Submit Logic
-	const onSubmitToSignUp = async (e: any) => {
+	const onSubmitToSignUp = async (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
 
 		const emptyField = [];

@@ -2,7 +2,7 @@
 import CartLayout from '../../layouts/CartLayout';
 
 // Hooks
-import { ReactNode, useEffect, useState } from 'react';
+import { ChangeEvent, ReactNode, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 // CSS
@@ -15,14 +15,16 @@ import {
 	setInitialCarts, // 기본 장바구니 설정
 	removeCartsItem, // 장바구니에서 삭제
 	clearCarts, // 장바구니 모두 비우기
+	RootState,
 } from '../../store';
+import { CartItem } from '../../types';
 
 const CartPage = () => {
 	const [totalAmount, setTotalAmout] = useState(0);
 	const [finalTotalAmout, setFinalTotalAmout] = useState(0);
 	const [isClear, setIsClear] = useState(false);
 
-	const cartItems = useSelector((state: any) => state.carts.carts);
+	const cartItems = useSelector((state: RootState) => state.carts.carts);
 
 	const dispatch = useDispatch();
 
@@ -37,7 +39,10 @@ const CartPage = () => {
 	}, []);
 
 	// Item Qauntity Change Handler
-	const itemCountHandle = (item: any, event: any) => {
+	const itemCountHandle = (
+		item: CartItem,
+		event: ChangeEvent<HTMLSelectElement>,
+	) => {
 		const newQuantity = Number(event.target.value);
 
 		if (item.quantityTerm && newQuantity > 2) {
@@ -51,7 +56,7 @@ const CartPage = () => {
 	};
 
 	// Remove Item In Cart
-	const removeCartItem = (item: any) => {
+	const removeCartItem = (item: CartItem) => {
 		if (confirm('장바구니에서 삭제하시겠습니까?')) {
 			dispatch(removeCartsItem(item));
 			setIsClear(true);
@@ -80,14 +85,15 @@ const CartPage = () => {
 
 	// Calculate Total Amount
 	const totalAmountHandle = () => {
-		return cartItems.reduce((total: any, item: any) => {
-			if (item.priceOff) {
+		return cartItems.reduce((total: any, item: CartItem) => {
+			if (item.priceOff && item.aboutItem) {
 				return (
 					total +
 					Number(
-						item.aboutItem?.quntityInfo.price.match(/\d+/g).join('') *
-							item.quantity,
-					)
+						String(item.aboutItem.quntityInfo.price).match(/\d+/g)?.join('') ||
+							'0',
+					) *
+						item.quantity
 				);
 			} else {
 				return Number(total + item.price * item.quantity);
@@ -96,7 +102,7 @@ const CartPage = () => {
 	};
 
 	// Calculate Total Amout and Delivery Fee
-	const finalTotalAmoutHandle = (total: any) => {
+	const finalTotalAmoutHandle = (total: number) => {
 		const final = total >= 70000 || total === 0 ? total : total + 3000;
 		return final;
 	};
@@ -151,11 +157,16 @@ const CartPage = () => {
 								<p className={styles.item_text}>
 									예상 결제 금액 :{' '}
 									{item.priceOff
-										? (
-												(item.aboutItem?.quntityInfo.price)
-													.match(/\d+/g)
-													.join('') * item.quantity
-											).toLocaleString()
+										? item.aboutItem?.quntityInfo?.price
+											? // price를 문자열로 변환 후 match 메서드 호출
+												(
+													Number(
+														String(item.aboutItem.quntityInfo.price)
+															.match(/\d+/g)
+															?.join('') || '0',
+													) * item.quantity
+												).toLocaleString()
+											: '정보 없음'
 										: (item.price * item.quantity).toLocaleString()}
 									원
 								</p>

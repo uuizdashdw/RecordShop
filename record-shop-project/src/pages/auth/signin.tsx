@@ -5,7 +5,7 @@ import styles from './signin.module.css';
 import AuthLayout from '../../layouts/AuthLayout';
 
 // Hooks
-import { useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode, ChangeEvent } from 'react';
 
 // Router
 import { useRouter } from 'next/router';
@@ -42,7 +42,7 @@ const SignInPage = ({ setUser }: any) => {
 		if (user) router.replace('/');
 	}, [router]);
 
-	const onChangeFormData = (event: any) => {
+	const onChangeFormData = (event: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
 		setFormData(prev => ({
 			...prev,
@@ -51,7 +51,7 @@ const SignInPage = ({ setUser }: any) => {
 	};
 
 	// 아이디 기억 로직
-	const isCheckAccountRemember = (checked: any, userAccount: any) => {
+	const isCheckAccountRemember = (checked: boolean, userAccount: string) => {
 		const rememberInfo = {
 			remember: true,
 			userAccount,
@@ -81,7 +81,7 @@ const SignInPage = ({ setUser }: any) => {
 	}, []);
 
 	// 로그인 로직
-	const onSignIn = async (event: any) => {
+	const onSignIn = async (event: React.MouseEvent<HTMLButtonElement>) => {
 		if (event) event.preventDefault();
 
 		const { userAccount, userPassword } = formData;
@@ -111,10 +111,12 @@ const SignInPage = ({ setUser }: any) => {
 		}
 	};
 
-	const onEnterSubmitFormData = (event: any) => {
+	const onEnterSubmitFormData = (
+		event: React.KeyboardEvent<HTMLInputElement>,
+	) => {
 		if (event.key === 'Enter') {
 			event.preventDefault();
-			onSignIn(event);
+			onSignIn(event as unknown as React.MouseEvent<HTMLButtonElement>);
 		}
 	};
 

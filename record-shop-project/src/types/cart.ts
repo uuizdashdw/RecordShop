@@ -1,3 +1,5 @@
+import { AboutItemType } from './allProducts';
+
 export type CartItem = {
 	id: number;
 	imageUrl: string;
@@ -5,4 +7,6 @@ export type CartItem = {
 	price: number;
 	quantity: number;
 	quantityTerm: boolean;
+	priceOff?: boolean;
+	aboutItem?: AboutItemType;
 };
