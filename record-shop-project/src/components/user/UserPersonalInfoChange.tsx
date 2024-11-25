@@ -1,5 +1,12 @@
 // Hooks
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, {
+	useState,
+	useEffect,
+	useCallback,
+	useRef,
+	SetStateAction,
+	ChangeEvent,
+} from 'react';
 
 // CSS
 import styles from './userPersonalInfoChange.module.css';
@@ -10,19 +17,30 @@ import phoneNumberHandler from '../../../utils/getPhoneNumber';
 // Component
 import AddressModal from '../modal/AddressModal';
 
+// Type
+import { UserPersnolType } from '../../types';
+import { Address } from 'react-daum-postcode';
+interface UserPersonalInfoChangeProps {
+	formData: UserPersnolType;
+	setFormData: React.Dispatch<SetStateAction<UserPersnolType>>;
+	oldPhoneNumberRef: React.RefObject<HTMLInputElement>;
+	setPersonalBtnDisabled: React.Dispatch<SetStateAction<boolean>>;
+	handleUpdateUserPersonalInfo: () => void;
+}
+
 const UserPersonalInfoChange = React.memo(function UserPersonalInfoChange({
 	formData,
 	setFormData,
 	oldPhoneNumberRef,
 	setPersonalBtnDisabled,
 	handleUpdateUserPersonalInfo,
-}: any) {
+}: UserPersonalInfoChangeProps) {
 	// Modal
 	const [isOpen, setIsOpen] = useState(false);
 	const detailAddressRef = useRef<HTMLInputElement>(null);
 
-	const onChangePhoneNumber = (e: any) => {
-		setFormData((prev: any) => ({
+	const onChangePhoneNumber = (e: ChangeEvent<HTMLInputElement>) => {
+		setFormData(prev => ({
 			...prev,
 			userPhoneNumber: phoneNumberHandler(e),
 		}));
@@ -31,14 +49,14 @@ const UserPersonalInfoChange = React.memo(function UserPersonalInfoChange({
 	// 개인정보 수정 버튼 Disabled 활성 및 비활성화 함수
 	const checkAllFieldsFilled = useCallback(() => {
 		const allFieldsFilled = Object.values(formData).every(
-			(value: any) => value.trim() !== '',
+			(value: string) => value.trim() !== '',
 		);
 		setPersonalBtnDisabled(!allFieldsFilled);
 	}, [formData]);
 
 	// 우편번호 및 주소 세팅
-	const onCompleteHandle = (data: any) => {
-		setFormData((prev: any) => ({
+	const onCompleteHandle = (data: Address) => {
+		setFormData(prev => ({
 			...prev,
 			userAddress: data.address,
 			zonecode: data.zonecode,
@@ -47,14 +65,14 @@ const UserPersonalInfoChange = React.memo(function UserPersonalInfoChange({
 	};
 
 	// 상세주소 변경 핸들러
-	const onChangeDetailAddress = (e: any) => {
-		setFormData((prev: any) => ({
+	const onChangeDetailAddress = (e: ChangeEvent<HTMLInputElement>) => {
+		setFormData(prev => ({
 			...prev,
 			userDetailAddress: e.target.value,
 		}));
 	};
 
-	const onEnterInfoChange = (e: any) => {
+	const onEnterInfoChange = (e: React.KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Enter') {
 			e.preventDefault();
 			handleUpdateUserPersonalInfo();

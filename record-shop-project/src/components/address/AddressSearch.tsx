@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent, SetStateAction } from 'react';
 
 // CSS
 import styles from '../css/addressSearch.module.css';
@@ -9,16 +9,26 @@ import { useState } from 'react';
 // Component
 import AddressModal from '../modal/AddressModal';
 
+// Type
+import { UserType } from '../../types';
+import { Address } from 'react-daum-postcode';
+
+interface AddressSearchProps {
+	address: string;
+	setFormData: React.Dispatch<SetStateAction<UserType>>;
+	onUpdateUserInfo: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
 const AddressSearch = React.memo(function AddressSearch({
 	address,
 	setFormData,
 	onUpdateUserInfo,
-}: any) {
+}: AddressSearchProps) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [postalCode, setPostalCode] = useState('');
 
-	const onCompleteHandle = (data: any) => {
-		setFormData((prev: any) => ({
+	const onCompleteHandle = (data: Address) => {
+		setFormData((prev: UserType) => ({
 			...prev,
 			userAddress: data.address,
 			zonecode: data.zonecode,

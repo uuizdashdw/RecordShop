@@ -45,7 +45,7 @@ const CartPage = () => {
 	) => {
 		const newQuantity = Number(event.target.value);
 
-		if (item.quantityTerm && newQuantity > 2) {
+		if (item.quantityTerms && newQuantity > 2) {
 			alert('해당 상품은 1인 최대 구매수량이 2장입니다.');
 			return;
 		}
@@ -85,7 +85,7 @@ const CartPage = () => {
 
 	// Calculate Total Amount
 	const totalAmountHandle = () => {
-		return cartItems.reduce((total: any, item: CartItem) => {
+		return cartItems.reduce((total: number, item: CartItem) => {
 			if (item.priceOff && item.aboutItem) {
 				return (
 					total +

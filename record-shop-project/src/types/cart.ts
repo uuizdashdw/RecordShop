@@ -1,12 +1,16 @@
-import { AboutItemType } from './allProducts';
+// import { AboutItemType } from './allProducts';
+import { ProductType } from './allProducts';
 
-export type CartItem = {
-	id: number;
-	imageUrl: string;
-	name: string;
-	price: number;
+// export interface CartItem {
+// 	id: number;
+// 	imageUrl: string;
+// 	name: string;
+// 	price: number;
+// 	quantity: number;
+// 	quantityTerm: boolean;
+// 	priceOff?: boolean;
+// 	aboutItem?: AboutItemType;
+// }
+export interface CartItem extends ProductType {
 	quantity: number;
-	quantityTerm: boolean;
-	priceOff?: boolean;
-	aboutItem?: AboutItemType;
-};
+}

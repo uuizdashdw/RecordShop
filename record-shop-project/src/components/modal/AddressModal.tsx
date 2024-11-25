@@ -1,5 +1,5 @@
 // Libraries
-import DaumPostcodeEmbed from 'react-daum-postcode';
+import DaumPostcodeEmbed, { Address } from 'react-daum-postcode';
 import {
 	Modal,
 	ModalOverlay,
@@ -8,8 +8,19 @@ import {
 	ModalBody,
 	ModalCloseButton,
 } from '@chakra-ui/react';
+import React, { SetStateAction } from 'react';
 
-const AddressModal = ({ isOpen, setIsOpen, onCompleteHandle }: any) => {
+interface AddressModalProps {
+	isOpen: boolean;
+	setIsOpen: React.Dispatch<SetStateAction<boolean>>;
+	onCompleteHandle: (address: Address) => void;
+}
+
+const AddressModal = ({
+	isOpen,
+	setIsOpen,
+	onCompleteHandle,
+}: AddressModalProps) => {
 	return (
 		<Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
 			<ModalOverlay />

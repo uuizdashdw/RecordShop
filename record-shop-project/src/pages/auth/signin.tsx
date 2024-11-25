@@ -5,7 +5,13 @@ import styles from './signin.module.css';
 import AuthLayout from '../../layouts/AuthLayout';
 
 // Hooks
-import React, { useState, useEffect, ReactNode, ChangeEvent } from 'react';
+import React, {
+	useState,
+	useEffect,
+	ReactNode,
+	ChangeEvent,
+	SetStateAction,
+} from 'react';
 
 // Router
 import { useRouter } from 'next/router';
@@ -19,11 +25,17 @@ import { setUserInfo } from '../../store';
 
 // Component
 import dynamic from 'next/dynamic';
+import { UserType } from '../../types';
 const DynamicAccountPassword = dynamic(
 	() => import('../../components/user/AccountPassword'),
 );
 
-const SignInPage = ({ setUser }: any) => {
+// Type
+interface SignInPageProps {
+	setUser: React.Dispatch<SetStateAction<UserType>>;
+}
+
+const SignInPage = ({ setUser }: SignInPageProps) => {
 	const [formData, setFormData] = useState({
 		userAccount: '',
 		userPassword: '',

@@ -50,7 +50,6 @@ const fetchAllProducts = async (): Promise<AllProdType[]> => {
 	} catch (reason) {
 		console.log('데이터를 가져오는 데 실패했습니다.', reason);
 	}
-	console.log('## ALL PRODUCTS', products);
 
 	if (!products) products = [];
 	return products;
@@ -73,7 +72,7 @@ const fetchProductDetails = async (
 
 		const data = productDoc.data();
 
-		if (!data || !data.product) return { notFound: true };
+		if (!data) return { notFound: true };
 		const product: ProductType = data.products.find(
 			(p: ProductType) => Number(p.id) === Number(productId),
 		);

@@ -25,7 +25,12 @@ import {
 	AllProductsType,
 	NextPageWithLayout,
 	ParamsType,
+	ProductType,
+	ProductProps,
 } from '../../../types';
+
+// initial Product
+import { initialProdcut } from '../../../../utils/initialProduct';
 
 export async function getStaticPaths() {
 	const categories: AllProductsType = await fetchAllProducts();
@@ -46,8 +51,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: ParamsType }) {
-	const product: any = await fetchProductDetails(params);
+	const product = await fetchProductDetails(params);
+
 	if (!product) {
+		console.log('## NOT FOUND');
 		return {
 			notFound: true,
 		};
@@ -59,13 +66,13 @@ export async function getStaticProps({ params }: { params: ParamsType }) {
 	};
 }
 
-const ProductDetailPage: NextPageWithLayout<any> = React.memo(
-	function ProductDetailPage({ product }: { product: any }) {
-		const [music, setMusic] = useState({});
+const ProductDetailPage: NextPageWithLayout<ProductProps> = React.memo(
+	function ProductDetailPage({ product }: ProductProps) {
+		const [music, setMusic] = useState(initialProdcut);
 		const router = useRouter();
 
 		const memoizedSetMusic = useCallback(
-			(data: any) => {
+			(data: ProductType) => {
 				setMusic(data);
 			},
 			[product],

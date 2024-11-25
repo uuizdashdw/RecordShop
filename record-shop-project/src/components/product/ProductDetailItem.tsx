@@ -11,9 +11,12 @@ import Button from '../buttons/Button';
 import ProductDetailText from './ProductDetailText';
 import ProductPlaylist from './ProductPlaylist';
 
+// Type
+import { ProductProps } from '../../types';
+
 const ProductDetailItem = React.memo(function ProductDetailItem({
 	product,
-}: any) {
+}: ProductProps) {
 	return (
 		<>
 			<div className={styles.product_wrapper}>
@@ -25,6 +28,7 @@ const ProductDetailItem = React.memo(function ProductDetailItem({
 						alt={product.name}
 					/>
 				</div>
+
 				<div className={styles.info_wrapper}>
 					<ProductDetailText product={product} />
 					<Button product={product} />

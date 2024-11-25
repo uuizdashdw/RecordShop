@@ -6,14 +6,17 @@ import { useRouter } from 'next/router';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCarts, setUserInfo } from '../../store';
+import { addToCarts, RootState, setUserInfo } from '../../store';
 
 // Hook
 import { useEffect } from 'react';
 
-const Button = ({ product }: any) => {
+// Type
+import { CartItem, ProductType, ProductProps } from '../../types';
+
+const Button = ({ product }: ProductProps) => {
 	const dispatch = useDispatch();
-	const user = useSelector((state: any) => state.users.userInfo);
+	const user = useSelector((state: RootState) => state.users.userInfo);
 
 	const router = useRouter();
 
@@ -34,19 +37,26 @@ const Button = ({ product }: any) => {
 		return user ? true : false;
 	};
 
-	const putInCartHandler = (product: any) => {
+	const putInCartHandler = (product: ProductType | CartItem) => {
 		const auth = checkAuthHandler();
+		const cart = localStorage.getItem('carts');
+		let carts: CartItem[] = [];
+
+		if (cart) carts = JSON.parse(cart);
 		if (auth && confirm('장바구니에 추가하시겠습니까?')) {
-			const carts = JSON.parse(localStorage.getItem('carts') as any);
+			// const carts = JSON.parse(localStorage.getItem('carts'));
 			const existingIndex = carts.findIndex(
-				(item: any) => item.id === Number(product.id),
+				item => item.id === Number(product.id),
 			);
 
 			if (existingIndex !== -1) {
 				carts[existingIndex].quantity += 1;
 			} else {
-				product.quantity = 1;
-				carts.push(product);
+				const newCartItem: CartItem = {
+					...product,
+					quantity: 1,
+				};
+				carts.push(newCartItem);
 			}
 
 			dispatch(addToCarts(product));

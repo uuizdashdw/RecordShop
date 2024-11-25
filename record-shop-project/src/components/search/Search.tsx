@@ -2,19 +2,23 @@
 import styles from './search.module.css';
 
 // Hooks
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, ChangeEvent } from 'react';
 
 // Router
 import { useRouter } from 'next/router';
 
-const Search = ({ placeholder }: { placeholder: string }) => {
+interface SearchProps {
+	placeholder: string;
+}
+
+const Search = ({ placeholder }: SearchProps) => {
 	const [searchData, setSearchData] = useState('');
 
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	const router = useRouter();
 
-	const onSearchProduct = (e: any) => {
+	const onSearchProduct = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearchData(e.target.value);
 	};
 
@@ -27,7 +31,7 @@ const Search = ({ placeholder }: { placeholder: string }) => {
 		router.push(`/search?query=${encodeURIComponent(searchData)}`);
 	};
 
-	const onEnterToSearch = (event: any) => {
+	const onEnterToSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
 		if (event.key === 'Enter') {
 			event.preventDefault();
 			onClickToSearch();
@@ -36,7 +40,6 @@ const Search = ({ placeholder }: { placeholder: string }) => {
 
 	useEffect(() => {
 		if (inputRef.current) inputRef?.current?.focus();
-		// if (inputRef.current) inputRef?.currentTarget.focus();
 	}, []);
 
 	return (

@@ -46,7 +46,7 @@ const UserAccountInfo = React.memo(function UserAccountInfo({
 	const [passwordChange, setPasswordChange] = useState<boolean>(false);
 	const [personalInfoChange, setPersonalInfoChange] = useState<boolean>(false);
 	const [allClear, setAllClear] = useState(false);
-	const [personalBtnDisabled, setPersonalBtnDisabled] = useState(true);
+	const [personalBtnDisabled, setPersonalBtnDisabled] = useState<boolean>(true);
 
 	const [formData, setFormData] = useState<UserPersnolType>({
 		userName: userInfo.userName,
@@ -58,7 +58,7 @@ const UserAccountInfo = React.memo(function UserAccountInfo({
 	});
 
 	const oldPasswordRef = useRef(null);
-	const oldPhoneNumberRef = useRef(null);
+	const oldPhoneNumberRef = useRef<HTMLInputElement>(null);
 	const dispatch = useDispatch<AppDispatch>();
 	const router = useRouter();
 

@@ -1,7 +1,10 @@
 // CSS
 import styles from './loading.module.css';
 
-const Loading = ({ reason }: any) => {
+interface LoadingProps {
+	reason: string;
+}
+const Loading = ({ reason }: LoadingProps) => {
 	return (
 		<div className={styles.loading_wrapper}>
 			<h2 className={styles.title}>{reason}</h2>

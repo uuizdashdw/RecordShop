@@ -1,5 +1,5 @@
 // Hook
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 // CSS
 import styles from './usercheck.module.css';
@@ -7,13 +7,16 @@ import styles from './usercheck.module.css';
 // Component
 import dynamic from 'next/dynamic';
 const DynamicAccountPassword = dynamic(() => import('./AccountPassword'));
-
+interface FormData {
+	userAccount: string;
+	userPassword: string;
+}
 interface UserCheckProps {
-	isDisabled: any;
-	formData: any;
-	onChangeFormData: any;
-	onSubmitFormData: any;
-	onEnterSubmitFormData: any;
+	isDisabled: boolean;
+	formData: FormData;
+	onChangeFormData: (e: ChangeEvent<HTMLInputElement>) => void;
+	onSubmitFormData: (e: React.MouseEvent<HTMLButtonElement>) => void;
+	onEnterSubmitFormData: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 const UserCheck = React.memo(function UserCheck({

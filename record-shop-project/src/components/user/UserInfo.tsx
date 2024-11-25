@@ -1,24 +1,22 @@
-import React, {
-	useEffect,
-	useState,
-	useRef,
-	SetStateAction,
-	ChangeEvent,
-} from 'react';
+import React, { useEffect, useState, SetStateAction, ChangeEvent } from 'react';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUser } from '../../pages/api';
 
 // Type
-import { UserInfoButtonProps, UserAccountInfoProps } from '../../types';
+import {
+	UserInfoButtonProps,
+	UserAccountInfoProps,
+	UserType,
+} from '../../types';
 interface UserInfoProps {
-	setUser: (user: any) => void;
+	setUser: React.Dispatch<SetStateAction<UserType>>;
 }
 
 // Components
 import dynamic from 'next/dynamic';
-import { AppDispatch } from '../../store';
+import { AppDispatch, RootState } from '../../store';
 
 const DynamicUserCheck = dynamic(() => import('./UserCheck'));
 const DynamicUserAccountInfo = dynamic<UserAccountInfoProps>(
@@ -36,7 +34,7 @@ const UserInfo = React.memo(function UserInfo({ setUser }: UserInfoProps) {
 	const [isDisabled, setIsDisabled] = useState(true);
 
 	const dispatch = useDispatch<AppDispatch>();
-	const { userInfo, error } = useSelector((state: any) => state.users);
+	const { userInfo, error } = useSelector((state: RootState) => state.users);
 
 	const onChangeFormData = (e: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;

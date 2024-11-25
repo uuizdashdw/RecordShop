@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SetStateAction } from 'react';
 
 // CSS
 import styles from './index.module.css';
@@ -11,9 +11,9 @@ import dynamic from 'next/dynamic';
 const DynamicUserInfo = dynamic(() => import('../../components/user/UserInfo'));
 
 // Type
-import { NextPageWithLayout } from '../../types';
+import { NextPageWithLayout, UserType } from '../../types';
 interface MyPageProps {
-	setUser: (user: any) => void;
+	setUser: React.Dispatch<SetStateAction<UserType>>;
 }
 
 const MyPage: NextPageWithLayout<MyPageProps> = React.memo(function MyPage({

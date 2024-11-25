@@ -15,3 +15,6 @@ export * from './cart';
 
 // 파라미터
 export * from './params';
+
+// 프롭스
+export * from './props';

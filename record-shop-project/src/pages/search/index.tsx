@@ -30,7 +30,6 @@ const SearchPage = () => {
 
 	const fetchSearchResult = async () => {
 		if (query) {
-			console.log('쿼리 구조 ::: ', query);
 			try {
 				const results = await fetchProductsByName(query);
 				setProducts(results);
